@@ -69,7 +69,7 @@ if ( \Pressbooks\Book\Helpers\social_media_enabled() ) {
 			<div class="header__brand">
 				<!-- Changed dynamically obtained links to static to decrease queries. Check original code in McLoohan theme header.php file-->
 				<a aria-label="Catalog Books 4 Languages" href="https://open.books4languages.com">
-					<img width="200" height="30" src="/wp-content/themes/pressbooks-jacobs/assets/images/header-logo.png">
+					<img width="200" height="30" src="/wp-content/themes/books4languages-child-theme-for-pressbooks/assets/images/header-logo.png">
 				</a>
 				<!-- End of modified code -->
 			</div>
@@ -83,7 +83,7 @@ if ( \Pressbooks\Book\Helpers\social_media_enabled() ) {
 			</div>
 		</div>
 		<?php if ( ! is_front_page() && pb_get_first_post_id() ) { ?>
-			<div class="reading-header">
+			<div class="reading-header smaller-margin">
 				<nav class="reading-header__inside">
 					<div class="reading-header__toc dropdown">
 						<h3 class="reading-header__toc__title"><?php _e( 'Contents', 'pressbooks-book' ); ?></h3>
@@ -96,8 +96,8 @@ if ( \Pressbooks\Book\Helpers\social_media_enabled() ) {
 
 					<div class="reading-header__end-container dropdown">
                         <?php if (in_array(get_post_type(), array('chapter', 'part', 'back-matter', 'front-matter')) && get_option(get_post_type().'_op')) : ?>
-                                <p>RESOURCES</p>
-                                <ul>
+                                <h3 class="res-head">RESOURCES</h3>
+                                <ul class="res-list">
                                     <?php do_shortcode('[related_content type="all"]'); ?>
                                 </ul>    
                         <?php endif; ?>

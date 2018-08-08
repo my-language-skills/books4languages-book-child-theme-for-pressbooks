@@ -18,8 +18,60 @@ GitHub Theme URI: my-language-skills/books4languages-child-theme-for-pressbooks
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-item {
-    color: #000;
-    background-color: #222;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    color: rgb(176,17,9) !important;
+    background-color: rgb(246, 246, 246) !important;
     z-index: 1;
+}
+
+.dropdown button {
+	border-bottom: 0px !important;
+	font-weight: 500;
+	font-size: 1rem;	
+}
+
+.dropdown button:hover, .dropdown button:focus {
+	text-decoration: underline !important;
+	color: rgb(255, 255, 255) !important;
+}
+
+.res-head {
+	margin-bottom: 0 !important;
+}
+
+.res-list {
+	padding-left: 0 !important;
+	width: inherit;
+}
+
+@media screen and (max-width: 60rem) {
+
+	.smaller-margin {
+		margin-top: 0.5rem !important;
+	}
+
+	.header {
+		padding-top: 2rem !important;
+	}
+
+	.reading-header__end-container, .reading-header__title, .reading-header__toc {
+    	min-height: 3.4rem !important;
+    	border-bottom: 0 !important;
+	}
+
+	.reading-header__end-container {
+		display: inline-block !important;
+		order: 1 !important;
+	}
+
+	h3.reading-header__toc__title, .reading-header__toc h3.reading-header__toc__title button {
+		height: 3.5rem !important;
+	}
+
+	.entry-title {
+		font-size: 1.8rem !important;
+	}
+
+	.res-list{
+		width: 100vw;
+	}
 }
