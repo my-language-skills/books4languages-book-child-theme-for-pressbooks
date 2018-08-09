@@ -94,7 +94,7 @@ if ( \Pressbooks\Book\Helpers\social_media_enabled() ) {
 					<?php /* translators: %s: the title of the book */ ?>
 					<h1 class="reading-header__title" ><a href="<?php echo home_url( '/' ); ?>" title="<?php printf( __( 'Go to the cover page of %s', 'pressbooks-book' ), esc_attr( get_bloginfo( 'name', 'display' ) ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-					<div class="reading-header__end-container dropdown">
+					<div class="reading-header__end-container dropdown cust">
                         <?php if (in_array(get_post_type(), array('chapter', 'part', 'back-matter', 'front-matter')) && get_option(get_post_type().'_op')) : ?>
                                 <h3 class="res-head">RESOURCES</h3>
                                 <ul class="res-list">

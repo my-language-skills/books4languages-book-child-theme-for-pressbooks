@@ -18,29 +18,44 @@ GitHub Theme URI: my-language-skills/books4languages-child-theme-for-pressbooks
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-item {
-    color: rgb(176,17,9) !important;
     background-color: rgb(246, 246, 246) !important;
     z-index: 1;
+    padding-left: 0 !important;
+    margin-top: .3rem;
 }
 
-.dropdown button {
+.dropdown-item a {
+	color: rgb(176, 17, 9) !important;
+}
+
+.cust button {
+	color: rgb(255, 255, 255);
 	border-bottom: 0px !important;
-	font-weight: 500;
-	font-size: 1rem;	
+	font-weight: 600;
+	font-size: 1rem;
+	text-transform: uppercase;
 }
 
-.dropdown button:hover, .dropdown button:focus {
+.res-head button {
+	font-weight: 500;
+}
+
+.res-head button:hover, .res-head button:focus {
+	margin-bottom: 0 !important;
 	text-decoration: underline !important;
 	color: rgb(255, 255, 255) !important;
 }
 
-.res-head {
-	margin-bottom: 0 !important;
-}
-
 .res-list {
 	padding-left: 0 !important;
-	width: inherit;
+	background-color: rgb(255, 255, 255) !important;
+}
+
+.res-list button {
+	color: rgb(176, 17, 9) !important;
+}
+.res-list button:hover, .res-list button:focus {
+	color: rgb(176, 17, 9) !important;
 }
 
 @media screen and (max-width: 60rem) {
@@ -61,6 +76,7 @@ GitHub Theme URI: my-language-skills/books4languages-child-theme-for-pressbooks
 	.reading-header__end-container {
 		display: inline-block !important;
 		order: 1 !important;
+		padding-left: 0 !important;
 	}
 
 	h3.reading-header__toc__title, .reading-header__toc h3.reading-header__toc__title button {
@@ -72,6 +88,11 @@ GitHub Theme URI: my-language-skills/books4languages-child-theme-for-pressbooks
 	}
 
 	.res-list{
-		width: 100vw;
+		min-width: 100vw !important;
+		margin-bottom: .1rem !important;
+	}
+
+	.res-head {
+		padding-left: 2.25rem !important;
 	}
 }
