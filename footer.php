@@ -23,7 +23,7 @@ echo $multipage ? ' footer--multipage' : '';
 		<section class="footer__pressbooks">
 			<a class="footer__pressbooks__icon" href="https://books4languages.com/" title="Books For Languages">
 				<?php // TODO ?>
-				<img src="<?=/wp-content/themes/pressbooks-jacobs/assets/images/icon-bfl.png">
+				<img src="/wp-content/themes/books4languages-child-theme-for-pressbooks/assets/images/icon-bfl.png">
 			</a>
 			<div class="footer__pressbooks__links">
 				<?php /* translators: %s: Pressbooks */ ?>
