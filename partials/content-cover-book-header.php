@@ -13,12 +13,15 @@
 		<div class="book-header__cover">
 			<?php if ( ! empty( $book_information['pb_cover_image'] ) ) { ?>
 				<div class="book-header__cover__image">
-					<?php /* translators: %s: title of book */ 
+					<?php   //getting Book Info post ID 
 						$meta_id = $wpdb->get_results("SELECT `ID` FROM $wpdb->posts WHERE `post_type` = 'metadata'");
+						//>> getting attachment (cover image) ID
 						$attach = get_attached_media('image',(int)$meta_id[0]->ID);
 						foreach ($attach as $key=>$value){
 							$img_id = $key;
 						}
+						<<//
+						//printing the <img> tag with cover image of 'pb_cover_large' size (350x525px)
 						echo wp_get_attachment_image($img_id, 'pb_cover_large', false, ['alt' => __('Cover image for '.get_bloginfo('name'), 'pressbooks-book')]);
 					?>
 					
