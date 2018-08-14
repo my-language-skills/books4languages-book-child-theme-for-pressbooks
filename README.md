@@ -1,2 +1,2 @@
-# books4languages-child-theme-for-pressbooks
-Personalization of the Jacobs child theme for 
+# Books4Languages Child Theme for PressBooks
+Personalization of the Jacobs child theme for
