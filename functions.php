@@ -97,7 +97,7 @@ function pbc_shorten_string($string, $amount) {
  	$current_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
  	foreach ($relations as $lang => $id) {
- 		if ($id == $blog_id){
+ 		if ($id == $blog_id || $id == 0){
  			continue;
  		} elseif ($lang == 'book_id'){
  			echo '<li><a href="'.$source.'/'.add_query_arg( array(), $wp->request ).'">'.__('Original Book', 'pressbooks-book').'</a> |</li>';
