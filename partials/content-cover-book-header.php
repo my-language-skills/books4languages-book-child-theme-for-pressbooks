@@ -19,7 +19,9 @@
 						foreach ($attach as $key=>$value){
 							$img_id = $key;
 						}
-						echo wp_get_attachment_image($img_id, 'pb_cover_large', false, ['alt' => __('Cover image for '.get_bloginfo('name'), 'pressbooks-book')]);
+						if (isset($img_id)){
+							echo wp_get_attachment_image($img_id, 'pb_cover_large', false, ['alt' => __('Cover image for '.get_bloginfo('name'), 'pressbooks-book')]);
+						}
 					?>
 					
 				</div>
