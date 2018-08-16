@@ -4,6 +4,7 @@
 </main>
 <?php
 global $multipage;
+global $wpdb;
 ?>
 
 
@@ -26,6 +27,11 @@ echo $multipage ? ' footer--multipage' : '';
 				<img src="/wp-content/themes/books4languages-child-theme-for-pressbooks/assets/images/icon-bfl.png">
 			</a>
 			<div class="footer__pressbooks__links">
+				<!-- New block which shows available translations-->
+				<ul class="footer__pressbooks__links__list" style="margin-bottom: 1rem;">
+					<?php pbc_print_trans_links(get_current_blog_id())?>
+				</ul>
+				<!-- END OF TRANSLATIONS BLOCK-->
 				<?php /* translators: %s: Pressbooks */ ?>
 				<p class="footer__pressbooks__links__title"><?php printf( __( 'Insolently created with use of %s', 'pressbooks-book' ), '<span class="pressbooks">Wordpress and Pressbooks</span>' ); ?></p>
 				<ul class="footer__pressbooks__links__list">
