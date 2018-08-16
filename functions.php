@@ -33,7 +33,7 @@ function get_navi_links_cus ($echo = true){
 				<a href="<?php echo $prev_chapter; ?>" title="<?php printf( __( 'Previous: %1$s (%2$s)', 'pressbooks-book' ), get_the_title( $prev_chapter_id ), $prev_chapter_post_type ); ?>">
 					<svg class="icon--svg"><use xlink:href="#arrow-left" /></svg>
 					<?php /* translators: %s: post type name */ ?>
-					<?php printf( __( 'Previous <br>(%s)', 'pressbooks-book' ), shorten_string($prev_chapter_title, 25) ); ?>
+					<?php printf( __( 'Previous <br>(%s)', 'pressbooks-book' ), pbc_shorten_string($prev_chapter_title, 25) ); ?>
 				</a>
 			<?php } ?>
 		</div>
@@ -42,7 +42,7 @@ function get_navi_links_cus ($echo = true){
 				<?php /* translators: %1$s: post title, %2$s: post type name */ ?>
 				<a href="<?php echo $next_chapter ?>" title="<?php printf( __( 'Next: %1$s (%2$s)', 'pressbooks-book' ), get_the_title( $next_chapter_id ), $next_chapter_post_type ); ?>">
 					<?php /* translators: %s: post type name */ ?>
-					<?php printf( __( 'Next <br>(%s)', 'pressbooks-book' ), shorten_string($next_chapter_title, 25) ); ?>
+					<?php printf( __( 'Next <br>(%s)', 'pressbooks-book' ), pbc_shorten_string($next_chapter_title, 25) ); ?>
 					<svg class="icon--svg"><use xlink:href="#arrow-right" /></svg>
 				</a>
 			<?php endif; ?>
@@ -59,9 +59,53 @@ function get_navi_links_cus ($echo = true){
 /**
  *Function to return first $amount characters from string
  */
-function shorten_string($string, $amount) {
+function pbc_shorten_string($string, $amount) {
 
 	$retval = strlen($string) >= 26 ? substr($string, 0, 25).'...' : $string;
  
 	return $retval;
 }
+
+/**
+ * Function for printing links to translations
+ */
+ function pbc_print_trans_links($blog_id){
+
+ 	global $wpdb;
+ 	global $wp;
+
+ 	//>> identify if book is translation or not and get the source book ID
+ 	switch_to_blog($blog_id);
+ 	$source = get_post_meta(tre_get_info_post(), 'pb_is_based_on', true) ?: 'original';
+ 	if ($source == 'original'){
+ 		$origin_id = $blog_id;
+ 	} else {
+ 		$origin = str_replace(['http://', 'https://'], '', $source).'/';
+		switch_to_blog(1);
+		$origin_id = $wpdb->get_results("SELECT `blog_id` FROM $wpdb->blogs WHERE CONCAT(`domain`, `path`) = '$origin'", ARRAY_A)[0]['blog_id'];
+	}
+	//<<
+	//fetching all related translations
+ 	switch_to_blog(1);
+ 	$relations = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}trans_rel WHERE `book_id` = '$origin_id'", ARRAY_A);
+ 	restore_current_blog();
+ 	//if book is orginal, unset 'id' property, as no need to point itself
+ 	if($source == 'original'){
+ 		unset($relations['book_id']);
+ 	}
+
+ 	$current_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+ 	foreach ($relations as $lang => $id) {
+ 		if ($id == $blog_id){
+ 			continue;
+ 		} elseif ($lang == 'book_id'){
+ 			echo '<li><a href="'.$source.'/'.add_query_arg( array(), $wp->request ).'">'.__('Original Book', 'pressbooks-book').'</a> |</li>';
+ 			continue;
+ 		}
+ 		//unknown bug fix
+ 		restore_current_blog();
+ 		echo '<li><a href="'.str_replace(get_blog_details(get_current_blog_id())->path, get_blog_details($id)->path, $current_link).'">'.$lang.'</a> |</li>';
+ 		
+ 	}
+ }
