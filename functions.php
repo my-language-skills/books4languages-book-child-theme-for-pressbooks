@@ -76,6 +76,7 @@ function pbc_shorten_string($string, $amount) {
 
  	//>> identify if book is translation or not and get the source book ID
  	switch_to_blog($blog_id);
+ 	$trans_lang = get_post_meta(tre_get_info_post(), 'efp_trans_language') ?: 'not_set';
  	$source = get_post_meta(tre_get_info_post(), 'pb_is_based_on', true) ?: 'original';
  	if ($source == 'original'){
  		$origin_id = $blog_id;
@@ -95,17 +96,22 @@ function pbc_shorten_string($string, $amount) {
  	}
 
  	$current_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
+ 	$flag = 0;
  	foreach ($relations as $lang => $id) {
+ 		$separator = $flag ? '|' : '';
  		if ($id == $blog_id || $id == 0){
  			continue;
  		} elseif ($lang == 'book_id'){
- 			echo '<li><a href="'.$source.'/'.add_query_arg( array(), $wp->request ).'">'.__('Original Book', 'pressbooks-book').'</a> |</li>';
+ 			echo '<li><a href="'.$source.'/'.add_query_arg( array(), $wp->request ).'">'.__('Original Language', 'pressbooks-book').'</a></li>';
+ 			$flag = 1;
  			continue;
  		}
  		//unknown bug fix
  		restore_current_blog();
- 		echo '<li><a href="'.str_replace(get_blog_details(get_current_blog_id())->path, get_blog_details($id)->path, $current_link).'">'.$lang.'</a> |</li>';
- 		
+ 		echo '<li>'.$separator.' <a href="'.str_replace(get_blog_details(get_current_blog_id())->path, get_blog_details($id)->path, $current_link).'">'.$lang.'</a> </li>';
+ 		$flag = 1;	
+ 	}
+ 	if ($source != 'original' && ($trans_lang == 'not_set' || $trans_lang == 'non_tr')){
+ 		echo '<li><a href="'.$source.'/'.add_query_arg( array(), $wp->request ).'">'.__('Original Book', 'pressbooks-book').'</a></li>';
  	}
  }
