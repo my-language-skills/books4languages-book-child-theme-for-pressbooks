@@ -58,6 +58,10 @@ GitHub Theme URI: my-language-skills/books4languages-child-theme-for-pressbooks
 	color: rgb(176, 17, 9) !important;
 }
 
+#hide, #show {
+	margin-bottom: 5px;
+}
+
 @media screen and (max-width: 60rem) {
 
 	.smaller-margin {
