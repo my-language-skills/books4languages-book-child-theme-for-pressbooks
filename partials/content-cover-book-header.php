@@ -41,7 +41,8 @@
 
 			$site_option = get_site_option( 'pressbooks_sharingandprivacy_options', [ 'allow_redistribution' => 0 ] );
 			$option      = get_option( 'pbt_redistribute_settings', [ 'latest_files_public' => 0 ] );
-if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) && ( ! empty( $option['latest_files_public'] ) ) ) {
+			//ADDED: Restrict content filter for singed-up users (last condition)
+if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) && ( ! empty( $option['latest_files_public'] ) ) && ( rcp_is_active() || ( rcp_get_subscription_id() && 'free' === rcp_get_status() ) ) ) {
 ?>
 				<div class="book-header__cover__downloads dropdown">
 
