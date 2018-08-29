@@ -28,6 +28,9 @@ echo $multipage ? ' footer--multipage' : '';
 			</a>
 			<div class="footer__pressbooks__links">
 				<!-- New block which shows available translations-->
+				<div style="display: flex; justify-content: center;">
+					<p>Translations</p>
+				</div>
 				<ul class="footer__pressbooks__links__list" style="margin-bottom: 1rem;">
 					<?php pbc_print_trans_links(get_current_blog_id())?>
 				</ul>
