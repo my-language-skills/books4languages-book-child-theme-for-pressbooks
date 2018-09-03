@@ -14,10 +14,21 @@
 		<div class="book-header__cover">
 			<?php if ( ! empty( $book_information['pb_cover_image'] ) ) { ?>
 				<div class="book-header__cover__image">
-					<?php
-					$cover_id = attachment_id_from_url( $book_information['pb_cover_image'] );
-					/* translators: %s: title of book */
-					echo wp_get_attachment_image( $cover_id, [ 333, 500 ], false, [ 'alt' => sprintf( __( 'Cover image for %s', 'pressbooks-book' ), get_bloginfo( 'name' ) ) ] );
+					<?php   //getting Book Info post ID 
+						$meta_id = $wpdb->get_results("SELECT `ID` FROM $wpdb->posts WHERE `post_type` = 'metadata'");
+						//>> getting attachment (cover image) ID
+						$attach = get_attached_media('image',(int)$meta_id[0]->ID);
+						foreach ($attach as $key=>$value){
+							$img_id = $key;
+						}
+						if (isset($img_id)){
+              			//printing the <img> tag with cover image of 'pb_cover_large' size (350x525px)
+							echo wp_get_attachment_image($img_id, 'pb_cover_large', false, ['alt' => __('Cover image for '.get_bloginfo('name'), 'pressbooks-book')]);
+						} else {
+							?>
+							<img src="<?php echo $book_information['pb_cover_image']; ?>" alt="<?php printf( __( 'Cover image for %s', 'pressbooks-book' ), get_bloginfo( 'name' ) ); ?>" />
+							<?php
+						}
 					?>
 					
 				</div>
