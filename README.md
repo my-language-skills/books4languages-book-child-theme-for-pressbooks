@@ -24,8 +24,8 @@ This theme is personalization of Jacobs Pressbooks theme (child theme of McLooha
 
 ## Installation
 
-1. Clone (or copy) this repository folder `all-in-one-metadata` to the `/wp-content/themes/` directory
-1. Activate the plugin through the 'Appearence' screen in WordPress
+1. Clone (or copy) this repository folder `books4languages-book-child-theme-for-pressbooks` to the `/wp-content/themes/` directory
+1. Activate the theme through the 'Themes' screen in WordPress Network Administration
 
 ## Upgrades
 
