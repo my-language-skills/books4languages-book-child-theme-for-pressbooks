@@ -86,8 +86,6 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 
 ## Credits
 
-* Here's a link to [Plugin Boilerplate](http://wppb.io/ "Uses the WordPress Plugin Boilerplate")
-* Here's a link to [Composer](https://getcomposer.org/)
 * Here's a link to [PressBooks](https://pressbooks.org/get-involved/ "Your favorite ebook platform")
 
 ---
