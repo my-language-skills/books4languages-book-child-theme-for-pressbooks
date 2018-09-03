@@ -7,12 +7,15 @@ Personalization of the Jacobs child theme for Pressbooks.
 * Logo image of Books4Languages in header
 * Resources tab (works with 'AIOM Education Related Content' plugin)
 * Automatically generated links for tranlsations <-> original books (works with 'Extensions For Pressbooks' plugin)
+* Hidden 'Download' dropdown and Resources tab for non-logged in users (works with 'Restrict Content Pro')
+* 'Show All Contents' button if front page of book moved to the top of TOC
 
 ## List of changed files
 
 * footer.php
 * header.php
 * partials/content-cover-book-header.php
+* partials/content-cover-toc.php
 * single.php (changed function for creation of next/previous chapters links)
 * functions.php (extends parent)
 * style.css (extends parent)
