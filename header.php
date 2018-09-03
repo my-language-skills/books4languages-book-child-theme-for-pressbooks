@@ -69,7 +69,7 @@ if ( \Pressbooks\Book\Helpers\social_media_enabled() ) {
 			<div class="header__brand">
 				<!-- Changed dynamically obtained links to static to decrease queries. Check original code in McLoohan theme header.php file-->
 				<a aria-label="Catalog Books 4 Languages" href="https://open.books4languages.com">
-					<img width="200" height="30" src="/wp-content/themes/books4languages-child-theme-for-pressbooks/assets/images/header-logo.png">
+					<img width="200" height="30" src="/wp-content/themes/books4languages-child-theme-for-pressbooks/assets/images/books4languages-header.png">
 				</a>
 				<!-- End of modified code -->
 			</div>

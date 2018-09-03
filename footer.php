@@ -24,7 +24,7 @@ echo $multipage ? ' footer--multipage' : '';
 		<section class="footer__pressbooks">
 			<a class="footer__pressbooks__icon" href="https://books4languages.com/" title="Books For Languages">
 				<?php // TODO ?>
-				<img src="/wp-content/themes/books4languages-child-theme-for-pressbooks/assets/images/icon-bfl.png">
+				<img src="/wp-content/themes/books4languages-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
 			</a>
 			<div class="footer__pressbooks__links">
 				<!-- New block which shows available translations-->
