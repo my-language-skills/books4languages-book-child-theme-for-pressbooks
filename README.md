@@ -58,10 +58,10 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 	* Static footer for Books4Languages (logos, links)
 	* Logo image of Books4Languages in header
 	* Resources tab (requires 'AIOM Education Related Content' plugin)
-	* Automatically generated links for tranlsations <-> original books (works with 'Extensions For Pressbooks' plugin)
+	* Automatically generated links for tranlsations <-> original books (requires 'Extensions For Pressbooks' plugin)
 	
 * **ENHANCEMENTS**
-	* Hidden 'Download' dropdown in book cover page and 'Resources tab' in content for non-logged in users (requires 'Restrict Content Pro', **If not installed, can cause a break!**)
+	* Hidden 'Download' dropdown in book cover page and 'Resources tab' in content for non-logged in users (requires 'Restrict Content Pro'. **If not installed, can cause a break!**)
 	* 'Show All Contents' button if front page of book moved to the top of TOC
 	* Navigation arrows in chapters show titles of previous and following chapters
 	
