@@ -27,13 +27,18 @@ echo $multipage ? ' footer--multipage' : '';
 				<img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
 			</a>
 			<div class="footer__pressbooks__links">
+				<?php
+					$blog_id = get_current_blog_id();
+				 if (pbc_check_trans($blog_id)){ 
+				?>
 				<!-- New block which shows available translations-->
 				<div style="display: flex; justify-content: center;">
 					<p>Translations</p>
 				</div>
 				<ul class="footer__pressbooks__links__list" style="margin-bottom: 1rem;">
-					<?php pbc_print_trans_links(get_current_blog_id())?>
+					<?php pbc_print_trans_links($blog_id)?>
 				</ul>
+				<?php } ?>
 				<!-- END OF TRANSLATIONS BLOCK-->
 				<?php /* translators: %s: Pressbooks */ ?>
 				<p class="footer__pressbooks__links__title"><?php printf( __( 'Insolently created with use of %s', 'pressbooks-book' ), '<span class="pressbooks">Wordpress and Pressbooks</span>' ); ?></p>

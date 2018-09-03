@@ -67,6 +67,36 @@ function pbc_shorten_string($string, $amount) {
 }
 
 /**
+ * Function to check if there are translations for this book
+ */
+function pbc_check_trans($blog_id) {
+	global $wpdb;
+ 	global $wp;
+
+ 	//>> identify if book is translation or not and get the source book ID
+ 	switch_to_blog($blog_id);
+ 	$trans_lang = get_post_meta(tre_get_info_post(), 'efp_trans_language') ?: 'not_set';
+ 	$source = get_post_meta(tre_get_info_post(), 'pb_is_based_on', true) ?: 'original';
+ 	if ($source == 'original'){
+ 		$origin_id = $blog_id;
+ 	} else {
+ 		$origin = str_replace(['http://', 'https://'], '', $source).'/';
+		switch_to_blog(1);
+		$origin_id = $wpdb->get_results("SELECT `blog_id` FROM $wpdb->blogs WHERE CONCAT(`domain`, `path`) = '$origin'", ARRAY_A)[0]['blog_id'];
+	}
+	//<<
+	//fetching all related translations
+ 	switch_to_blog(1);
+ 	$relations = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}trans_rel WHERE `book_id` = '$origin_id'", ARRAY_A);
+ 	restore_current_blog();
+ 	if (!empty($relations)){
+ 		return true;
+ 	} else {
+ 		return false;
+ 	}
+}
+
+/**
  * Function for printing links to translations
  */
  function pbc_print_trans_links($blog_id){
