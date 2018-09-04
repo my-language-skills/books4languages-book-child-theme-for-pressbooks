@@ -99,7 +99,7 @@ if ( \Pressbooks\Book\Helpers\social_media_enabled() ) {
                         <?php if (in_array(get_post_type(), array('chapter', 'part', 'back-matter', 'front-matter')) && get_option(get_post_type().'_op') && ( rcp_is_active() || ( rcp_get_subscription_id() && 'free' === rcp_get_status() ) )) : ?>
                                 <h3 class="res-head">RESOURCES</h3>
                                 <ul class="res-list">
-                                    <?php do_shortcode('[related_content type="all"]'); ?>
+                                    <?php if(shortcode_exists('related_content')){ do_shortcode('[related_content type="all"]'); }?>
                                 </ul>    
                         <?php endif; ?>
 						<?php if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) : ?>
