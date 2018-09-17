@@ -1,3 +1,9 @@
+<?php
+
+use function \Pressbooks\Image\attachment_id_from_url;
+
+?>
+
 <section class="book-header">
 	<div class="book-header__inner">
 		<?php \Pressbooks\Book\Helpers\get_links( false ); ?>
@@ -10,29 +16,25 @@
 		<?php if ( ! empty( $book_information['pb_authors'] ) ) { ?>
 			<p class="book-header__author"><span class="screen-reader-text"><?php echo translate_nooped_plural( _n_noop( 'Author', 'Authors', 'pressbooks-book' ), \Pressbooks\Book\Helpers\count_authors( $book_information['pb_authors'] ), 'pressbooks-book' ); ?>: </span><?php echo $book_information['pb_authors']; ?></p>
 		<?php } ?>
-		<?php //Printing the cover image of most appropriate image size from uploads?>
 		<div class="book-header__cover">
 			<?php if ( ! empty( $book_information['pb_cover_image'] ) ) { ?>
 				<div class="book-header__cover__image">
-					<?php   //getting Book Info post ID 
-						$meta_id = $wpdb->get_results("SELECT `ID` FROM $wpdb->posts WHERE `post_type` = 'metadata'");
-						//>> getting attachment (cover image) ID
-						$attach = get_attached_media('image',(int)$meta_id[0]->ID);
-						foreach ($attach as $key=>$value){
-							$img_id = $key;
-						}
-						if (isset($img_id)){
-              			//printing the <img> tag with cover image of 'pb_cover_large' size (350x525px)
-							echo wp_get_attachment_image($img_id, 'pb_cover_large', false, ['alt' => __('Cover image for '.get_bloginfo('name'), 'pressbooks-book')]);
-						} else {
-							?>
-							<img src="<?php echo $book_information['pb_cover_image']; ?>" alt="<?php printf( __( 'Cover image for %s', 'pressbooks-book' ), get_bloginfo( 'name' ) ); ?>" />
-							<?php
-						}
+					<?php   
+					$cover_id = attachment_id_from_url( $book_information['pb_cover_image'] );
+					if ( $cover_id ) {
+						/* translators: %s: title of book */
+						echo wp_get_attachment_image( $cover_id, [ 333, 500 ], false, [ 'alt' => sprintf( __( 'Cover image for %s', 'pressbooks-book' ), get_bloginfo( 'name' ) ) ] );
+					} else {
+						echo sprintf(
+							'<img src="%1$s" alt="%2$s" />',
+							$book_information['pb_cover_image'],
+							/* translators: %s: title of book */
+							sprintf( __( 'Cover image for %s', 'pressbooks-book' ), get_bloginfo( 'name' ) )
+						);
+					}
 					?>
-					
 				</div>
-			<?php
+				<?php
 }
 
 			/**
@@ -45,7 +47,9 @@
 
 			$site_option = get_site_option( 'pressbooks_sharingandprivacy_options', [ 'allow_redistribution' => 0 ] );
 			$option      = get_option( 'pbt_redistribute_settings', [ 'latest_files_public' => 0 ] );
-			//ADDED: Restrict content filter for singed-up users (last condition)
+
+			//RCP ADDED: Restrict content filter for singed-in users (last condition)
+
 if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) && ( ! empty( $option['latest_files_public'] ) ) && ( rcp_is_active() || ( rcp_get_subscription_id() && 'free' === rcp_get_status() ) ) ) {
 ?>
 				<div class="book-header__cover__downloads dropdown">
