@@ -63,7 +63,7 @@ function get_navi_links_cus ($echo = true){
 }
 
 /**
- *Function to return first $amount characters from string
+ *Function to return first $amount characters from string in multibyte encoding
  */
 function pbc_shorten_string($string, $amount) {
 
