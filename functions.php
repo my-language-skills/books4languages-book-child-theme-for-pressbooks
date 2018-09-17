@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Function for enqueuing styles of child theme without overwriting styles of parent
+ */
 function pbc_enqueue_styles() {
 
 	$parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
@@ -13,6 +16,9 @@ function pbc_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );
 
+/**
+ * Function for creation of side navigation elements between chapters using their titles
+ */
 function get_navi_links_cus ($echo = true){
 	global $first_chapter, $prev_chapter, $next_chapter, $multipage;
 	$first_chapter          = pb_get_first();
@@ -61,7 +67,7 @@ function get_navi_links_cus ($echo = true){
  */
 function pbc_shorten_string($string, $amount) {
 
-	$retval = strlen($string) >= 26 ? substr($string, 0, 25).'...' : $string;
+	$retval = strlen($string) > $amount ? mb_substr($string, 0, $amount-1).'...' : $string;
  
 	return $retval;
 }
