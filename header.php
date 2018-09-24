@@ -79,7 +79,7 @@ if ( \Pressbooks\Book\Helpers\social_media_enabled() ) {
 					<ul id="nav-primary-menu" class="nav--primary">
 						<?php echo \Pressbooks\Book\Helpers\display_menu(); ?>
 						<?php if (! is_user_logged_in()):?>
-						| <li><a href="./register/">Sign Up</a></li>
+						| <li><a href="/register/">Sign Up</a></li>
 						<?php endif; ?>
 					</ul>
 				</nav>
