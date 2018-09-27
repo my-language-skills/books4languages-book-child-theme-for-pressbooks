@@ -53,7 +53,7 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 
 
 ### Now
-#### 0.1
+#### 1.0
 * **ADDITIONS**
 	* Static footer for Books4Languages (logos, links)
 	* Logo image of Books4Languages in header
