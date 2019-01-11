@@ -53,6 +53,10 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 
 
 ### Now
+### 1.1
+* **Deletion of files**
+	* partials/content-cover-toc.php no longer required after update to McLuhan 2.6.0
+
 #### 1.0
 * **ADDITIONS**
 	* Static footer for Books4Languages (logos, links)
