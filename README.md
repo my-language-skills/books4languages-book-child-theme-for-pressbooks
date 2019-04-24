@@ -40,7 +40,10 @@ Books4Languages Book Child Theme for Pressbooks works with:
 
  * ![PHP](https://img.shields.io/badge/PHP-7.2.X-blue.svg)
  * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
-
+ * [![Pressbooks - McLuhan 2.6.0](https://img.shields.io/badge/McLuhan-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks-book)
+  * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
+   * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
+    * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
  Lower versions are not supported.
 
 ## Disclaimers
