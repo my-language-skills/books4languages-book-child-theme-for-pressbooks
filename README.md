@@ -42,8 +42,8 @@ Books4Languages Book Child Theme for Pressbooks works with:
  * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
  * [![Pressbooks - McLuhan 2.6.0](https://img.shields.io/badge/McLuhan-V%202.8.3-red.svg)](https://github.com/pressbooks/pressbooks-book)
   * [![Books4Languages extensions for pressbooks](https://img.shields.io/badge/Pressbooks-V%201.1-red.svg)](https://github.com/my-language-skills/extensions-for-pressbooks/releases/tag/1.1)
-   * [![simple-metadata-education](https://img.shields.io/badge/Simple Metadata Education-V%201.0-red.svg)](https://github.com/my-language-skills/simple-metadata-education/releases/tag/1.0)
-    * [![Restric Content](https://img.shields.io/badge/RC-V%202.2.3-red.svg)](https://github.com/restrictcontentpro/restrict-content/releases/tag/2.2.3)
+  * [![simple-metadata-education](https://img.shields.io/badge/Simple Metadata Education-V%201.0-red.svg)](https://github.com/my-language-skills/simple-metadata-education/releases/tag/1.0)
+  * [![Restric Content](https://img.shields.io/badge/RC-V%202.2.3-red.svg)](https://github.com/restrictcontentpro/restrict-content/releases/tag/2.2.3)
  Lower versions are not supported.
 
 ## Disclaimers
