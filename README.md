@@ -104,5 +104,7 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 
 * Here's a link to [PressBooks](https://pressbooks.org/get-involved/ "Your favorite ebook platform")
 
+* [Inline Documentation](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/)
+
 ---
 [Up](/README.md)
