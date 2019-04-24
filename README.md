@@ -40,10 +40,10 @@ Books4Languages Book Child Theme for Pressbooks works with:
 
  * ![PHP](https://img.shields.io/badge/PHP-7.2.X-blue.svg)
  * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
- * [![Pressbooks - McLuhan 2.6.0](https://img.shields.io/badge/McLuhan-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks-book)
-  * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
-   * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
-    * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
+ * [![Pressbooks - McLuhan 2.6.0](https://img.shields.io/badge/McLuhan-V%202.8.3-red.svg)](https://github.com/pressbooks/pressbooks-book)
+  * [![Books4Languages extensions for pressbooks](https://img.shields.io/badge/Pressbooks-V%201.1-red.svg)](https://github.com/my-language-skills/extensions-for-pressbooks/releases/tag/1.1)
+   * [![simple-metadata-education](https://img.shields.io/badge/Simple Metadata Education-V%201.0-red.svg)](https://github.com/my-language-skills/simple-metadata-education/releases/tag/1.0)
+    * [![Restric Content](https://img.shields.io/badge/RC-V%202.2.3-red.svg)](https://github.com/restrictcontentpro/restrict-content/releases/tag/2.2.3)
  Lower versions are not supported.
 
 ## Disclaimers
@@ -78,8 +78,8 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 * **ADDITIONS**
 	* Static footer for Books4Languages (logos, links)
 	* Logo image of Books4Languages in header
-	* Resources tab (requires 'AIOM Education Related Content' plugin to manage content of resources)
-	* Automatically generated links for tranlsations <-> original books (requires 'Extensions For Pressbooks' plugin to manage relations of translations)
+	* Resources tab (requires ['AIOM Education Related Content'](https://) plugin to manage content of resources)
+	* Automatically generated links for tranlsations <-> original books (requires ['Extensions for Pressbooks'](https://) plugin to manage relations of translations)
 	
 * **ENHANCEMENTS**
 	* Hidden 'Download' dropdown in book cover page and 'Resources tab' in content for non-logged in users (requires 'Restrict Content Pro'. **If not installed, can cause a break!**)
@@ -95,8 +95,6 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 	* single.php (changed function for creation of next/previous chapters links)
 	* functions.php (extends parent)
 	* style.css (extends parent)
-
-
 
 
 ## Upgrade Notice
