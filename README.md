@@ -50,18 +50,27 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ## Screenshots
 
 ## Roadmap
+### Soon
 
+### Later
+
+### Future
 
 ### Now
 ### 1.2
 * **ADDITIONS**
 	* From picture name:  Title and Alt Text and Description is created automatic.
-
+	
+* **List of Files revised**
+	* functions.php (extends parent)
 
 ### 1.1
-* **Deletion of files**
+* **REMOVED**
 	* partials/content-cover-toc.php no longer required after update to McLuhan 2.6.0
-
+	
+* **List of Files revised**
+	* partials/content-cover-toc.php
+	
 #### 1.0
 * **ADDITIONS**
 	* Static footer for Books4Languages (logos, links)
@@ -85,11 +94,7 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 	* style.css (extends parent)
 
 
-### Soon
 
-### Later
-
-### Future
 
 ## Upgrade Notice
 
