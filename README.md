@@ -82,10 +82,10 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 	* Automatically generated links for tranlsations <-> original books (requires ['Extensions for Pressbooks'](https://) plugin to manage relations of translations)
 	
 * **ENHANCEMENTS**
-	* Hidden 'Download' dropdown in book cover page and 'Resources tab' in content for non-logged in users (requires 'Restrict Content Pro'. **If not installed, can cause a break!**)
 	* 'Show All Contents' button if front page of book moved to the top of TOC
 	* Navigation arrows in chapters show titles of previous and following chapters
-	* 'Sign Up' link in header and 'Your Membership' link in footer for RCP (requires [Restric Content](https://github.com/restrictcontentpro/restrict-content) plugin to manage the restrictions)
+	* Hidden 'Download' dropdown in book cover page and 'Resources tab' in content for non-logged in users (requires [Restric Content](https://github.com/restrictcontentpro/restrict-content) plugin to manage the restrictions. **If not installed, can cause a break!**)
+	* 'Sign Up' link in header and 'Your Membership' link in footer for RCP (requires [Restric Content](https://github.com/restrictcontentpro/restrict-content) plugin to manage the restrictions.)
 	
 * **List of Files revised**
 	* footer.php
