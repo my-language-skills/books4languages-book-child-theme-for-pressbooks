@@ -42,7 +42,7 @@ Books4Languages Book Child Theme for Pressbooks works with:
  * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
  * [![Pressbooks - McLuhan 2.6.0](https://img.shields.io/badge/McLuhan-V%202.8.3-red.svg)](https://github.com/pressbooks/pressbooks-book)
   * [![Books4Languages extensions for pressbooks](https://img.shields.io/badge/Pressbooks-V%201.1-red.svg)](https://github.com/my-language-skills/extensions-for-pressbooks/releases/tag/1.1)
-  * [![simple-metadata-education](https://img.shields.io/badge/Simple Metadata Education-V%201.0-red.svg)](https://github.com/my-language-skills/simple-metadata-education/releases/tag/1.0)
+  * [![simple-metadata-education](https://img.shields.io/badge/SimpleMetadataEducation-V%201.0-red.svg)](https://github.com/my-language-skills/simple-metadata-education/releases/tag/1.0)
   * [![Restric Content](https://img.shields.io/badge/RC-V%202.2.3-red.svg)](https://github.com/restrictcontentpro/restrict-content/releases/tag/2.2.3)
  Lower versions are not supported.
 
@@ -85,7 +85,7 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 	* Hidden 'Download' dropdown in book cover page and 'Resources tab' in content for non-logged in users (requires 'Restrict Content Pro'. **If not installed, can cause a break!**)
 	* 'Show All Contents' button if front page of book moved to the top of TOC
 	* Navigation arrows in chapters show titles of previous and following chapters
-	* 'Sign Up' link in header and 'Your Membership' link in footer for RCP
+	* 'Sign Up' link in header and 'Your Membership' link in footer for RCP (requires [Restric Content](https://github.com/restrictcontentpro/restrict-content) plugin to manage the restrictions)
 	
 * **List of Files revised**
 	* footer.php
