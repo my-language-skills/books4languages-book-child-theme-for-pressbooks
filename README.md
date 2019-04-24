@@ -6,6 +6,7 @@ Donate link: https://opencollective.com/mylanguageskills
 
 Tags: wordpress, pressbooks
 
+Tested up to: [![WordPress](https://img.shields.io/wordpress/v/akismet.svg)](https://wordpress.org/download/)
 
 Requires:  [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
 
