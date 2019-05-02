@@ -68,7 +68,7 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 * **List of Files revised**
 	* xxx.php (xxx)
 
-### 1.2
+### 1.1.1
 * **ADDITIONS**
 	* From picture name:  Title and Alt Text and Description is created automatic.
 	
