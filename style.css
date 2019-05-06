@@ -1,5 +1,5 @@
 /*
-Theme Name: Books4languages Book Child theme for Pressbooks 
+Theme Name: Books4languages Book Child theme for Pressbooks
 Theme URI: https://github.com/my-language-skills/books4languages-child-theme-for-pressbooks
 Description: This theme is based on Jacobs child-theme of Pressbooks with some modified functionality.
 Author: My Language Skills team
@@ -100,3 +100,26 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 		padding-left: 2.25rem !important;
 	}
 }
+
+/*By toni :root{--primary:#575757; --body-text:#575757!important; --footer-bg:#575757!important;--primary-dark: #262626!important;--body-bg:#ffffff!important}
+*/
+
+:root{--primary:#dc6e78!important; --body-text:#262626!important; --body-bg:#ffffff!important}
+
+.footer { background-color:#575757;}
+
+.chapter header h1 {    font-size: 1.8em !important; }
+
+.header {
+      padding-top:  2em !important;
+      padding-bottom: 2em !important; }
+
+section.chapter header [data-type="subtitle"]{
+      text-align: right !important; }
+
+main {
+    margin-top: 0em !important; }
+
+th {
+    text-transform: uppercase !important;
+    font-weight: bold !important }

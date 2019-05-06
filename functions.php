@@ -96,91 +96,10 @@ function get_navi_links_cus ($echo = true){
 function pbc_shorten_string($string, $amount) {
 
 	$retval = strlen($string) > $amount ? mb_substr($string, 0, $amount-1).'...' : $string;
- 
+
 	return $retval;
 }
 
-/**
- * Function to check if there are translations for this book
- */
-function pbc_check_trans($blog_id) {
-	global $wpdb;
- 	global $wp;
-
- 	//>> identify if book is translation or not and get the source book ID
- 	switch_to_blog($blog_id);
- 	$trans_lang = get_post_meta(tre_get_info_post(), 'efp_trans_language') ?: 'not_set';
- 	$source = get_post_meta(tre_get_info_post(), 'pb_is_based_on', true) ?: 'original';
- 	if ($source == 'original'){
- 		$origin_id = $blog_id;
- 	} else {
- 		$origin = str_replace(['http://', 'https://'], '', $source).'/';
-		switch_to_blog(1);
-		$origin_id = $wpdb->get_results("SELECT `blog_id` FROM $wpdb->blogs WHERE CONCAT(`domain`, `path`) = '$origin'", ARRAY_A)[0]['blog_id'];
-	}
-	//<<
-	//fetching all related translations
- 	switch_to_blog(1);
- 	$relations = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}trans_rel WHERE `book_id` = '$origin_id'", ARRAY_A);
- 	restore_current_blog();
- 	if (!empty($relations)){
- 		return true;
- 	} else {
- 		return false;
- 	}
-}
-
-/**
- * Function for printing links to translations
- */
- function pbc_print_trans_links($blog_id){
-
- 	global $wpdb;
- 	global $wp;
-
- 	//>> identify if book is translation or not and get the source book ID
- 	switch_to_blog($blog_id);
- 	$trans_lang = get_post_meta(tre_get_info_post(), 'efp_trans_language') ?: 'not_set';
- 	$source = get_post_meta(tre_get_info_post(), 'pb_is_based_on', true) ?: 'original';
- 	if ($source == 'original'){
- 		$origin_id = $blog_id;
- 	} else {
- 		$origin = str_replace(['http://', 'https://'], '', $source).'/';
-		switch_to_blog(1);
-		$origin_id = $wpdb->get_results("SELECT `blog_id` FROM $wpdb->blogs WHERE CONCAT(`domain`, `path`) = '$origin'", ARRAY_A)[0]['blog_id'];
-	}
-	//<<
-	//fetching all related translations
- 	switch_to_blog(1);
- 	$relations = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}trans_rel WHERE `book_id` = '$origin_id'", ARRAY_A);
- 	restore_current_blog();
- 	//if book is orginal, unset 'id' property, as no need to point itself
- 	if($source == 'original'){
- 		unset($relations['book_id']);
- 	}
-
- 	$current_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
- 	$flag = 0;
- 	if(!empty($relations)){
- 		foreach ($relations as $lang => $id) {
- 			$separator = $flag ? '|' : '';
- 			if ($id == $blog_id || $id == 0){
- 				continue;
- 			} elseif ($lang == 'book_id'){
- 				echo '<li><a href="'.$source.'/'.add_query_arg( array(), $wp->request ).'">'.__('Original Language', 'pressbooks-book').'</a></li>';
- 				$flag = 1;
- 				continue;
- 			}
- 			//unknown bug fix
- 			restore_current_blog();
- 			echo '<li>'.$separator.' <a href="'.str_replace(get_blog_details(get_current_blog_id())->path, get_blog_details($id)->path, $current_link).'">'.$lang.'</a> </li>';
- 			$flag = 1;	
- 		}
- 	}
- 	if ($source != 'original' && ($trans_lang == 'not_set' || $trans_lang == 'non_tr')){
- 		echo '<li><a href="'.$source.'/'.add_query_arg( array(), $wp->request ).'">'.__('Original Book', 'pressbooks-book').'</a></li>';
- 	}
- }
 
  function pbc_login_logo() { ?>
     <style type="text/css">
