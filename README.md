@@ -1,6 +1,6 @@
 # Books4Languages Child Theme for PressBooks
 
-Contributors: @colomet, @danzhik
+Contributors: @colomet, @danzhik, @huguespages
 
 Donate link: https://opencollective.com/mylanguageskills
 
