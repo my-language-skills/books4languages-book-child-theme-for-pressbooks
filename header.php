@@ -8,12 +8,12 @@
 							Hugo B4L
 							MODIFIE href="" of all the link bellow
  -->
-	<link rel="apple-touch-icon" sizes="180x180" href="\wordpress\wp-content\themes\pressbooks-book-child-test\dist\images\books4languages-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="\wordpress\wp-content\themes\pressbooks-book-child-test\dist\images\books4languages-icon.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="\wordpress\wp-content\themes\pressbooks-book-child-test\dist\images\books4languages-icon.png">
-	<link rel="manifest" href="\wordpress\wp-content\themes\pressbooks-book-child-test\site.webmanifest">
-	<link rel="mask-icon" href="\wordpress\wp-content\themes\pressbooks-book-child-test\dist\images\books4languages-icon.png" color="#b01109">
-	<link rel="shortcut icon" href="\wordpress\wp-content\themes\pressbooks-book-child-test\dist\images\books4languages-icon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
+	<link rel="manifest" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/site.webmanifest">
+	<link rel="mask-icon" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" color="#b01109">
+	<link rel="shortcut icon" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" >
 	<meta name="application-name" content="Pressbooks">
 	<meta name="msapplication-TileColor" content="#b01109">
 	<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/browserconfig.xml">
