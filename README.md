@@ -63,7 +63,7 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 
 ### 1.2
 * **ADDITIONS**
-	* Add icon of the site
+	* Add fav-icon of the page of the site
 	
 * **BUG**
 	* correct the install of uptade of the new version of themes
