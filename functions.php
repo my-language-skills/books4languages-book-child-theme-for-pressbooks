@@ -90,7 +90,7 @@ add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
 /*
 * Auto update from github
 *
-* @since 4.6
+* @since 1.2
 */
 require 'vendor/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
