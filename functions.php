@@ -114,3 +114,15 @@ function pbc_shorten_string($string, $amount) {
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
+
+/*
+* Auto update from github
+*
+* @since 4.6
+*/
+require 'vendor/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+		'https://github.com/my-language-skills/books4languages-book-child-theme-for-pressbooks/',
+		__FILE__,
+		'books4languages-book-child-theme-for-pressbooks'
+);
