@@ -98,6 +98,7 @@ function pbc_shorten_string($string, $amount) {
 <?php }
 add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
 
+
 /*
 * Auto update from github
 *
