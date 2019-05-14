@@ -1,6 +1,6 @@
 # Books4Languages Child Theme for PressBooks
 
-Contributors: @colomet, @danzhik
+Contributors: @colomet, @danzhik, @huguespages
 
 Donate link: https://opencollective.com/mylanguageskills
 
@@ -61,12 +61,20 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 
 ### Now
 
-### 1.X
+### 1.2
 * **ADDITIONS**
-	* xx:  xxx.
+	* Add fav-icon of the page of the site
+	
+* **BUG**
+	* correct the install of uptade of the new version of themes
 	
 * **List of Files revised**
-	* xxx.php (xxx)
+	* functions.php
+        * footer.php
+        * header.php
+	* partials/content-cover-book-header.php
+	* partials/content-cover-toc.php
+
 
 ### 1.1.1
 * **ADDITIONS**
