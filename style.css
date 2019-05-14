@@ -11,17 +11,12 @@ Template: pressbooks-book
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
 
-.dropdown {
-    position: relative;
-    display: block;
-}
-
 /* Dropdown Content (Hidden by Default) */
 .dropdown-item {
     background-color: rgb(246, 246, 246) !important;
-    z-index: 1;
+    z-index: 1!important;
     padding-left: 0 !important;
-    margin-top: .3rem;
+    margin-top: 0.3rem!important;
 }
 
 .dropdown-item a {
@@ -31,9 +26,9 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 .cust button {
 	color: rgb(255, 255, 255);
 	border-bottom: 0px !important;
-	font-weight: 600;
+	font-weight: 600!important;
 	font-size: 1rem;
-	text-transform: uppercase;
+	text-transform: uppercase!important;
 }
 
 .res-head button {
@@ -65,7 +60,7 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 @media screen and (max-width: 60rem) {
 
 	.smaller-margin {
-		margin-top: 0.5rem !important;
+		margin-top: 0.2rem !important;
 	}
 
 	.header {
@@ -73,7 +68,7 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 	}
 
 	.reading-header__end-container, .reading-header__title, .reading-header__toc {
-    	min-height: 3.4rem !important;
+    	min-height: 3.2rem !important;
     	border-bottom: 0 !important;
 	}
 
@@ -101,6 +96,8 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 	}
 }
 
+
+
 /*By toni :root{--primary:#575757; --body-text:#575757!important; --footer-bg:#575757!important;--primary-dark: #262626!important;--body-bg:#ffffff!important}
 */
 
@@ -111,8 +108,8 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 .chapter header h1 {    font-size: 1.8em !important; }
 
 .header {
-      padding-top:  2em !important;
-      padding-bottom: 2em !important; }
+      padding-top:  3em !important;
+      padding-bottom: 0.1em !important; }
 
 section.chapter header [data-type="subtitle"]{
       text-align: right !important; }
@@ -123,3 +120,15 @@ main {
 th {
     text-transform: uppercase !important;
     font-weight: bold !important }
+
+
+
+
+#content .wp-caption, #content .wp-nocaption, #content img {
+    height:100% !important;
+    max-height: 100%  !important;
+}
+  .book-header__cover__image img {
+      margin-bottom: 0rem !important;
+      max-height: 100% !important;
+  }

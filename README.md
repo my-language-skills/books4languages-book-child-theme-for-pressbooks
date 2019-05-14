@@ -64,6 +64,13 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 * **REMOVED**
 	* From picture name:  Title and Alt Text and Description is created automatic.
 
+* **ADDITIONS**
+  * Add possibility to modify responsive theme
+
+* **List of Files revised**
+  * functions.php
+  * style.css
+  * responsive.css
 
 ### 1.2
 * **ADDITIONS**

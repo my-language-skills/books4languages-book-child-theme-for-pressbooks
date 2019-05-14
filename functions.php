@@ -17,6 +17,17 @@ function pbc_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );
 
 /**
+ * Function for modfiing the media screen style of the parents
+ */
+function wpa_custom_css(){
+    wp_enqueue_style(
+        'wpa_custom',
+        get_stylesheet_directory_uri() . '/responsive.css'
+    );
+}
+add_action( 'wp_enqueue_scripts', 'wpa_custom_css', 999 );
+
+/**
  * Function for creation of side navigation elements between chapters using their titles
  */
 function get_navi_links_cus ($echo = true){
