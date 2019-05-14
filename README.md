@@ -20,7 +20,7 @@ Personalization of the Jacobs child theme for Pressbooks.
 
 ## Description
 
-This theme is personalization of Jacobs Pressbooks theme (child theme of McLoohan theme), made with requirements of [Books4Languages](https://open.books4languages.com/) webiste. 
+This theme is personalization of Jacobs Pressbooks theme (child theme of McLoohan theme), made with requirements of [Books4Languages](https://open.books4languages.com/) webiste.
 
 ## Installation
 
@@ -64,14 +64,14 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ### 1.2
 * **ADDITIONS**
 	* Add fav-icon of the page of the site
-	
+
 * **BUG**
 	* correct the install of uptade of the new version of themes
-	
+
 * **List of Files revised**
 	* functions.php
-        * footer.php
-        * header.php
+  * footer.php
+  * header.php
 	* partials/content-cover-book-header.php
 	* partials/content-cover-toc.php
 
@@ -79,30 +79,30 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ### 1.1.1
 * **ADDITIONS**
 	* From picture name:  Title and Alt Text and Description is created automatic.
-	
+
 * **List of Files revised**
 	* functions.php (extends parent)
 
 ### 1.1
 * **REMOVED**
 	* partials/content-cover-toc.php no longer required after update to McLuhan 2.6.0
-	
+
 * **List of Files revised**
 	* partials/content-cover-toc.php
-	
+
 #### 1.0
 * **ADDITIONS**
 	* Static footer for Books4Languages (logos, links)
 	* Logo image of Books4Languages in header
 	* Resources tab (requires ['AIOM Education Related Content'](https://) plugin to manage content of resources)
 	* Automatically generated links for tranlsations <-> original books (requires ['Extensions for Pressbooks'](https://) plugin to manage relations of translations)
-	
+
 * **ENHANCEMENTS**
 	* 'Show All Contents' button if front page of book moved to the top of TOC
 	* Navigation arrows in chapters show titles of previous and following chapters
 	* Hidden 'Download' dropdown in book cover page and 'Resources tab' in content for non-logged in users (requires [Restric Content](https://github.com/restrictcontentpro/restrict-content) plugin to manage the restrictions. **If not installed, can cause a break!**)
 	* 'Sign Up' link in header and 'Your Membership' link in footer for RCP (requires [Restric Content](https://github.com/restrictcontentpro/restrict-content) plugin to manage the restrictions.)
-	
+
 * **List of Files revised**
 	* footer.php
 	* header.php

@@ -1,3 +1,5 @@
+# Theme structure
+```
 themes/books4languages-book-child-theme-for-pressbooks/              # → Plugin root
 ├── assets/                                     # → Images folder
 │   │── all-flag.png                            # → all country flags
@@ -10,7 +12,7 @@ themes/books4languages-book-child-theme-for-pressbooks/              # → Plugi
 │   │── images/                                 # → Images folder
 │       └── all-images.png                      # → All image
 ├── partials/                                   # → Partials folder
-│   └── content-cover-book-header.php           # → cover book header 
+│   └── content-cover-book-header.php           # → cover book header
 │   └── content-cover-toc.php                   # → cover toc
 ├── wp-assets/                                  # → Wp folder
 │   │── all-banner.png                          # → All baner files

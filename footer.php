@@ -59,7 +59,7 @@ echo $multipage ? ' footer--multipage' : '';
 
 				<?php
 				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if (is_plugin_active('extensions-for-pressbooks/extensions-for-pressbooks.php')) {
+if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) {
 
 					$blog_id = get_current_blog_id();
 				 if (pbc_check_trans($blog_id)){
