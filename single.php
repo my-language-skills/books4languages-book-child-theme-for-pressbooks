@@ -22,7 +22,7 @@
 			}
 			?>
 </div><!-- #content -->
-			<?php \PressbooksBook\Helpers\get_links(); ?>
+			<?php \PressbooksBook\Helpers\get_links();?>
 
 					<div class="block block-reading-meta">
 						<div class="block-reading-meta__inner">
@@ -63,7 +63,8 @@
 														DELETE all this parts below END 1
 							 -->
 							</div>
-							<?php if ( \PressbooksBook\Helpers\social_media_enabled() ) { ?>
+							<?php if ( \PressbooksBook\Helpers\social_media_enabled() ) {
+								 ?>
 							<div class="block-reading-meta__subsection">
 								<h2 class="section__subtitle block-reading-meta__subtitle"><?php _e( 'Share This Book', 'pressbooks-book' ); ?></h2>
 								<div class="block-reading-meta__share">

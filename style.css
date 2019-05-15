@@ -114,8 +114,9 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 section.chapter header [data-type="subtitle"]{
       text-align: right !important; }
 
+      /* Space between nav and content  */
 main {
-    margin-top: 0em !important; }
+    margin-top: 1em !important; }
 
 th {
     text-transform: uppercase !important;
