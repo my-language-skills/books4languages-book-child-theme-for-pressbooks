@@ -4,11 +4,11 @@ Contributors: @colomet, @danzhik, @huguespages
 
 Donate link: https://opencollective.com/mylanguageskills
 
-Tags: wordpress, pressbooks
+Tags: wordpress, multisite, pressbooks
 
-Tested up to: [![WordPress](https://img.shields.io/badge/Wordpress-V%205.1.1-blue.svg)](https://wordpress.org/download/)
+Tested up to: WP 5.2
 
-Requires:  [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
+Requires:  Pressbooks 5.8
 
 Stable tag: [![Current Release](https://img.shields.io/github/release/Books4Languages/pressbooks-metadata.svg)](https://github.com/my-language-skills/books4languages-book-child-theme-for-pressbooks/releases/latest/)
 
@@ -38,12 +38,13 @@ For upgrades, download the last stable version from github, delete from FTP the 
 
 Books4Languages Book Child Theme for Pressbooks works with:
 
- * ![PHP](https://img.shields.io/badge/PHP-7.2.X-blue.svg)
- * [![Pressbooks](https://img.shields.io/badge/Pressbooks-V%205.3-red.svg)](https://github.com/pressbooks/pressbooks/releases/tag/5.3)
- * [![Pressbooks - McLuhan 2.6.0](https://img.shields.io/badge/McLuhan-V%202.8.3-red.svg)](https://github.com/pressbooks/pressbooks-book)
-  * [![Extensions for pressbooks](https://img.shields.io/badge/Extensions_for_pressbooks]-V%201.1-red.svg)](https://github.com/my-language-skills/extensions-for-pressbooks/releases/tag/1.2)
-  * [![simple-metadata-education](https://img.shields.io/badge/Simple_Metadata_Education-V%201.0-red.svg)](https://github.com/my-language-skills/simple-metadata-education/releases/tag/1.0)
-  * [![Restric Content](https://img.shields.io/badge/RC-V%202.2.3-red.svg)](https://github.com/restrictcontentpro/restrict-content/releases/tag/2.2.3)
+  * PHP 7.2
+  * Pressbooks 5.8
+  * PressBooks Mc McLuhan
+  * Extensions for pressbooks 1.2.1
+  * Simple metadata
+  * Simple metadata education
+  * Restic content
  Lower versions are not supported.
 
 ## Disclaimers
