@@ -113,5 +113,5 @@ require 'vendor/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 		'https://github.com/my-language-skills/books4languages-book-child-theme-for-pressbooks/',
 		__FILE__,
-		'functions'
+		'books4languages-book-child-theme-for-pressbooks'
 );
