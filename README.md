@@ -61,6 +61,14 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ### Future
 
 ### Now
+### 1.2.3
+* **BUG**
+  * Auto update
+
+* **List of Files revised**
+  * functions.php
+  * style.css
+
 ### 1.2.2
 * **ADDITIONS**
   * Add possibility to add featured image in top of the page

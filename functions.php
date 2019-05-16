@@ -1,10 +1,13 @@
 <?php
 /*
 Theme Name: Books4languages Book Child theme for Pressbooks
-Version: 1.2.2
+Version: 1.2.3
 License: GPL v3 or later
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
+/**
+ * Function for enqueuing styles of child theme without overwriting styles of parent
+ */
 /**
  * Function for enqueuing styles of child theme without overwriting styles of parent
  */
@@ -107,11 +110,11 @@ add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
 /*
 * Auto update from github
 *
-* @since 1.2
+* @since 1.2.3
 */
 require 'vendor/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 		'https://github.com/my-language-skills/books4languages-book-child-theme-for-pressbooks/',
 		__FILE__,
-		'functions'
+		'books4languages-book-child-theme-for-pressbooks'
 );
