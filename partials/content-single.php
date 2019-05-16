@@ -2,6 +2,7 @@
 <header>
 	<h1 class="entry-title">
 	<?php
+//add featuded image code BEGIN
 	if ( has_post_thumbnail() ) {
 $option = get_option("pressbooks_theme_options_web");
 if ($option['webbook_width'] == '30em'){
@@ -14,6 +15,8 @@ if ($option['webbook_width'] == '48em'){
 the_post_thumbnail('featured-wide');
 }
 }
+//add featuded image code END
+
 ?>
 <?php
 	if ( $number ) {
