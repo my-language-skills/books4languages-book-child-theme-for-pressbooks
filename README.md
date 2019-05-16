@@ -63,7 +63,7 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ### Now
 ### 1.2.2
 * **ADDITIONS**
-  * Add possibility to add picture in top of the page
+  * Add possibility to add featured image in top of the page
 
 * **ENHANCEMENTS**
   * Add space paddind for featured image

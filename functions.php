@@ -1,5 +1,10 @@
 <?php
-
+/*
+Theme Name: Books4languages Book Child theme for Pressbooks
+Version: 1.2.2
+License: GPL v3 or later
+GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
+*/
 /**
  * Function for enqueuing styles of child theme without overwriting styles of parent
  */
@@ -108,5 +113,5 @@ require 'vendor/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 		'https://github.com/my-language-skills/books4languages-book-child-theme-for-pressbooks/',
 		__FILE__,
-		'books4languages-book-child-theme-for-pressbooks'
+		'functions'
 );
