@@ -61,13 +61,17 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ### Future
 
 ### Now
-### 1.X.X
+### 1.2.4
+* **REMOVED**
+    *  Auto update from github
+
 * **ADDITIONS**
   * Meta data in front web page of book : City
 
+
 * **List of Files revised**
   * content-cover-metadata.php
-  
+
 ### 1.2.3
 * **BUG**
   * Auto update
