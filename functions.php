@@ -5,11 +5,11 @@ Version: 1.2.4
 License: GPL v3 or later
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
+
 /**
  * Function for enqueuing styles of child theme without overwriting styles of parent
- */
-/**
- * Function for enqueuing styles of child theme without overwriting styles of parent
+ *
+ * SINCE v1.0
  */
 function pbc_enqueue_styles() {
 
@@ -23,9 +23,12 @@ function pbc_enqueue_styles() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );
+/** End of modified code */
 
 /**
- * Function for modfiing the media screen style of the parents
+ * Function for hooking responsive css file
+ *
+ * SINCE v1.2.1
  */
 function wpa_custom_css(){
     wp_enqueue_style(
@@ -34,9 +37,12 @@ function wpa_custom_css(){
     );
 }
 add_action( 'wp_enqueue_scripts', 'wpa_custom_css', 999 );
+/** End of modified code */
 
 /**
  * Function for creation of side navigation elements between chapters using their titles
+ *
+ * SINCE v1.0
  */
 function get_navi_links_cus ($echo = true){
 	global $first_chapter, $prev_chapter, $next_chapter, $multipage;
@@ -80,18 +86,26 @@ function get_navi_links_cus ($echo = true){
 		<?php
 	endif;
 }
+/** End of modified code */
 
 /**
- *Function to return first $amount characters from string in multibyte encoding
- */
+* Function to return first $amount characters from string in multibyte encoding
+*
+* SINCE v1.2
+*/
 function pbc_shorten_string($string, $amount) {
 
 	$retval = strlen($string) > $amount ? mb_substr($string, 0, $amount-1).'...' : $string;
 
 	return $retval;
 }
+/** End of modified code */
 
-
+/**
+ * Function for updating company logo on sign in page
+ *
+ * SINCE v1.0
+ */
  function pbc_login_logo() { ?>
     <style type="text/css">
         #login h1 a, .login h1 a {
@@ -105,3 +119,4 @@ function pbc_shorten_string($string, $amount) {
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
+/** End of modified code */

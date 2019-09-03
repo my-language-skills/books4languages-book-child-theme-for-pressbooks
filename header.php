@@ -4,16 +4,19 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--
-							Hugo B4L
-							MODIFIE href="" of all the link bellow
- -->
+
+<!--
+-				MODIFICATION href="" of all the link bellow
+-
+-				SINCE v1.0
+-->
 	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
 	<link rel="manifest" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/site.webmanifest">
 	<link rel="mask-icon" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" color="#b01109">
 	<link rel="shortcut icon" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" >
+	<!-- End of modified code -->
 	<meta name="application-name" content="Pressbooks">
 	<meta name="msapplication-TileColor" content="#b01109">
 	<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/browserconfig.xml">
@@ -21,9 +24,11 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" /><?php // TODO ?>
 	<?php wp_head(); ?>
 </head>
+
 <!--
-							Hugo B4L
-							ADD code php BEGIN 1
+-				Specifying content  with schema.org
+-
+-				SINCE v1.2.4
 -->
 <?php
 if ( is_front_page() ) {
@@ -34,18 +39,10 @@ if ( is_front_page() ) {
 	$schema = '';
 }
 ?>
-<!--
-							END 1
--->
 
-<!--
-							Hugo B4L
-							ADD code echo shmema php BEGIN 2
--->
 <body <?php body_class(); ?>   <?php echo $schema; ?>>
-	<!--
-								END 2
-	-->
+<!-- End of modified code -->
+
 <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
 	<defs>
 		<symbol id="icon-pressbooks" fill="currentColor" viewBox="0 0 45 44">
@@ -94,20 +91,37 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 	<header class="header" role="banner">
 		<div class="header__inside">
 			<div class="header__brand">
-				<!-- Changed dynamically obtained links to static to decrease queries. Check original code in McLoohan theme header.php file-->
-				<a aria-label="Catalog Books 4 Languages" href="https://open.books4languages.com">
-					<img width="200" height="30" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-header.png" alt="Books4Languages Logo">
+
+<!--
+-				Changes dynamically obtained links to static to decrease queries.
+-
+-				Check original code in McLoohan theme header.php file
+-
+-				SINCE v1.0
+-->
+				<a aria-label="Catalog Books 4 Languages" href="https://books4languages.com/">
+					<img width="200" height="20" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-header.png" alt="Books4Languages logo">
 				</a>
-				<!-- End of modified code -->
+<!-- End of modified code -->
+
 			</div>
 			<div class="header__nav">
 				<a class="header__nav-icon js-header-nav-toggle" href="#navigation"><?php _e( 'Toggle Menu', 'pressbooks-book' ); ?><span class="header__nav-icon__icon"></span></a>
 				<nav class="js-header-nav" id="navigation">
 					<ul id="nav-primary-menu" class="nav--primary">
 						<?php echo \PressbooksBook\Helpers\display_menu(); ?>
+
+
+<!--
+-				ADDED: Links to registration and subscription details
+-
+-				SINCE v1.2.4
+-->
 						<?php if (! is_user_logged_in()):?>
 						| <li><a href="/register/">Sign Up</a></li>
 						<?php endif; ?>
+<!-- End of modified code -->
+
 					</ul>
 				</nav>
 			</div>
@@ -125,7 +139,12 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 					<h1 class="reading-header__title" ><a href="<?php echo home_url( '/' ); ?>" title="<?php printf( __( 'Go to the cover page of %s', 'pressbooks-book' ), esc_attr( get_bloginfo( 'name', 'display' ) ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
 					<div class="reading-header__end-container dropdown cust">
-						<!-- ADDED: Resources with restrict content filter for singed-up users (last condition) -->
+
+<!--
+-				ADDED: Resources with restrict content filter for singed-up users (last condition)
+-
+-				SINCE v1.0
+-->
                         <?php if (in_array(get_post_type(), array('chapter', 'part', 'back-matter', 'front-matter')) && get_option(get_post_type().'_op') && ( rcp_is_active() || ( rcp_get_subscription_id() && 'free' === rcp_get_status() ) )) : ?>
                                 <h3 class="res-head">RESOURCES</h3>
                                 <ul class="res-list">
@@ -135,6 +154,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 						<?php if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) : ?>
 						<a href="<?php echo home_url( '/buy/' ); ?>"><?php _e( 'Buy', 'pressbooks-book' ); ?></a>
 						<?php endif; ?>
+<!-- End of modified code -->
 
 					</div>
 				</nav>

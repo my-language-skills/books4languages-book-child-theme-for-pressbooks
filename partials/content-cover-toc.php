@@ -1,11 +1,12 @@
 <section class="block block-toc">
 	<?php if ( pb_get_first_post_id() ) : ?>
 		<h2 class="block__title block-toc__title"><?php _e( 'Contents', 'pressbooks-book' ); ?></h2>
-		<!--
-								 Hugo B4L
-									CHANGE aria-expanded="true" to aria-expanded="false"
 
-		-->
+<!--
+-				CHANGE: aria-expanded="true" to aria-expanded="false"
+-
+-				SINCE v1.0
+-->
 		<div class="toc__toggle" aria-expanded="false">
 			<button id="show" class="button"><?php _e( 'Show All Contents' ); ?></button>
 			<button id="hide" class="button"><?php _e( 'Hide All Contents' ); ?></button>

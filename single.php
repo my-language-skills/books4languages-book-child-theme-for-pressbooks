@@ -35,10 +35,8 @@
 										<?php echo \PressbooksBook\Helpers\copyright_license( false ); ?>
 									</p>
 								<?php } ?>
-								<!--
-														Hugo B4L
-														DELETE all this parts below BEGIN 1
-							 -->
+
+
 								<?php { ?>
 									<!--
 								$pb_section_doi = get_post_meta( $post->ID, 'pb_section_doi', true );
@@ -46,6 +44,7 @@
 									?>
 									<h2 class="section__subtitle block-reading-meta__subtitle"><?php _e( 'Digital Object Identifier (DOI)', 'pressbooks-book' ); ?></h2>
 									<p>
+
 									<?php
 										/**
 										 * Filter the DOI resolver service URL (default: https://dx.doi.org).
@@ -58,10 +57,12 @@
 									</p>
 									-->
 								<?php } ?>
-								<!--
-														Hugo B4L
-														DELETE all this parts below END 1
-							 -->
+
+<!--
+-				Renamed directory from Presbooks/Book/... to PresbooksBook/Helpers/...
+-
+-   		SINCE: v1.2
+-->
 							</div>
 							<?php if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 								 ?>
@@ -81,8 +82,10 @@
 	<?php get_template_part( 'private' ); ?>
 <?php endif; ?>
 		<?php
+
 		/** Insert content before content footer.
 		 * @since 2.0.0
+		 *
 		 */
 		do_action( 'pb_book_content_before_footer' );
 		get_footer();

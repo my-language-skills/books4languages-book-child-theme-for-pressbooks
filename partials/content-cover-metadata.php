@@ -25,7 +25,14 @@
 							} elseif ( 'pb_hashtag' === $key ) {
 								$hashtag = $book_information[ $key ];
 								$book_information[ $key ] = "<a href='https://twitter.com/search?q=%23$hashtag'>#$hashtag</a>";
-							} elseif ( 'pb_publisher' === $key ) {
+							}
+
+								/**
+								* ADDED: Display pubisher city metadata
+								*
+								* SINCE v1.2.4
+								*/
+								elseif ( 'pb_publisher' === $key ) {
 								$sautdeligne = "\n <br>";
 								if (empty($book_information['pb_publisher_city'])) {
 									$Cityy = '';
@@ -35,8 +42,10 @@
 									$Cityy = $sautdeligne . $city;
 								}
 								$book_information[$key] = $book_information['pb_publisher'] . $Cityy;
+								}
+								/** End of modified code */
 
-							}  elseif ( 'pb_book_license' === $key ) {
+							  elseif ( 'pb_book_license' === $key ) {
 								$book_information[ $key ] = \PressbooksBook\Helpers\copyright_license();
 							} elseif ( 'pb_primary_subject' === $key ) {
 								$book_information[ $key ] = \Pressbooks\Metadata\get_subject_from_thema( $book_information[ $key ] );

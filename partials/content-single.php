@@ -1,6 +1,12 @@
 <section data-type="<?php echo $datatype; ?>" <?php post_class( pb_get_section_type( $post ) ); ?>>
 <header>
 	<h1 class="entry-title">
+		
+<!--
+-				Centering small iimage
+-
+-				SINCE v1.2.4
+-->
 		<style media="screen">
 		.center_image {
 			margin-left: auto;
@@ -8,8 +14,14 @@
 	text-align: center;}
 		</style>
 		<div class="center_image" >
+<!-- End of modified code -->
 	<?php
-//add featuded image code BEGIN
+
+/**
+* ADDED: featuded image code
+*
+* SINCE v1.2.2
+*/
 	if ( has_post_thumbnail() ) {
 $option = get_option("pressbooks_theme_options_web");
 if ($option['webbook_width'] == '30em'){
@@ -22,12 +34,13 @@ if ($option['webbook_width'] == '48em'){
 the_post_thumbnail('featured-wide');
 }
 }
-
-//add featuded image code END
+/** End of modified code */
 
 ?>
+
 	</div>
 	<br>
+
 <?php
 	if ( $number ) {
 		echo "<span style='display: inline-block; margin-top: 1em;'>$number</span> ";

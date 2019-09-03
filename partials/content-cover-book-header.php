@@ -53,11 +53,12 @@ if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) &&
 
 					<p><?php _e( 'Download this book', 'pressbooks-book' ); ?></p>
 					<ul>
-						<!--
-					 							 Hugo B4L
-					 							  DELETE LINE $title = esc_js( get_bloginfo( 'name' ) );
 
-					  -->
+<!--
+-				DELETED LINE: $title = esc_js( get_bloginfo( 'name' ) );
+-
+-				SINCE v1.2.1
+-->
 					<?php
 					foreach ( $files as $filetype => $filename ) :
 						$filename = preg_replace( '/(-\d{10})(.*)/ui', '$1', $filename );
@@ -65,7 +66,7 @@ if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) &&
 						// Rewrite rule
 						$url = home_url( "/open/download?type={$filetype}" );
 
-							// DELETE line
+						// DELETE line
 
 						// Tracking event defaults to Google Analytics (Universal). @codingStandardsIgnoreStart
 						// Filter like so (for Piwik):

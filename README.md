@@ -1,12 +1,15 @@
 # Books4Languages Child Theme for PressBooks
 
-Contributors: @colomet, @danzhik, @huguespages
-
-Donate link: https://opencollective.com/mylanguageskills
-
-Tags: wordpress, multisite, pressbooks
-
-Tested up to: WP 5.2
+* Contributors: @colomet, @danzhik, @huguespages, @!ndeed
+* Donate link: https://opencollective.com/mylanguageskills
+* Tags: wordpress, multisite, pressbooks
+* Tags: pressbooks, wordpress, theme, books4languages
+* Requires at least: 3.0.1
+* Tested up to: 5.2.2
+* Requires PHP: 5.6.0
+* Stable tag: 1.2.4
+* License: GNU 3.0
+* License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Requires:  Pressbooks 5.8
 
@@ -14,25 +17,22 @@ Stable tag: [![Current Release](https://img.shields.io/github/release/Books4Lang
 
 License:  [![License](https://img.shields.io/badge/license-GPL--3.0-red.svg)](https://github.com/my-language-skills/all-in-one-metadata/blob/master/LICENSE.txt)
 
-License URI: http://www.gnu.org/licenses/gpl-3.0.txt
-
-Personalization of the Jacobs child theme for Pressbooks.
+This is child theme of Jacobs theme (Pressbooks) provides the front end requirements for Books For Languages Catalog.
 
 ## Description
 
-This theme is personalization of Jacobs Pressbooks theme (child theme of McLoohan theme), made with requirements of [Books4Languages](https://open.books4languages.com/) webiste.
+This theme is personalization of Jacobs Pressbooks theme (child theme of McLoohan theme), made with requirements of [Books4Languages](https://open.books4languages.com/) website.
 
 ## Installation
 
 1. Clone (or copy) this repository folder `books4languages-book-child-theme-for-pressbooks` to the `/wp-content/themes/` directory
-1. Activate the theme through the 'Themes' screen in WordPress Network Administration
+2. Activate the theme through the 'Themes' screen in WordPress Network Administration
 
 ## Upgrades
 
-For upgrades, download the last stable version from github, delete from FTP the old version of theme and upload the new one.
+For upgrades, download the last stable version from github, delete from the old version of theme from your FTP and upload the new one.
 
 ## Frequently Asked Questions
-
 
 ## Requirements
 
@@ -51,32 +51,23 @@ Books4Languages Book Child Theme for Pressbooks works with:
 
 Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at your own risk.
 
+## Frequently Asked Questions
+
 ## Screenshots
 
-## Roadmap
-### Soon
+## Changelog
 
-### Later
-
-### Future
-
-### Now
-### 1.2.X
-
-
-* **List of Files revised**
-
+### 1.2.x
 
 ### 1.2.4
 * **ENHANCEMENTS**
   * Center small image
-  
+
 * **REMOVED**
-    *  Auto update from github
+  *  Auto update from github
 
 * **ADDITIONS**
   * Meta data in front web page of book : City
-
 
 * **List of Files revised**
   * content-cover-metadata.php
@@ -160,19 +151,16 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 	* header.php
 	* partials/content-cover-book-header.php
 	* partials/content-cover-toc.php
-	* single.php (changed function for creation of next/previous chapters links)
+	* single.php (changed function for creation of next/previous chapters
+    links)
 	* functions.php (extends parent)
 	* style.css (extends parent)
 
-
 ## Upgrade Notice
-
-
-## Credits
 
 * Here's a link to [PressBooks](https://pressbooks.org/get-involved/ "Your favorite ebook platform")
 
-* [Inline Documentation](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/)
+* [Online Documentation](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/)
 
 ---
 [Up](/README.md)

@@ -5,13 +5,16 @@
 <?php
 global $multipage;
 ?>
+
 <!--
-							Hugo B4L
-							ADD code for connexion to WordPress DataBase
+-				ADDED: code for connecion to WordPress DataBase
+-
+-				SINCE v1.0
 -->
 <?php
 global $wpdb;
   ?>
+<!-- End of modified code -->
 
 <footer class="footer
 <?php
@@ -27,10 +30,11 @@ echo $multipage ? ' footer--multipage' : '';
 ">
 	<div class="footer__inner">
 		<section class="footer__pressbooks">
-			<!--
-									Hugo B4L
-									MODIFIE  all the link bellow
 
+<!--
+-				Comment OUT in case you want do use dynamic logo in the footer.
+-
+-				SINCE v1.0
 
 			<a class="footer__pressbooks__icon" href="https://pressbooks.com" title="Pressbooks">
 				<?php //  ?>
@@ -40,51 +44,59 @@ echo $multipage ? ' footer--multipage' : '';
 			</a>
  -->
 
- <!--
-							 Hugo B4L
-							 NEW MODIFES code of all this above code, for add logo company in the footer
- -->
 
+<!--
+-				MODIFIES: logo for the logo of the company
+-
+-				SINCE v1.0
+-->
 			<a class="" href="https://books4languages.com/" title="Books For Languages">
 				<img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" alt="Books4Languages Logo">
 			</a>
+<!-- End of modified code -->
 
 			<div class="footer__pressbooks__links">
+
 				<?php /* translators: %s: Pressbooks */ ?>
 
-				<!--
-											Hugo B4L
-											ADD code for translations block BEGIN 1
-				-->
-
 				<?php
+
+				/**
+				* ADD: code for translations
+				*
+				* SINCE v1.0
+				*/
 				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) {
+				if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) {
 
 					$blog_id = get_current_blog_id();
 				 if (pbc_check_trans($blog_id)){
+				/** End of modified code */
 				?>
 
-				<!-- New block which shows available translations-->
+<!--
+-				NEW BLOCK which shows available translations.
+-
+-				SINCE v1.0
+-->
 				<div style="display: flex; justify-content: center;">
-					<p>Translations</p>
+					<p><?php _e( 'Translations', 'pressbooks-book' ); ?></p>
 				</div>
 				<ul class="footer__pressbooks__links__list" style="margin-bottom: 1rem;">
 					<?php pbc_print_trans_links($blog_id)?>
 				</ul>
 				<?php } } ?>
+<!-- End of modified code -->
 
-				<!--
-											Hugo B4L
-											ADD code for translations block END 1
-				-->
 				<p class="footer__pressbooks__links__title"><a href="https://pressbooks.com"><?php printf( __( 'Powered by %s', 'pressbooks-book' ), '<span class="pressbooks">Pressbooks</span>' ); ?></a></p>
 				<ul class="footer__pressbooks__links__list">
-					<!--
-											Hugo B4L
-											MODIFIE href="" of all the link bellow
-				 -->
 
+
+<!--
+-				MODIFIES: href="" all the links bellow.
+-
+-				SINCE v1.0
+-->
 				 <li><a href="https://books4languages.com/"><?php _e( 'Books4Languagess', 'pressbooks-book' ); ?></a> |</li>
 				 <li><a href="https://worksheet.books4languages.com/"><?php _e( 'Exercises', 'pressbooks-book' ); ?></a> |</li>
 				 <li><a href="https://books4languages.com/legal/"><?php _e( 'Policy', 'pressbooks-book' ); ?></a> |</li>
@@ -93,22 +105,26 @@ if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.ph
 				</ul>
 			</div>
 			<div class="footer__pressbooks__social">
-				<!--
-										Hugo B4L
-										MODIFIE href="" of all the link bellow for add social network of the company
-			 -->
-			 <a class="facebook" href="https://www.facebook.com/Books4Languages/" title="<?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?>">
+<!-- End of modified code -->
+
+<!--
+-				MODIFIES: href="" of all the link bellow for addition of company social networks.
+-
+-				SINCE v1.0
+-->
+			 <a class="facebook" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?>">
 		 		<svg class="icon--svg">
 		 			<use xlink:href="#facebook" />
 		 		</svg>
 		 		<span class="screen-reader-text"><?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?></span>
 		 	</a>
-		 	<a class="twitter" href="https://twitter.com/bookslanguages/" title="<?php _e( 'Books For Languages on Twitter', 'pressbooks-book' ); ?>">
+		 	<a class="twitter" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books For Languages on Twitter', 'pressbooks-book' ); ?>">
 		 		<svg class="icon--svg">
 		 			<use xlink:href="#twitter" />
 		 		</svg>
 		 	<span class="screen-reader-text"><?php _e( 'Books For Languages on Twitter', 'pressbooks-book' ); ?></span></a>
 		 </div>
+<!-- End of modified code -->
 
 
 		</section>
