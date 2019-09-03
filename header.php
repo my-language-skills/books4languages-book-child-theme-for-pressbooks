@@ -28,7 +28,7 @@
 <!--
 -				Specifying content  with schema.org
 -
--				SINCE v1.2.4
+-				SINCE v1.0
 -->
 <?php
 if ( is_front_page() ) {
