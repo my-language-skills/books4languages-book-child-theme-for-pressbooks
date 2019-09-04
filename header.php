@@ -25,11 +25,6 @@
 	<?php wp_head(); ?>
 </head>
 
-<!--
--				Specifying content  with schema.org
--
--				SINCE v1.0
--->
 <?php
 if ( is_front_page() ) {
 	$schema = 'itemscope itemtype="http://schema.org/Book" itemref="about alternativeHeadline author copyrightHolder copyrightYear datePublished description editor image inLanguage keywords publisher" ';
@@ -39,9 +34,8 @@ if ( is_front_page() ) {
 	$schema = '';
 }
 ?>
-
 <body <?php body_class(); ?>   <?php echo $schema; ?>>
-<!-- End of modified code -->
+
 
 <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
 	<defs>
