@@ -19,3 +19,23 @@ function pbc_enqueue_styles() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );
+
+/**
+ * Function for updating company logo on sign in page
+ *
+ * SINCE v1.0
+ */
+ function pbc_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/books4languages-header.png) !important;
+		height:65px;
+		width:320px;
+		background-size: 320px 65px;
+		background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
+/** End of functionality*/
