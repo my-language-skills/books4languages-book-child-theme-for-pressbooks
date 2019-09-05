@@ -67,15 +67,15 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 		<div class="header__inside">
 			<div class="header__brand">
 
-					<!--
-				-				CHANGE: dynamic logo to static logo
-				-
-				-				SINCE v1.0
-				-->
+<!--
+-		CHANGE: dynamic logo to static logo
+-
+-		SINCE v1.0
+-->
 								<a aria-label="Catalog Books 4 Languages" href="https://books4languages.com/">
 												<img width="200" height="20" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-header.png" alt="Books4Languages logo">
 											</a>
-				<!-- End of changed code -->
+<!-- End of changed code -->
 
 			</div>
 			<div class="header__nav">
@@ -83,6 +83,17 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 				<nav class="js-header-nav" id="navigation">
 					<ul id="nav-primary-menu" class="nav--primary">
 						<?php echo \PressbooksBook\Helpers\display_menu(); ?>
+
+<!--
+-		ADDED: Link to registration and subscription details
+-
+-		SINCE v1.0
+-->
+												<?php if (! is_user_logged_in()):?>
+												| <li><a href="/register/">Sign Up</a></li>
+												<?php endif; ?>
+<!-- End of added code -->
+
 					</ul>
 				</nav>
 			</div>
