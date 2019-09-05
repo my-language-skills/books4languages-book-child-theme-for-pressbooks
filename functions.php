@@ -39,18 +39,3 @@ add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );
 <?php }
 add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
 /** End of functionality*/
-
-
-/**
- * Function for hooking responsive CSS file
- *
- * SINCE v1.2.1
- */
-function wpa_custom_css(){
-    wp_enqueue_style(
-        'wpa_custom',
-        get_stylesheet_directory_uri() . '/responsive.css'
-    );
-}
-add_action( 'wp_enqueue_scripts', 'wpa_custom_css', 999 );
-/** End of functionality*/
