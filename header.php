@@ -3,13 +3,21 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1"
-	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/dist/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/dist/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/dist/images/favicon-16x16.png">
-	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/site.webmanifest">
-	<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/dist/images/safari-pinned-tab.svg" color="#b01109">
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/dist/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+-		MODIFICATION href="" of all the link bellow to static pathways
+-
+-		SINCE v1.0
+-->
+	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
+	<link rel="manifest" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/site.webmanifest">
+	<link rel="mask-icon" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" color="#b01109">
+	<link rel="shortcut icon" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" >
+<!-- End of modified code -->
+
 	<meta name="application-name" content="Pressbooks">
 	<meta name="msapplication-TileColor" content="#b01109">
 	<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/browserconfig.xml">
@@ -90,7 +98,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 -		SINCE v1.0
 -->
 												<?php if (! is_user_logged_in()):?>
-												| <li><a href="/register/">Sign Up</a></li>
+													| <li><a href="/register/">Sign Up</a></li>
 												<?php endif; ?>
 <!-- End of added code -->
 
@@ -99,6 +107,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 			</div>
 		</div>
 		<?php if ( ! is_front_page() && pb_get_first_post_id() ) { ?>
+
 			<div class="reading-header">
 				<nav class="reading-header__inside">
 					<?php if ( is_single() ) { ?>
