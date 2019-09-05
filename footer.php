@@ -65,8 +65,18 @@ if ( $contact_link ) {
 <!-- End of added code -->
 
 			<div class="footer__pressbooks__links">
+
 				<?php /* translators: %s: Pressbooks */ ?>
-				<p class="footer__pressbooks__links__title"><a href="https://pressbooks.com"><?php printf( __( 'Powered by %s', 'pressbooks-book' ), '<span class="pressbooks">Pressbooks</span>' ); ?></a></p>
+
+<!--
+-		MODIFIES: Footer tittle.
+-
+-		SINCE v1.0
+-->
+								<p class="footer__pressbooks__links__title"><?php printf( __( 'Created with use of %s', 'pressbooks-book' ),'<span class="pressbooks">Wordpress and Pressbooks</span>' ); ?></p>
+								<ul class="footer__pressbooks__links__list">
+<!-- End of modified code -->
+
 				<ul class="footer__pressbooks__links__list">
 
 <!--
