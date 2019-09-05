@@ -57,7 +57,9 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 
 ## Changelog
 
-### 1.2.x
+### 1.3
+* **ENHANCEMENTS**
+  * Complete RE-BUILD of the book child theme due to update of the parent theme (pressbook-book) McLuhan to version 2.8.9 and its Jacobs child-theme to version 1.2.0.
 
 ### 1.2.4
 * **ENHANCEMENTS**
