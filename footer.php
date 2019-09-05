@@ -95,17 +95,27 @@ if ( $contact_link ) {
 <!-- End of modified code -->
 
 			</div>
-			<div class="footer__pressbooks__social">
-				<a href="https://www.youtube.com/user/pressbooks" title="<?php _e( 'Pressbooks on YouTube', 'pressbooks-book' ); ?>">
-					<img class="youtube-link" src="<?php bloginfo( 'template_directory' ); ?>/assets/images/yt_icon_mono_dark.png" alt="YouTube">
-					<span class="screen-reader-text"><?php _e( 'Pressbooks on YouTube', 'pressbooks-book' ); ?></span>
-				</a>
-				<a class="twitter" href="https://twitter.com/intent/follow?screen_name=pressbooks" title="<?php _e( 'Pressbooks on Twitter', 'pressbooks-book' ); ?>">
-					<svg class="icon--svg">
-						<use xlink:href="#twitter" />
-					</svg>
-				<span class="screen-reader-text"><?php _e( 'Pressbooks on Twitter', 'pressbooks-book' ); ?></span></a>
-			</div>
+
+<!--
+-		MODIFIES: href="" of the link bellow for addition of company social networks.
+-
+-		SINCE v1.0
+-->
+	<div class="footer__pressbooks__social">
+		<a class="facebook" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?>">
+			 <svg class="icon--svg">
+				 <use xlink:href="#facebook" />
+			 </svg>
+			 <span class="screen-reader-text"><?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?></span>
+		 </a>
+		 <a class="twitter" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books For Languages on Twitter', 'pressbooks-book' ); ?>">
+			 <svg class="icon--svg">
+				 <use xlink:href="#twitter" />
+			 </svg>
+		 <span class="screen-reader-text"><?php _e( 'Books For Languages on Twitter', 'pressbooks-book' ); ?></span>
+	 </a>
+	</div>
+<!-- End of modified code -->
 
 		</section>
 	</div><!-- .container -->
