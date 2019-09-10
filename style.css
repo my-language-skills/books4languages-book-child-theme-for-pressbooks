@@ -10,3 +10,13 @@ License:          GPL v3 or later
 Template:         pressbooks-book
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
+
+/* featured image for content-single.php */
+@media only screen {
+  .featured_image {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-bottom: 0.8em;
+  }
+}
