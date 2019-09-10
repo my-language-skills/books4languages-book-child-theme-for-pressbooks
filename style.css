@@ -11,6 +11,74 @@ Template:         pressbooks-book
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
 
+/*
+* MODIFIED CSS OF PARENT THEME - BEGIN
+*/
+
+/* Main colors of the theme */
+:root{
+    --primary: #dc6e78 !important;
+    --body-text: #262626 !important;
+    --body-bg: #ffffff !important
+}
+
+/* footer */
+.footer {
+  background-color: #575757;
+}
+
+ /* header */
+.header {
+  padding-bottom: 1.6em !important;
+}
+
+/* space above ul list element and line above decreased */
+.chapter ul{
+  margin-top: 0 !important;
+}
+
+/* Book download dropdown button - BEGIN */
+.book-header__cover__downloads ul {
+  padding-bottom: 0 !important;
+  -webkit-box-shadow: 6px 6px 19px -2px rgba(0,0,0,0.48);
+  -moz-box-shadow: 6px 6px 19px -2px rgba(0,0,0,0.48);
+  box-shadow: 6px 6px 19px -2px rgba(0,0,0,0.48);
+}
+
+.dropdown-item:hover {
+    background-color: #f6f6f6 !important;
+}
+
+.dropdown button {
+  padding: 7px !important;
+  /* border-color: var(--header-color) !important; */
+  border-bottom: 2px solid var(--header-color);
+
+}
+
+
+.dropdown button:focus {
+  padding: 5px !important;
+  border-color: var(--header-color) !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* Book download dropdown button - END */
+
+/*
+* MODIFIED CSS OF PARENT THEME - END
+*/
+
+
+/*
+* MLS ADDED CSS FOR NEW ELEMENTS - BEGIN
+*/
+
 /* featured image for content-single.php */
 @media only screen {
   .featured_image {
@@ -20,3 +88,7 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
     padding-bottom: 0.8em;
   }
 }
+
+/*
+* MLS ADDED CSS FOR NEW ELEMENTS - END
+*/

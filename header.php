@@ -98,7 +98,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 -		SINCE v1.0
 -->
 												<?php if (! is_user_logged_in()):?>
-													| <li><a href="/register/">Sign Up</a></li>
+													 <li><a href="/register/">Sign Up</a></li>
 												<?php endif; ?>
 <!-- End of added code -->
 
