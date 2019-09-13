@@ -38,6 +38,28 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 }
 
 /* Book download dropdown button - BEGIN */
+.book-header__cover__downloads.dropdown button:focus {
+  padding: 5px !important;
+  border-color: var(--header-color) !important;
+  border-style: solid !important;
+  border-width: 2px !important;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.book-header__cover__downloads.dropdown button {
+    border-bottom: 2px solid var(--header-color);
+}
+
+.book-header__cover__downloads button:focus{
+  outline: none !important;
+}
+
+.book-header__cover__downloads button:hover{
+  cursor: pointer;
+}
+
 .book-header__cover__downloads ul {
   padding-bottom: 0 !important;
   -webkit-box-shadow: 6px 6px 19px -2px rgba(0,0,0,0.48);
@@ -45,28 +67,15 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
   box-shadow: 6px 6px 19px -2px rgba(0,0,0,0.48);
 }
 
-.dropdown-item:hover {
+.book-header__cover__downloads a {
+    display: flex !important;
+    align-items: center !important;
+    width: 100%;
+    height: 100%;
+}
+
+.book-header__cover__downloads.dropdown-item:hover {
     background-color: #f6f6f6 !important;
-}
-
-.dropdown button {
-  padding: 7px !important;
-  /* border-color: var(--header-color) !important; */
-  border-bottom: 2px solid var(--header-color);
-
-}
-
-
-.dropdown button:focus {
-  padding: 5px !important;
-  border-color: var(--header-color) !important;
-  border-style: solid !important;
-  border-width: 2px !important;
-
-
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
 }
 /* Book download dropdown button - END */
 
