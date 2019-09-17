@@ -69,6 +69,24 @@ if ( $contact_link ) {
 				<?php /* translators: %s: Pressbooks */ ?>
 
 <!--
+-				ADD: Functionality for loading of the available translations - location 3. Functions are called from translations-for-presbooks plugin.
+-
+-				SINCE v1.3
+-->
+						<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) { ?>
+						<div style="display: flex; justify-content: center;">
+							<p><?php _e( 'Translations:', 'pressbooks-book' ); ?></p>
+						</div>
+							<ul class="footer__pressbooks__links__list" style="margin-bottom: 1rem;">
+								<?php
+									$blog_id = get_current_blog_id();
+									pbc_print_trans_links($blog_id, "footer");
+								?>
+							</ul>
+							<?php } ?>
+<!-- End of modified code -->
+
+<!--
 -		MODIFIES: Footer tittle.
 -
 -		SINCE v1.0

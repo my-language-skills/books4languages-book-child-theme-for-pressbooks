@@ -7,11 +7,11 @@
 * Requires at least: 3.0.1
 * Tested up to: 5.2.2
 * Requires PHP: 5.6.0
-* Stable tag: 1.2.4
+* Stable tag: 1.3
 * License: GNU 3.0
 * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-Requires:  Pressbooks 5.8
+Requires:  Pressbooks 5.8, For functional translations (plugin translations-for-pressbooks at least v1.2.4)
 
 Stable tag: [![Current Release](https://img.shields.io/github/release/Books4Languages/pressbooks-metadata.svg)](https://github.com/my-language-skills/books4languages-book-child-theme-for-pressbooks/releases/latest/)
 
@@ -58,8 +58,16 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ## Changelog
 
 ### 1.3
+Complete RE-BUILD of the book child theme due to update of the parent theme (pressbook-book) McLuhan to version 2.8.9 and its Jacobs child-theme to version 1.2.0.
+
+* **ADDITIONS**
+  * All the useful functionalities from previous versions.
+  * Translations menu in header and footer (Requires: plugin translations-for-pressbooks at least v1.2.4)
+  * Added and modified featured image functionality from previous version.
+
 * **ENHANCEMENTS**
-  * Complete RE-BUILD of the book child theme due to update of the parent theme (pressbook-book) McLuhan to version 2.8.9 and its Jacobs child-theme to version 1.2.0.
+  * All the useful enhancements from previous versions.
+  * Book download button and its dropdown menu.
 
 ### 1.2.4
 * **ENHANCEMENTS**

@@ -17,8 +17,19 @@ function pbc_enqueue_styles() {
 		array( $parent_style ),
 		wp_get_theme()->get('Version')
 	);
+
+	wp_enqueue_style( 'dropdown-lang.css',get_stylesheet_directory_uri() . '/translations-menu.css' );
+
 }
 add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );
+
+
+function pbc_enqueue_scripts() {
+
+	wp_enqueue_script( 'owl-carousel', get_stylesheet_directory_uri() . '/script.js', array( 'jquery' ) );
+}
+add_action( 'wp_enqueue_scripts', 'pbc_enqueue_scripts' );
+
 
 /**
  * Function for updating company logo on sign in page

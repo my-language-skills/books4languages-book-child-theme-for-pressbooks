@@ -86,6 +86,39 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 <!-- End of changed code -->
 
 			</div>
+
+<!--
+-				ADD: Functionality for loading of the available translations - location 2. Functions are called from translations-for-presbooks plugin.
+-
+-				SINCE v1.3
+-->
+			<?php
+				if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) {
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			/* Load values to variables to limit queries.  */
+				$currFlag = getCurrentBookFlag();
+				$currLang = getCurrentBookLanguageCode();
+			?>
+
+			<div id="header-inside-right"> <!-- This div is added due for align translation icon to the right in small screen version -->
+				<li id="dropdown-in-responsive-header">
+					<div class="dropdown-lang2">
+					  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content2')"><img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
+							 <?php echo $currFlag;?> <?php echo $currLang;?>
+						</a>
+					  <div id="dropdown-lang-content2">
+							<ul>
+								<?php
+									$blog_id = get_current_blog_id();
+									pbc_print_trans_links($blog_id, "header");
+								?>
+							</ul>
+					  </div>
+					</div>
+				</li>
+				<?php } ?>
+<!-- End of modified code -->
+
 			<div class="header__nav">
 				<a class="header__nav-icon js-header-nav-toggle" href="#navigation"><?php _e( 'Toggle Menu', 'pressbooks-book' ); ?><span class="header__nav-icon__icon"></span></a>
 				<nav class="js-header-nav" id="navigation">
@@ -97,15 +130,43 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 -
 -		SINCE v1.0
 -->
-												<?php if (! is_user_logged_in()):?>
-													 <li><a href="/register/">Sign Up</a></li>
-												<?php endif; ?>
+						<?php if (! is_user_logged_in()):?>
+							 <li><a href="/register/">Sign Up</a></li>
+						<?php endif; ?>
 <!-- End of added code -->
+
+<!--
+-				ADD: Functionality for loading of the available translations - location 1. Functions are called from translations-for-presbooks plugin.
+-
+-				SINCE v1.3
+-->
+							<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) { ?>
+							<li>
+								<div class="dropdown-lang">
+								  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content')"><img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
+									<?php echo $currFlag;?> <?php echo $currLang;?>
+									</a>
+								  <div id="dropdown-lang-content">
+										<ul>
+											<?php
+												$blog_id = get_current_blog_id();
+												pbc_print_trans_links($blog_id, "header");
+											?>
+										</ul>
+								  </div>
+								</div>
+							</li>
+							<?php } ?>
+<!-- End of modified code -->
 
 					</ul>
 				</nav>
 			</div>
+
+  	<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) { ?>	</div> <?php } ?>
+
 		</div>
+
 		<?php if ( ! is_front_page() && pb_get_first_post_id() ) { ?>
 
 			<div class="reading-header">
