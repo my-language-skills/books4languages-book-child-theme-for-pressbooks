@@ -19,6 +19,7 @@ function pbc_enqueue_styles() {
 	);
 
 	wp_enqueue_style( 'dropdown-lang.css',get_stylesheet_directory_uri() . '/translations-menu.css' );
+	wp_enqueue_style( 'smd-relations.css',get_stylesheet_directory_uri() . '/smd-relations.css' );
 
 }
 add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );

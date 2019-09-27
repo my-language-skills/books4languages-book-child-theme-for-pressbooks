@@ -92,10 +92,7 @@ if ( $contact_link ) {
 -		SINCE v1.0
 -->
 								<p class="footer__pressbooks__links__title"><?php printf( __( 'Created with use of %s', 'pressbooks-book' ),'<span class="pressbooks">Wordpress and Pressbooks</span>' ); ?></p>
-								<ul class="footer__pressbooks__links__list">
 <!-- End of modified code -->
-
-				<ul class="footer__pressbooks__links__list">
 
 <!--
 -		MODIFIES: all the links bellow. Privacy Policy menu slug added.

@@ -183,15 +183,23 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 					<?php } ?>
 					<?php /* translators: %s: the title of the book */ ?>
 					<h1 class="reading-header__title" ><a href="<?php echo home_url( '/' ); ?>" title="<?php printf( __( 'Go to the cover page of %s', 'pressbooks-book' ), esc_attr( get_bloginfo( 'name', 'display' ) ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-					<div class="reading-header__end-container">
-						<?php if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) : ?>
+<!--
+-		ADD: Functionality for loading of the available relations.
+-		COMMENTED OUT: Displaying option for the Buy button.
+-		NOTE: HTML contennt in the <div> container needs to stay space-free due to .reading-header__end-container:empty class in smd-relations.php
+-
+-		SINCE v1.4
+-->
+					<div class="reading-header__end-container"><?php if (is_plugin_active('simple-metadata-relation/simple-metadata-relation.php')) {
+								getCurrentPostRelations($location = "chapter");
+							}?><?php /* if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) : ?>
 						<a href="<?php echo home_url( '/buy/' ); ?>"><?php _e( 'Buy', 'pressbooks-book' ); ?></a>
-						<?php endif; ?>
-					</div>
+						<?php  endif; */ ?></div>
+<!-- End of modified code -->
+
 				</nav>
 			</div>
-		<?php } ?>
+		<?php   }  ?>
 	</header>
 
 	<main id="main">

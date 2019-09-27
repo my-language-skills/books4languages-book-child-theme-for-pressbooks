@@ -1,0 +1,163 @@
+/*..........RELATIONS ON CHAPTERS PAGE..........*/
+@media only screen and (min-width: 60rem){
+  .reading-header__end-container{
+  justify-content: flex-start !important;
+  position: relative;
+}
+
+.dropdown-relations-content-chapters{
+    position: absolute;
+    background-color: var(--primary-fg);
+    min-width: 100%;
+    box-shadow: -2px 3px 2px 1px hsla(0,0%,52.9%,.09);
+    z-index: 1;
+    right: 0;
+    top: 5rem;
+    flex-direction: column;
+  }
+
+  .reading-header__end-container a {
+    cursor: pointer;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 59.999rem){
+  .reading-header__end-container:empty{
+    display: none !important;
+    }
+
+  .reading-header__end-container{
+    display: flex !important;
+    justify-content: center !important;
+    position: relative;
+  }
+
+  .reading-header__end-container a {
+    cursor: pointer;
+    margin: auto;
+  }
+
+  .dropdown-relations-content-chapters{
+    position: absolute;
+    background-color: var(--primary-fg);
+    width:100%;
+    box-shadow: 2px 3px 2px 1px hsla(0,0%,52.9%,.09);
+    z-index: 1;
+    right: 0;
+    top: 4.8rem;
+    flex-direction: column;
+  }
+}
+
+#dropdown-relations-content-chapters-activities,
+#dropdown-relations-content-chapters-excercises,
+#dropdown-relations-content-chapters-audios,
+#dropdown-relations-content-chapters-videos,
+#dropdown-relations-content-chapters-citations {
+  display: none;
+}
+
+#dropdown-relations-content-chapters-activities li a,
+#dropdown-relations-content-chapters-excercises li a,
+#dropdown-relations-content-chapters-audios li a,
+#dropdown-relations-content-chapters-videos li a,
+#dropdown-relations-content-chapters-citations li a   {
+  color: var(--primary);
+}
+
+.dropdown-relations-content-chapters-activities,
+.dropdown-relations-content-chapters-excercises,
+.dropdown-relations-content-chapters-audios,
+.dropdown-relations-content-chapters-videos,
+.dropdown-relations-content-chapters-citations{
+  display: flex !important;
+}
+
+
+/*..........RELATIONS ON BOOK COVER PAGE (BOOK INFO)..........*/
+.dropdown-relations-content-bookinfo {
+    position: absolute;
+    background-color: var(--primary-fg);
+    min-width: 12rem;
+    box-shadow: -2px 3px 2px 1px hsla(0,0%,52.9%,.09);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.relations-container{
+    margin-top: 1rem;
+}
+
+.relations-container a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 48rem){
+  .relations-container{
+    margin: auto;
+    max-width: 55%;
+    margin-top: 1rem;
+
+  }
+  .dropdown-relations-content-bookinfo{
+    min-width: 11.7rem;
+  }
+}
+
+#dropdown-relations-content-bookinfo-activities,
+#dropdown-relations-content-bookinfo-excercises,
+#dropdown-relations-content-bookinfo-audios,
+#dropdown-relations-content-bookinfo-videos,
+#dropdown-relations-content-bookinfo-citations {
+  display: none;
+}
+
+#dropdown-relations-content-bookinfo-activities ul li a,
+#dropdown-relations-content-bookinfo-excercises ul li a,
+#dropdown-relations-content-bookinfo-audios ul li a,
+#dropdown-relations-content-bookinfo-videos ul li a,
+#dropdown-relations-content-bookinfo-citations ul li a   {
+  color: #222222;
+  font-family: Karla,sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+}
+
+.dropdown-relations-content-bookinfo-activities,
+.dropdown-relations-content-bookinfo-excercises,
+.dropdown-relations-content-bookinfo-audios,
+.dropdown-relations-content-bookinfo-videos,
+.dropdown-relations-content-bookinfo-citations{
+  display: flex !important;
+}
+
+/*..........TOOLTIP...........*/
+ .dropdown-relations-tooltiptext {
+  visibility: hidden;
+  width: 5.8rem;
+  background-color: #ffffff;
+  color: #000;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  margin-top: -1.2rem;
+  margin-left: -3.8rem;
+  font-size: 0.7rem;
+}
+
+.dropdown-relations-tooltip:hover .dropdown-relations-tooltiptext {
+  visibility: visible;
+}
+
+.dropdown-relations-item-inactive {
+  opacity: 0.50;
+ -moz-opacity: 50%;
+ -webkit-opacity: 50%;
+ margin: auto;
+}
+.dropdown-relations-item-inactive:hover{
+  cursor: pointer;
+}
