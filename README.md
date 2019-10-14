@@ -5,13 +5,15 @@
 * Tags: wordpress, multisite, pressbooks
 * Tags: pressbooks, wordpress, theme, books4languages
 * Requires at least: 3.0.1
-* Tested up to: 5.2.2
+* Tested up to: 5.2.3
 * Requires PHP: 5.6.0
 * Stable tag: 1.4
 * License: GNU 3.0
 * License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-Requires:  Pressbooks 5.8, For functional translations (plugin translations-for-pressbooks at least v1.2.4)
+Requires:
+Pressbooks 5.8,
+For fully functional translations (plugin translations-for-pressbooks at least v1.2.6 with conjunction of extensions-for-pressbooks v1.2.4)
 
 Stable tag: [![Current Release](https://img.shields.io/github/release/Books4Languages/pressbooks-metadata.svg)](https://github.com/my-language-skills/books4languages-book-child-theme-for-pressbooks/releases/latest/)
 
@@ -60,10 +62,11 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ### 1.4
  * **ADDITIONS**
   * Display related content from simple-metadata-relation plugin.
+  * Adding functionality related to displaying translation options.
+  * Adding functionality related to upgrade of translations-for-pressbooks plugin which checks if translations option for current book and post is enabled.
 
  * **ENHANCEMENTS**
-  *  removed redundant tags in footer.php
-
+  *  Removed redundant tags in footer.php
 
 * **List of Files revised**
   * added smd-relations.css

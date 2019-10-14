@@ -89,34 +89,37 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 
 <!--
 -				ADD: Functionality for loading of the available translations - location 2. Functions are called from translations-for-presbooks plugin.
--
+-				NOTE: Location 2 and location 1 work together.
 -				SINCE v1.3
+-				MODIFIED v1.4
 -->
 			<?php
-				if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) {
-				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-			/* Load values to variables to limit queries.  */
-				$currFlag = getCurrentBookFlag();
-				$currLang = getCurrentBookLanguageCode();
-			?>
+				if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = check_if_translations_enabled()) {
+					 // If translations are enabled in back-end display here. check_if_translations_enabled() from TFP.
 
-			<div id="header-inside-right"> <!-- This div is added due for align translation icon to the right in small screen version -->
-				<li id="dropdown-in-responsive-header">
-					<div class="dropdown-lang2">
-					  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content2')"><img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
-							 <?php echo $currFlag;?> <?php echo $currLang;?>
-						</a>
-					  <div id="dropdown-lang-content2">
-							<ul>
-								<?php
-									$blog_id = get_current_blog_id();
-									pbc_print_trans_links($blog_id, "header");
-								?>
-							</ul>
-					  </div>
-					</div>
-				</li>
-				<?php } ?>
+					 /* Load values to variables to limit queries.  */
+						$currFlag = getCurrentBookFlag();
+						$currLang = getCurrentBookLanguageCode();
+						?>
+
+						<div id="header-inside-right"> <!-- This div is added due for align translation icon to the right in small screen version -->
+							<li id="dropdown-in-responsive-header">
+								<div class="dropdown-lang2">
+								  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content2')"><img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
+										 <?php echo $currFlag;?> <?php echo $currLang;?>
+									</a>
+								  <div id="dropdown-lang-content2">
+										<ul>
+											<?php
+												$blog_id = get_current_blog_id();
+												pbc_print_trans_links($blog_id, "header");
+											?>
+										</ul>
+								  </div>
+								</div>
+							</li>
+
+			<?php } ?>
 <!-- End of modified code -->
 
 			<div class="header__nav">
@@ -131,7 +134,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 -		SINCE v1.0
 -->
 						<?php if (! is_user_logged_in()):?>
-							 <li><a href="/register/">Sign Up</a></li>
+							 <li><a href="/register/"><?php _e( 'Sign Up', 'pressbooks-book' ); ?></a></li>
 						<?php endif; ?>
 <!-- End of added code -->
 
@@ -139,8 +142,10 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 -				ADD: Functionality for loading of the available translations - location 1. Functions are called from translations-for-presbooks plugin.
 -
 -				SINCE v1.3
+-				MODIFIED v1.4
 -->
-							<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) { ?>
+							<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && $option == "1") {
+							 ?>
 							<li>
 								<div class="dropdown-lang">
 								  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content')"><img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
@@ -149,21 +154,21 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 								  <div id="dropdown-lang-content">
 										<ul>
 											<?php
-												$blog_id = get_current_blog_id();
 												pbc_print_trans_links($blog_id, "header");
 											?>
 										</ul>
 								  </div>
 								</div>
 							</li>
-							<?php } ?>
+						<?php  } ?>
 <!-- End of modified code -->
 
 					</ul>
 				</nav>
 			</div>
 
-  	<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) { ?>	</div> <?php } ?>
+<!-- Closing of the <div id="header-inside-right"> -->
+  	<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php')) 	if ($option == "1"){ { ?>	</div> <?php } } ?>
 
 		</div>
 
