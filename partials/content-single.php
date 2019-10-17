@@ -4,24 +4,31 @@
 <!--
 -				ADDED: featured image code
 -
--				SINCE v1.2.2  MODIFIED for 1.3
+-				SINCE v1.2.2  MODIFIED v1.3  MODIFIED v1.4.1
 -->
-	<div class="featured_image" >
-		<?php
-			if ( has_post_thumbnail() ) {
-				$option = get_option("pressbooks_theme_options_web");
-			if ($option['webbook_width'] == '30em'){
-				the_post_thumbnail('featured-narrow');
-			}
-			if ($option['webbook_width'] == '40em'){
-				the_post_thumbnail('featured-standard');
-			}
-			if ($option['webbook_width'] == '48em'){
-				the_post_thumbnail('featured-wide');
-				}
-			}
-		?>
-	</div>
+<?php
+if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbooks.php')){
+	if(!(wp_is_mobile() && fifp_is_featured_image_disabled())){
+		// condition to check if displaying featured images is not disabled for mobile devices
+			?>
+				<div class="featured_image" >
+					<?php
+						if ( has_post_thumbnail() ) {
+							$option = get_option("pressbooks_theme_options_web");
+						if ($option['webbook_width'] == '30em'){
+							the_post_thumbnail('featured-narrow');
+						}
+						if ($option['webbook_width'] == '40em'){
+							the_post_thumbnail('featured-standard');
+						}
+						if ($option['webbook_width'] == '48em'){
+							the_post_thumbnail('featured-wide');
+							}
+						}
+						?>
+				</div>
+			<?php
+	 } } ?>
 <!-- End of added code -->
 
 	<h1 class="entry-title">

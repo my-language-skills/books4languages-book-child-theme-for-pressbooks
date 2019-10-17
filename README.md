@@ -59,6 +59,19 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 
 ## Changelog
 
+### 1.4.1
+* **ADDITIONS**
+  * Function for monitoring if displaying of featured images is disabled for mobile devices. (related to featured-images-for-pressbooks plugin v0.6)
+
+* **BUG**
+  * Fixed error for relations-for-pressbooks when simple-metadata plugin deactivated.
+
+* **List of Files revised**
+  * header.php
+  * content-cover-book-header.php
+  * conent-single.php
+
+
 ### 1.4
  * **ADDITIONS**
   * Display related content from simple-metadata-relation plugin.
@@ -66,7 +79,9 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
   * Adding functionality related to upgrade of translations-for-pressbooks plugin which checks if translations option for current book and post is enabled.
 
  * **ENHANCEMENTS**
-  *  Removed redundant tags in footer.php
+  * Removed redundant tags in footer.php
+  * Updated logo size
+
 
 * **List of Files revised**
   * added smd-relations.css

@@ -193,9 +193,9 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 -		COMMENTED OUT: Displaying option for the Buy button.
 -		NOTE: HTML contennt in the <div> container needs to stay space-free due to .reading-header__end-container:empty class in smd-relations.php
 -
--		SINCE v1.4
+-		SINCE v1.4 MODIFIED: v1.4.1
 -->
-					<div class="reading-header__end-container"><?php if (is_plugin_active('simple-metadata-relation/simple-metadata-relation.php')) {
+					<div class="reading-header__end-container"><?php if (is_plugin_active('simple-metadata-relation/simple-metadata-relation.php') && is_plugin_active('simple-metadata/simple-metadata.php')) {
 								getCurrentPostRelations($location = "chapter");
 							}?><?php /* if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) : ?>
 						<a href="<?php echo home_url( '/buy/' ); ?>"><?php _e( 'Buy', 'pressbooks-book' ); ?></a>

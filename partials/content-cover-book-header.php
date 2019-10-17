@@ -130,10 +130,10 @@ if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) {
 <!--
 -		ADD: Functionality for loading of the available relations.
 -
--		SINCE v1.4
+-		SINCE v1.4 MODIFIED: v1.4.1
 -->
 		<div class="relations-container">
-			<?php if (is_plugin_active('simple-metadata-relation/simple-metadata-relation.php')) {
+			<?php if (is_plugin_active('simple-metadata-relation/simple-metadata-relation.php') && is_plugin_active('simple-metadata/simple-metadata.php')) {
 						getCurrentPostRelations($location = "book-info");
 					}?>
 		</div>
