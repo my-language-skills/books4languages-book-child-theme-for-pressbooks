@@ -63,6 +63,9 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 * **ADDITIONS**
   * Function for monitoring if displaying of featured images is disabled for mobile devices. (related to featured-images-for-pressbooks plugin v0.6)
 
+* **ENHANCEMENTS**
+  * Fix book content width to 720px.
+
 * **BUG**
   * Fixed error for relations-for-pressbooks when simple-metadata plugin deactivated.
 

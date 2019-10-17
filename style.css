@@ -12,7 +12,7 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 */
 
 /*
-* MODIFIED CSS OF PARENT THEME - BEGIN
+* MODIFIED CSS OF PARENT THEME ELEMENTS - BEGIN
 */
 
 /* Main colors of the theme */
@@ -79,8 +79,15 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 }
 /* Book download dropdown button - END */
 
+/* fixes width of book content to 720px */
+@media screen and (min-width: 45rem){
+  .single #content {
+    width: 720px !important;
+  }
+}
+
 /*
-* MODIFIED CSS OF PARENT THEME - END
+* MODIFIED CSS OF PARENT THEME ELEMENTS - END
 */
 
 

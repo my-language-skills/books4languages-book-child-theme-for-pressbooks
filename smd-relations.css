@@ -94,13 +94,13 @@
   text-decoration: none;
 }
 
-@media only screen and (max-width: 48rem){
+@media only screen and (max-width: 47.999rem){
   .relations-container{
     margin: auto;
     max-width: 55%;
     margin-top: 1rem;
-
   }
+  
   .dropdown-relations-content-bookinfo{
     min-width: 11.7rem;
   }
