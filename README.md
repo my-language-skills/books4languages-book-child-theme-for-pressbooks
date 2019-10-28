@@ -58,6 +58,12 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ## Screenshots
 
 ## Changelog
+### 1.4.2
+* **ADDITIONS**
+  * Modification of displaying post thumbnails related to upgraded version of featured_images_for_pressbooks plugin v0.7 
+
+* **List of Files revised**
+  * conent-single.php
 
 ### 1.4.1
 * **ADDITIONS**
