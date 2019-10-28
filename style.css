@@ -86,6 +86,39 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
   }
 }
 
+/* Bottom navigation change order on mobile devices (small screens) */
+
+@media only screen and (max-width: 59.99rem){
+  .nav-reading {
+    display: flex !important;
+    flex-flow: column;
+  }
+
+  .nav-reading__previous{
+    order: 2;
+  }
+
+  .nav-reading__previous a {
+    border-top: 1px solid transparent;
+    border-top-color: var(--primary-dark) !important;
+    border-bottom: 0 !important;
+  }
+
+  .nav-reading__previous:empty{
+    display: none;
+  }
+
+  .nav-reading__next{
+    order: 1;
+  }
+
+  .nav-reading__next a {
+    border: 0 !important;
+  }
+}
+
+/* Bottom navigation change order on small screens - END */
+
 /*
 * MODIFIED CSS OF PARENT THEME ELEMENTS - END
 */
