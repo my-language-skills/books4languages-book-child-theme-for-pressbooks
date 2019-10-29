@@ -132,6 +132,12 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
   height: 48px;
 }
 
+@media only screen and (max-width: 59.99rem){
+  .header__nav{
+    height: 48px;
+  }
+}
+
 .header__brand a{
   display: block;
   padding: 12px 0;
