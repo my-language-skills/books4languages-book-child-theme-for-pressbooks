@@ -63,6 +63,9 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
   * Modification of displaying post thumbnails related to upgraded version of featured_images_for_pressbooks plugin v0.7
   * Styles for switching order of bottom navigation bar.
 
+* **ENHANCEMENTS**
+  * Headar navigation menu styling
+
 * **List of Files revised**
   * conent-single.php
   * style.css

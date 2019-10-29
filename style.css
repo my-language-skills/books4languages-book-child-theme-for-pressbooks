@@ -28,10 +28,18 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 }
 
  /* header */
-.header {
-  padding-bottom: 1.6em !important;
-}
+ .reading-header{
+   margin-top: 1rem !important;
+ }
 
+ @media screen and (min-width: 60rem){
+   .header {
+       padding: 3rem 0rem 1rem !important;
+   }
+   .header__inside{
+     padding: 0rem 1rem;
+   }
+}
 /* space above ul list element and line above decreased */
 .chapter ul{
   margin-top: 0 !important;
@@ -119,10 +127,29 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 
 /* Bottom navigation change order on small screens - END */
 
+/* Header navigation height modification */
+.header .header__brand #navigation #header-inside-right .header__inside{
+  height: 48px;
+}
+
+.header__brand a{
+  display: block;
+  padding: 12px 0;
+}
+/* Header navigation height modification - END */
+
+/* Expand arrow in cover page display */
+.block-toggle__cta__button{
+  color: var(--primary) !important;
+}
+/* Expand arrow in cover page display - END  */
 /*
 * MODIFIED CSS OF PARENT THEME ELEMENTS - END
 */
 
+/*
+############################################################################
+*/
 
 /*
 * MLS ADDED CSS FOR NEW ELEMENTS - BEGIN

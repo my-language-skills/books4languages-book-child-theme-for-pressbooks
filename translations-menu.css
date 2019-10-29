@@ -93,6 +93,7 @@
   #header-inside-right{
     float:right;
     display: flex;
+    height: 48px !important;
   }
 
   .dropdown-lang2 {
@@ -103,7 +104,13 @@
     margin-right: 15px;
   }
 
-  #dropdown-in-responsive-header{
+.dropdown-lang2 a {
+  height: 48px;
+  display: block;
+  padding: 10px 0;
+ }
+
+ #dropdown-in-responsive-header{
     display: block;
     list-style: none;
   }
@@ -133,7 +140,7 @@
     background-color: var(--header-color);
   }
 
-  #dropdown-lang-content2 ul li a {
+  #dropdown-lang-content2 ul li {
     width: auto;
     display: block;
     padding: 5px 15px;
@@ -145,7 +152,7 @@
   }
 
   .header__nav-icon{
-    top: 4px;
+    top: 15px;
   }
 }
 
