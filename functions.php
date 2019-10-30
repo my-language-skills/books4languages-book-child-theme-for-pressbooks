@@ -51,3 +51,14 @@ add_action( 'wp_enqueue_scripts', 'pbc_enqueue_scripts' );
 <?php }
 add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
 /** End of functionality*/
+
+/**
+ * Function for printing URL of Table of contents post
+ *
+ * SINCE v1.4.3
+ */
+function pbc_get_tablecontents_url(){
+	global $wpdb;
+	echo get_permalink($postID = $wpdb->get_var( "SELECT ID FROM $wpdb->posts WHERE post_name = 'table-of-contents'" ));
+}
+/** End of functionality*/

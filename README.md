@@ -5,11 +5,12 @@
 * Tags: wordpress, multisite, pressbooks
 * Tags: pressbooks, wordpress, theme, books4languages
 * Requires at least: 3.0.1
-* Tested up to: 5.2.3
+* Tested up to WP: 5.2.4
+* Tested up to PB: 5.9.5
 * Requires PHP: 5.6.0
-* Stable tag: 1.4
+* Stable tag: 1.4.3
 * License: GNU 3.0
-* License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
+* License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 Requires:
 Pressbooks 5.8,
@@ -58,6 +59,18 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ## Screenshots
 
 ## Changelog
+### 1.4.3
+* **ADDITIONS**
+  * Site index link in the footer
+
+* **ENHANCEMENTS**
+  * CSS modifications
+
+* **List of Files revised**
+  * functions.php
+  * style.css
+
+
 ### 1.4.2
 * **ADDITIONS**
   * Modification of displaying post thumbnails related to upgraded version of featured_images_for_pressbooks plugin v0.7

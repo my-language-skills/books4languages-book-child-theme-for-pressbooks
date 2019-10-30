@@ -5,7 +5,7 @@ Description:      This theme is based on McLuhan 2.8.9 and its Jacobs 1.2.0 chil
 Author:           My Language Skills team
 Author URI:       https://github.com/my-language-skills
 Copyright:        2019 My Language Skills
-Version:          1.4.2
+Version:          1.4.3
 License:          GPL v3 or later
 Template:         pressbooks-book
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
@@ -22,11 +22,19 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
     --body-bg: #ffffff !important
 }
 
+/* main */
+main {
+  min-height: 500px;
+}
+
 /* footer */
 .footer {
   background-color: #575757;
 }
 
+.footer__pressbooks > a {
+  margin: 0 1rem;
+}
  /* header */
  .reading-header{
    margin-top: 1rem !important;
@@ -39,6 +47,10 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
    .header__inside{
      padding: 0rem 1rem;
    }
+}
+
+.a11y-toolbar{
+  width: 100% !important;
 }
 /* space above ul list element and line above decreased */
 .chapter ul{
@@ -106,7 +118,7 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
     order: 2;
   }
 
-  .nav-reading__previous a {
+  .nav-reading__previous > a {
     border-top: 1px solid transparent;
     border-top-color: var(--primary-dark) !important;
     border-bottom: 0 !important;
@@ -120,7 +132,7 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
     order: 1;
   }
 
-  .nav-reading__next a {
+  .nav-reading__next > a {
     border: 0 !important;
   }
 }
