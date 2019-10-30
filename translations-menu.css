@@ -6,11 +6,9 @@
   cursor: pointer;
   color: var(--primary);
 }
-
-.dropdown-lang a:hover {
-  text-decoration: underline;
+.dropdown-lang > a:hover {
+  text-decoration: none;
 }
-
 #dropdown-lang-content {
   display: none;
   position: absolute;
@@ -22,27 +20,27 @@
   margin-top: 5px;
 }
 
-#dropdown-lang-content ul{
+#dropdown-lang-content >  ul{
   padding: 0;
 }
 
-#dropdown-lang-content ul li {
+#dropdown-lang-content >  ul >  li {
   width: auto;
   display: block;
   padding-left: 0;
 }
 
-#dropdown-lang-content ul li:hover {
+#dropdown-lang-content >  ul >  li:hover {
   background-color: var(--header-color);
 }
 
-#dropdown-lang-content ul li a {
+#dropdown-lang-content >  ul >  li >  a {
   width: auto;
   display: block;
   padding: 5px 15px;
 }
 
-#dropdown-lang-content ul li a:hover {
+#dropdown-lang-content > ul > li > a:hover {
   background-color: #ececec;
   text-decoration: none;
 }
@@ -61,7 +59,7 @@
 }
 
 @media only screen and (max-width: 59.99rem){
-  .dropdown-content-selected-lang a {
+  .dropdown-content-selected-lang  >  a {
         color: #444444;
   }
 }
@@ -78,7 +76,7 @@
     background-color: #444444;
   }
 
-  #dropdown-lang-content ul li a:hover {
+  #dropdown-lang-content > ul >  li >  a:hover {
     color: #444444;
   }
 }
@@ -104,7 +102,7 @@
     margin-right: 15px;
   }
 
-.dropdown-lang2 a {
+.dropdown-lang2 > a {
   height: 48px;
   display: block;
   padding: 10px 0;
@@ -123,30 +121,30 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     right: 0;
-    margin-top: 5px;
   }
-  #dropdown-lang-content2 ul{
+
+  #dropdown-lang-content2 > ul{
     padding: 0;
     margin: 0;
   }
 
-  #dropdown-lang-content2 ul li {
+  #dropdown-lang-content2 > ul > li {
     width: auto;
     display: block;
     padding-left: 0;
   }
 
-  #dropdown-lang-content2 ul li:hover {
+  #dropdown-lang-content2 > ul > li:hover {
     background-color: var(--header-color);
   }
 
-  #dropdown-lang-content2 ul li {
+  #dropdown-lang-content2 > ul > li > a {
     width: auto;
     display: block;
     padding: 5px 15px;
   }
 
-  #dropdown-lang-content2 ul li a:hover {
+  #dropdown-lang-content2 > ul > li > a:hover {
     background-color: #ececec;
     text-decoration: none;
   }
@@ -157,6 +155,6 @@
 }
 
 /* Make selected language bold in the footer. */
-.footer-lang-selected a{
+.footer-lang-selected > a{
   font-weight: bold;
 }
