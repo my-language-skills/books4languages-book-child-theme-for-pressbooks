@@ -74,7 +74,7 @@ if ( $contact_link ) {
 -				SINCE v1.3
 -				MODIFIED v1.4
 -->
-						<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = check_if_translations_enabled() ) {
+						<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled() ) {
 						 ?>
 								<div style="display: flex; justify-content: center;">
 									<p><?php _e( 'Translations:', 'pressbooks-book' ); ?></p>
@@ -82,7 +82,7 @@ if ( $contact_link ) {
 									<ul class="footer__pressbooks__links__list" style="margin-bottom: 1rem;">
 										<?php
 											$blog_id = get_current_blog_id();
-											pbc_print_trans_links($blog_id, "footer");
+											tfp_printTransLinks($blog_id, "footer");
 										?>
 									</ul>
 						<?php  } ?>

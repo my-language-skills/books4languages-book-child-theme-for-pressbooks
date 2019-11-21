@@ -94,12 +94,12 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 -				MODIFIED v1.4
 -->
 			<?php
-				if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = check_if_translations_enabled()) {
-					 // If translations are enabled in back-end display here. check_if_translations_enabled() from TFP.
+				if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled()) {
+					 // If translations are enabled in back-end display here. tfp_checkIfTranslationsEnabled() from TFP.
 
 					 /* Load values to variables to limit queries.  */
-						$currFlag = getCurrentBookFlag();
-						$currLang = getCurrentBookLanguageCode();
+						$currFlag = tfp_getCurrentBookFlag();
+						$currLang = tfp_getCurrentBookLanguageCode();
 						?>
 
 						<div id="header-inside-right"> <!-- This div is added due for align translation icon to the right in small screen version -->
@@ -112,7 +112,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 										<ul>
 											<?php
 												$blog_id = get_current_blog_id();
-												pbc_print_trans_links($blog_id, "header");
+												tfp_printTransLinks($blog_id, "header");
 											?>
 										</ul>
 								  </div>
@@ -154,7 +154,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 								  <div id="dropdown-lang-content">
 										<ul>
 											<?php
-												pbc_print_trans_links($blog_id, "header");
+												tfp_printTransLinks($blog_id, "header");
 											?>
 										</ul>
 								  </div>
