@@ -62,6 +62,10 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ### 1.4.4
 * **ENHANCEMENTS**
   * Renamed functions related to updated Translations-for-pressbooks plugins
+  * Remove google fonts from fonts.googleapis.com (now, just local google fonts) (not finish)
+
+* **List of Files revised**
+  * functions.php
 
 ### 1.4.3
 * **ADDITIONS**
