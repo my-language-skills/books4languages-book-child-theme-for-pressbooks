@@ -98,13 +98,6 @@ main {
 }
 /* Book download dropdown button - END */
 
-/* fixes width of book content to 720px */
-@media screen and (min-width: 45rem){
-  .single #content {
-    width: 720px !important;
-  }
-}
-
 /* Bottom navigation change order on mobile devices (small screens) */
 @media only screen and (max-width: 59.99rem){
   .nav-reading {

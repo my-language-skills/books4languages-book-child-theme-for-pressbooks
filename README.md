@@ -61,7 +61,9 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ## Changelog
 ### 1.4.5
   * **MODIFICATION**
-  * merging CSS styles to single File
+  * Merge CSS styles to single File
+  * Remove CSS fixation of the content to 720px
+  * Update header logo 
 
 ### 1.4.4
 * **ENHANCEMENTS**
