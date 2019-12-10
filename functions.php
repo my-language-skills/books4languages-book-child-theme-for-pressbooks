@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name:       Books4languages Book child theme
-Version:          1.4.4
+Version:          1.4.5
 License:          GPL v3 or later
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
@@ -17,13 +17,9 @@ function pbc_enqueue_styles() {
 		array( $parent_style ),
 		wp_get_theme()->get('Version')
 	);
-
-	wp_enqueue_style( 'dropdown-lang.css',get_stylesheet_directory_uri() . '/translations-menu.css' );
-	wp_enqueue_style( 'smd-relations.css',get_stylesheet_directory_uri() . '/smd-relations.css' );
-
 }
-add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );
 
+add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );
 
 function pbc_enqueue_scripts() {
 
