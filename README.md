@@ -59,10 +59,13 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ## Screenshots
 
 ## Changelog
+* **MODIFICATIONS**
+ * Images optimiced to 64 colors png 8 ImageAlpha and ImageOptim)
+
 ### 1.4.6
   * **MODIFICATION**
   * HTML header fix related to update of the parent theme.
-  
+
 * **List of Files revised**
   * header.php
 
