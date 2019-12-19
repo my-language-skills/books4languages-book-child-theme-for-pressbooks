@@ -178,10 +178,17 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 				<nav class="reading-header__inside">
 					<?php if ( is_single() ) { ?>
 					<div class="reading-header__toc dropdown">
-						<div class="reading-header__toc__title"><?php _e( 'Contents', 'pressbooks-book' ); ?></div>
-						<div class="block-reading-toc" hidden>
-							<?php include( locate_template( 'partials/content-toc.php' ) ); ?>
-						</div>
+						<?php if(!wp_is_mobile()){ ?>
+						<div class="reading-header__toc__title"><?php
+							 _e( 'Contents', 'pressbooks-book' ); ?></div>
+							<div class="block-reading-toc" hidden><?php //the hidden list?>
+								<?php include( locate_template( 'partials/content-toc.php' ) ); // FILE content-toc NOT FOUND?>
+							</div>	<?php }
+						else { ?>
+							<h1 class="reading-header__toc__title">
+							<a href="<?php pbc_get_tablecontents_url() ?>"><?php _e( 'CONTENTS', 'pressbooks-book' ); ?></a>
+						</h1>
+					<?php	}	?>
 					</div>
 					<?php } else { ?>
 					<div class="reading-header__toc"></div>
