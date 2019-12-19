@@ -5,16 +5,15 @@ Description:      This theme is based on McLuhan 2.8.9 and its Jacobs 1.2.0 chil
 Author:           My Language Skills team
 Author URI:       https://github.com/my-language-skills
 Copyright:        2019 My Language Skills
-Version:          1.4.4
+Version:          1.4.6
 License:          GPL v3 or later
 Template:         pressbooks-book
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
 
 /*
-* MODIFIED CSS OF PARENT THEME ELEMENTS - BEGIN
+ ################################### GENERAL THEME CSS *BEGIN* ###################################
 */
-
 /* Main colors of the theme */
 :root{
     --primary: #dc6e78 !important;
@@ -99,15 +98,7 @@ main {
 }
 /* Book download dropdown button - END */
 
-/* fixes width of book content to 720px */
-@media screen and (min-width: 45rem){
-  .single #content {
-    width: 720px !important;
-  }
-}
-
 /* Bottom navigation change order on mobile devices (small screens) */
-
 @media only screen and (max-width: 59.99rem){
   .nav-reading {
     display: flex !important;
@@ -136,7 +127,6 @@ main {
     border: 0 !important;
   }
 }
-
 /* Bottom navigation change order on small screens - END */
 
 /* Header navigation height modification */
@@ -162,17 +152,13 @@ main {
 }
 /* Expand arrow in cover page display - END  */
 /*
-* MODIFIED CSS OF PARENT THEME ELEMENTS - END
+ ################################### GENERAL THEME CSS *END* ###################################
 */
+
 
 /*
-############################################################################
+ ################################### CSS FOR FEATURED IMAGES FOR PB PLUGIN *BEGIN* ###################################
 */
-
-/*
-* MLS ADDED CSS FOR NEW ELEMENTS - BEGIN
-*/
-
 /* featured image for content-single.php */
 @media only screen {
   .featured_image {
@@ -182,7 +168,341 @@ main {
     padding-bottom: 0.8em;
   }
 }
+/*
+ ################################### CSS FOR FEATURED IMAGES FOR PB PLUGIN *END* ###################################
+*/
+
 
 /*
-* MLS ADDED CSS FOR NEW ELEMENTS - END
+ ################################### CSS FOR TRANSLATIONS PLUGIN *BEGIN* ###################################
 */
+.dropdown-lang {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: var(--primary);
+}
+.dropdown-lang > a:hover {
+  text-decoration: none;
+}
+#dropdown-lang-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 10;
+  right: 0;
+  margin-top: 5px;
+}
+
+#dropdown-lang-content >  ul{
+  padding: 0;
+}
+
+#dropdown-lang-content >  ul >  li {
+  width: auto;
+  display: block;
+  padding-left: 0;
+}
+
+#dropdown-lang-content >  ul >  li:hover {
+  background-color: var(--header-color);
+}
+
+#dropdown-lang-content >  ul >  li >  a {
+  width: auto;
+  display: block;
+  padding: 5px 15px;
+}
+
+#dropdown-lang-content > ul > li > a:hover {
+  background-color: #ececec;
+  text-decoration: none;
+}
+/* class for displaying dropdowns. Trigerred by mls_toggleLangDropdown() function. */
+.show-dropdown {display: block !important;}
+
+@media only screen and (min-width: 60rem){
+  .dropdown-content-selected-lang{
+    background-color: #ececec;
+    }
+}
+
+.dropdown-content-selected-lang{
+  background-color: #ececec;
+  color: white;
+}
+
+@media only screen and (max-width: 59.99rem){
+  .dropdown-content-selected-lang  >  a {
+        color: #444444;
+  }
+}
+
+
+/* Following CSS modifies language dropdown in mobile menu. */
+@media only screen and (max-width: 59.99rem) {
+  .dropdown-lang{
+    width: 100%;
+  }
+
+#dropdown-lang-content{
+    position: relative;
+    background-color: #444444;
+  }
+
+  #dropdown-lang-content > ul >  li >  a:hover {
+    color: #444444;
+  }
+}
+
+
+/* Following CSS modifies language icon in header for small mobile screens. */
+#dropdown-in-responsive-header{
+  display: none;
+}
+
+@media only screen and (max-width: 59.99rem){
+  #header-inside-right{
+    float:right;
+    display: flex;
+    height: 48px !important;
+  }
+
+  .dropdown-lang2 {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--primary);
+    margin-right: 15px;
+  }
+
+.dropdown-lang2 > a {
+  height: 48px;
+  display: block;
+  padding: 10px 0;
+ }
+
+ #dropdown-in-responsive-header{
+    display: block;
+    list-style: none;
+  }
+
+  #dropdown-lang-content2 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+  }
+
+  #dropdown-lang-content2 > ul{
+    padding: 0;
+    margin: 0;
+  }
+
+  #dropdown-lang-content2 > ul > li {
+    width: auto;
+    display: block;
+    padding-left: 0;
+  }
+
+  #dropdown-lang-content2 > ul > li:hover {
+    background-color: var(--header-color);
+  }
+
+  #dropdown-lang-content2 > ul > li > a {
+    width: auto;
+    display: block;
+    padding: 5px 15px;
+  }
+
+  #dropdown-lang-content2 > ul > li > a:hover {
+    background-color: #ececec;
+    text-decoration: none;
+  }
+
+  .header__nav-icon{
+    margin-top: 14px;
+  }
+}
+
+/* Make selected language bold in the footer. */
+.footer-lang-selected > a{
+  font-weight: bold;
+}
+/*
+ ################################### CSS FOR TRANSLATIONS PLUGIN *END* ###################################
+*/
+
+
+/*
+ ################################### CSS FOR SIMPLE METADATA RELATIONS PLUGIN *BEGIN* ###################################
+*/
+/*..........RELATIONS ON CHAPTERS PAGE..........*/
+@media only screen and (min-width: 60rem){
+  .reading-header__end-container{
+  justify-content: flex-start !important;
+  position: relative;
+}
+
+.dropdown-relations-content-chapters{
+    position: absolute;
+    background-color: var(--primary-fg);
+    min-width: 100%;
+    box-shadow: -2px 3px 2px 1px hsla(0,0%,52.9%,.09);
+    z-index: 1;
+    right: 0;
+    top: 5rem;
+    flex-direction: column;
+  }
+
+  .reading-header__end-container a {
+    cursor: pointer;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 59.999rem){
+  .reading-header__end-container:empty{
+    display: none !important;
+    }
+
+  .reading-header__end-container{
+    display: flex !important;
+    justify-content: center !important;
+    position: relative;
+  }
+
+  .reading-header__end-container a {
+    cursor: pointer;
+    margin: auto;
+  }
+
+  .dropdown-relations-content-chapters{
+    position: absolute;
+    background-color: var(--primary-fg);
+    width:100%;
+    box-shadow: 2px 3px 2px 1px hsla(0,0%,52.9%,.09);
+    z-index: 1;
+    right: 0;
+    top: 4.8rem;
+    flex-direction: column;
+  }
+}
+
+#dropdown-relations-content-chapters-activities,
+#dropdown-relations-content-chapters-excercises,
+#dropdown-relations-content-chapters-audios,
+#dropdown-relations-content-chapters-videos,
+#dropdown-relations-content-chapters-citations {
+  display: none;
+}
+
+#dropdown-relations-content-chapters-activities li a,
+#dropdown-relations-content-chapters-excercises li a,
+#dropdown-relations-content-chapters-audios li a,
+#dropdown-relations-content-chapters-videos li a,
+#dropdown-relations-content-chapters-citations li a   {
+  color: var(--primary);
+}
+
+.dropdown-relations-content-chapters-activities,
+.dropdown-relations-content-chapters-excercises,
+.dropdown-relations-content-chapters-audios,
+.dropdown-relations-content-chapters-videos,
+.dropdown-relations-content-chapters-citations{
+  display: flex !important;
+}
+
+
+/*..........RELATIONS ON BOOK COVER PAGE (BOOK INFO)..........*/
+.dropdown-relations-content-bookinfo {
+    position: absolute;
+    background-color: var(--primary-fg);
+    min-width: 12rem;
+    box-shadow: -2px 3px 2px 1px hsla(0,0%,52.9%,.09);
+    z-index: 1;
+    flex-direction: column;
+}
+
+.relations-container{
+    margin-top: 1rem;
+}
+
+.relations-container a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 47.999rem){
+  .relations-container{
+    margin: auto;
+    max-width: 55%;
+    margin-top: 1rem;
+  }
+
+  .dropdown-relations-content-bookinfo{
+    min-width: 11.7rem;
+  }
+}
+
+#dropdown-relations-content-bookinfo-activities,
+#dropdown-relations-content-bookinfo-excercises,
+#dropdown-relations-content-bookinfo-audios,
+#dropdown-relations-content-bookinfo-videos,
+#dropdown-relations-content-bookinfo-citations {
+  display: none;
+}
+
+#dropdown-relations-content-bookinfo-activities ul li a,
+#dropdown-relations-content-bookinfo-excercises ul li a,
+#dropdown-relations-content-bookinfo-audios ul li a,
+#dropdown-relations-content-bookinfo-videos ul li a,
+#dropdown-relations-content-bookinfo-citations ul li a   {
+  color: #222222;
+  font-family: Karla,sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+}
+
+.dropdown-relations-content-bookinfo-activities,
+.dropdown-relations-content-bookinfo-excercises,
+.dropdown-relations-content-bookinfo-audios,
+.dropdown-relations-content-bookinfo-videos,
+.dropdown-relations-content-bookinfo-citations{
+  display: flex !important;
+}
+
+/*..........TOOLTIP...........*/
+ .dropdown-relations-tooltiptext {
+  visibility: hidden;
+  width: 5.8rem;
+  background-color: #ffffff;
+  color: #000;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  margin-top: -1.2rem;
+  margin-left: -3.8rem;
+  font-size: 0.7rem;
+}
+
+.dropdown-relations-tooltip:hover .dropdown-relations-tooltiptext {
+  visibility: visible;
+}
+
+.dropdown-relations-item-inactive {
+  opacity: 0.50;
+ -moz-opacity: 50%;
+ -webkit-opacity: 50%;
+ margin: auto;
+}
+.dropdown-relations-item-inactive:hover{
+  cursor: pointer;
+}
+/*################################### CSS FOR SIMPLE METADATA RELATIONS PLUGIN *END* ################################### */

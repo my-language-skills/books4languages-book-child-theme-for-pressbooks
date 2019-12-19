@@ -1,6 +1,6 @@
 # Books4Languages Child Theme for PressBooks
 
-* Contributors: @colomet, @danzhik, @huguespages, @!ndeed
+* Contributors: @colomet, @danzhik, @huguespages, @lukastonhajzer
 * Donate link: https://opencollective.com/mylanguageskills
 * Tags: wordpress, multisite, pressbooks
 * Tags: pressbooks, wordpress, theme, books4languages
@@ -8,7 +8,7 @@
 * Tested up to WP: 5.2.4
 * Tested up to PB: 5.9.5
 * Requires PHP: 5.6.0
-* Stable tag: 1.4.4
+* Stable tag: 1.4.6
 * License: GNU 3.0
 * License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -59,9 +59,29 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ## Screenshots
 
 ## Changelog
+* **MODIFICATIONS**
+ * Images optimiced to 64 colors png 8 ImageAlpha and ImageOptim)
+
+### 1.4.6
+  * **MODIFICATION**
+  * HTML header fix related to update of the parent theme.
+
+* **List of Files revised**
+  * header.php
+
+### 1.4.5
+  * **MODIFICATION**
+  * Merge CSS styles to single File
+  * Remove CSS fixation of the content to 720px
+  * Update header logo
+
 ### 1.4.4
 * **ENHANCEMENTS**
   * Renamed functions related to updated Translations-for-pressbooks plugins
+  * Remove google fonts from fonts.googleapis.com (now, just local google fonts) (not finish)
+
+* **List of Files revised**
+  * functions.php
 
 ### 1.4.3
 * **ADDITIONS**
