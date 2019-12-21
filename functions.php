@@ -31,7 +31,7 @@ add_action( 'wp_enqueue_scripts', 'pbc_enqueue_scripts' );
 /**
  * Function for updating company logo on sign in page
  *
- * SINCE v1.0
+ * @since v1.0
  */
  function pbc_login_logo() { ?>
     <style type="text/css">
@@ -62,7 +62,8 @@ function pbc_get_tablecontents_url(){
 /**
  * Remove External Google Fonts
  *
- * SINCE v1.4.4
+ * @since v1.4.4
+ * @internal not loonger required
  */
 /*
 fonts.gstatic.com

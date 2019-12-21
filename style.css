@@ -12,6 +12,29 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 */
 
 /*
+ *
+ * DOCUMENTATION
+ *
+ * https://docs.pressbooks.org/theme-development/
+ * https://pressbooks.com/2017/09/13/improved-css-customization-in-pressbooks/
+ * https://pressbookshelpdesk.groovehq.com/help/customizing-your-books-css-1
+ * https://buckram.pressbooks.org/
+ * https://pressbooks.org/blog/2018/04/09/book-themes-part-1-frames-and-pictures/
+ * https://pressbooks.org/blog/2018/07/03/book-themes-part-2-whats-buckram/
+ * https://guide.pressbooks.com/chapter/customizing-your-exports-with-custom-styles/
+ * https://www.w3.org/TR/css-page-3/
+ * https://www.princexml.com/doc/paged/
+ * https://guide.pressbooks.com/chapter/export-validation-logs/#receivingvalidationlogs
+ * https://www.w3schools.com/css/css_howto.asp
+ * https://medium.com/@jiminypan/on-readium-css-5a7d87f7b671
+ *
+*/
+
+
+/* This doesn't do anything. */
+
+
+/*
  ################################### GENERAL THEME CSS *BEGIN* ###################################
 */
 /* Main colors of the theme */
