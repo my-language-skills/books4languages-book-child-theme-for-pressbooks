@@ -88,4 +88,8 @@ if ( is_user_logged_in() ) {
 	 });
 
 }
+
+
+//include content-header-smdre
+include ( locate_template("/partials/content-header-smdre.php"));
 /** End of functionality*/
