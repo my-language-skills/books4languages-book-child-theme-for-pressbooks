@@ -120,13 +120,13 @@ if ( $contact_link ) {
 -		SINCE v1.0
 -->
 	<div class="footer__pressbooks__social">
-		<a class="facebook" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?>">
+		<a class="facebook" href="https://www.facebook.com/Books4Languages/" target="_blank" rel="noreferrer" title="<?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?>">
 			 <svg class="icon--svg">
 				 <use xlink:href="#facebook" />
 			 </svg>
 			 <span class="screen-reader-text"><?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?></span>
 		 </a>
-		 <a class="twitter" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books For Languages on Twitter', 'pressbooks-book' ); ?>">
+		 <a class="twitter" href="https://twitter.com/bookslanguages/" target="_blank" rel="noreferrer" title="<?php _e( 'Books For Languages on Twitter', 'pressbooks-book' ); ?>">
 			 <svg class="icon--svg">
 				 <use xlink:href="#twitter" />
 			 </svg>

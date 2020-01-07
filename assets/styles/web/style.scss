@@ -8,3 +8,20 @@ $type: 'web';
 @import '../components/media';
 @import '../components/pages';
 @import '../components/section-titles';
+
+/* @internal by B4L */
+
+.textbox, .bcc-box {
+  border-style: none;
+	}
+
+.textbox, .bcc-box {
+  padding: 0;
+  margin: 0;
+	}
+
+h2 { border-bottom: 1px solid rgba(53,86,129, 0.3);	}
+
+  .textbox.textbox--summary {  background: #FDF7F8; }
+
+  .single-chapter {  background: #FCFCFC; }
