@@ -64,12 +64,10 @@ function pbc_get_tablecontents_url(){
 /**
  * Remove External Google Fonts
  *
- * SINCE v1.4.4
+ * @since 1.4.4
+ * @internal fonts.gstatic.com / fonts.googleapis.com
  */
-/*
-fonts.gstatic.com
-fonts.googleapis.com
-*/
+
 /*
 function remove_google_fonts_stylesheet() {
 		wp_dequeue_style('Inconsolata');
@@ -91,9 +89,6 @@ if ( is_user_logged_in() ) {
 
 }
 
-
-//include content-header-smdre
-include ( locate_template("/partials/content-header-smdre.php"));
 /** End of functionality*/
 
 /**
@@ -116,3 +111,14 @@ include ( locate_template("/partials/content-header-smdre.php"));
  // }, 100);
 
 /** End of functionality*/
+
+
+/**
+ * Include content-header-smdre
+ *
+ * @since 1.4.6
+ * @internal Simple Metadata Relations
+ *
+ */
+//
+include ( locate_template("/partials/content-header-smdre.php"));
