@@ -5,8 +5,10 @@ $sans-serif-epub: sans-serif !default;
 // Insert custom fonts for your theme into the font stacks below. Always end the
 // stack with $serif-epub or $sans-serif-epub, as appropriate—this allows custom
 // language support to be added dynamically.
-$font-1: 'Montserrat', $sans-serif-epub;
-$font-2: 'Montserrat', $sans-serif-epub;
+$font-1: $serif-epub;
+$font-2: $serif-epub;
+// $font-1: 'Montserrat', $sans-serif-epub;
+// $font-2: 'Montserrat', $sans-serif-epub;
 $font-3: $font-2;
 
 // Add import rules for any fonts you referenced below. Available font partials
@@ -14,4 +16,4 @@ $font-3: $font-2;
 // _FontNameInCamelCaseFont.scss. For example, to import Alegreya Sans, use:
 // @import 'AlegreyaSansFont';
 
-@import 'MontserratFont';
+// @import 'MontserratFont';
