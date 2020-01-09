@@ -8,3 +8,40 @@ $type: 'web';
 @import '../components/media';
 @import '../components/pages';
 @import '../components/section-titles';
+
+
+/* ****** @internal by B4L ****** */
+
+/* Text Boxes */
+.textbox, .bcc-box {
+  border-style: none;
+	}
+
+.textbox, .bcc-box {
+  padding: 0;
+  margin: 0;
+	}
+
+.textbox.textbox--summary {
+  background: #FDF7F8;
+  }
+
+.single-chapter {
+  background: #FCFCFC;
+  }
+
+/* Titles styles */
+.chapter h2 {
+  border-bottom: 2px solid rgba(53,86,129, 0.3);
+  text-transform: uppercase;
+  }
+
+.chapter h4 {
+ margin: 20px;
+  font-style: normal;
+	}
+
+/* Tables styles */
+.chapter th {
+text-transform: uppercase;
+	}
