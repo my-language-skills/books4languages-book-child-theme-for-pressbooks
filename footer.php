@@ -57,7 +57,7 @@ if ( $contact_link ) {
 <!--
 -		ADD: changes logo from dynamic original logo to static logo of the company
 -
--		SINCE v1.0
+-		@since 1.0
 -->
 						<a class="" href="https://books4languages.com/" title="Books For Languages">
 							<img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" alt="Books4Languages Logo">
@@ -71,8 +71,8 @@ if ( $contact_link ) {
 <!--
 -				ADD: Functionality for loading of the available translations - location 3. Functions are called from translations-for-presbooks plugin.
 -
--				SINCE v1.3
--				MODIFIED v1.4
+-				@since 1.3
+-				@modified 1.4
 -->
 						<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled() ) {
 						 ?>
@@ -91,15 +91,16 @@ if ( $contact_link ) {
 <!--
 -		MODIFIES: Footer tittle.
 -
--		SINCE v1.0
+-		@since 1.0
 -->
 								<p class="footer__pressbooks__links__title"><?php printf( __( 'Created with use of %s', 'pressbooks-book' ),'<span class="pressbooks">Wordpress and Pressbooks</span>' ); ?></p>
-<!-- End of modified code -->
+								<?php
+/* End of modified code -->
 
 <!--
 -		MODIFIES: all the links bellow. Privacy Policy menu slug added.
 -
--		SINCE v1.0    Book- index link ADDED v1.4.3
+-		@since 1.0    Book- index link ADDED v1.4.3
 -->
 						<ul class="footer__pressbooks__links__list">
 							<li><a href="https://open.books4languages.com/"><?php _e( 'Books4Languages', 'pressbooks-book' ); ?></a> |</li>
@@ -117,7 +118,7 @@ if ( $contact_link ) {
 <!--
 -		MODIFIES: href="" of the link bellow for addition of company social networks.
 -
--		SINCE v1.0
+-		@since 1.0
 -->
 	<div class="footer__pressbooks__social">
 		<a class="facebook" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?>">

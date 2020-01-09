@@ -33,7 +33,7 @@ add_action( 'wp_enqueue_scripts', 'pbc_enqueue_scripts' );
 /**
  * Function for updating company logo on sign in page
  *
- * SINCE v1.0
+ * @since 1.0
  */
  function pbc_login_logo() { ?>
     <style type="text/css">
@@ -53,7 +53,7 @@ add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
 /**
  * Function for printing URL of Table of contents post
  *
- * SINCE v1.4.3
+ * @since 1.4.3
  */
 function pbc_get_tablecontents_url(){
 	global $wpdb;
@@ -122,3 +122,5 @@ if ( is_user_logged_in() ) {
  */
 //
 include ( locate_template("/partials/content-header-smdre.php"));
+
+/** End of functionality*/

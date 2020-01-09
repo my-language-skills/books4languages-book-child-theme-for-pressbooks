@@ -5,11 +5,13 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--
--		MODIFICATION href="" of all the link bellow to static pathways
--
--		SINCE v1.0
--->
+<?php
+/*
+ * MODIFICATION href="" of all the link bellow to static pathways
+ *
+ *	@since 1.0
+*/
+?>
 	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
@@ -78,7 +80,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 <!--
 -		CHANGE: dynamic logo to static logo
 -
--		SINCE v1.0
+-		@since 1.0
 -->
 								<a aria-label="Catalog Books 4 Languages" href="https://books4languages.com/">
 												<img width="200" height="20" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-header.png" alt="Books4Languages logo">
@@ -90,8 +92,8 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 <!--
 -				ADD: Functionality for loading of the available translations - location 2. Functions are called from translations-for-presbooks plugin.
 -				NOTE: Location 2 and location 1 work together.
--				SINCE v1.3
--				MODIFIED v1.4
+-				@since 1.3
+-				@modified 1.4
 -->
 			<?php
 				if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled()) {
@@ -131,7 +133,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 <!--
 -		ADDED: Link to registration and subscription details
 -
--		SINCE v1.0
+-		@since v1.0
 -->
 						<?php if (! is_user_logged_in()):?>
 							 <li><a href="/register/"><?php _e( 'Sign Up', 'pressbooks-book' ); ?></a></li>
@@ -141,8 +143,8 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 <!--
 -				ADD: Functionality for loading of the available translations - location 1. Functions are called from translations-for-presbooks plugin.
 -
--				SINCE v1.3
--				MODIFIED v1.4
+-				@since 1.3
+-				@modified 1.4
 -->
 							<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && $option == "1") {
 							 ?>
@@ -200,7 +202,8 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 -		COMMENTED OUT: Displaying option for the Buy button.
 -		NOTE: HTML contennt in the <div> container needs to stay space-free due to .reading-header__end-container:empty class in smd-relations.php
 -
--		SINCE v1.4 MODIFIED: v1.4.1
+-		@since 1.4
+-   @modified 1.4.1
 -->
 					<div class="reading-header__end-container"><?php if (is_plugin_active('simple-metadata-relation/simple-metadata-relation.php') && is_plugin_active('simple-metadata/simple-metadata.php')) {
 								getCurrentPostRelations($location = "chapter");
