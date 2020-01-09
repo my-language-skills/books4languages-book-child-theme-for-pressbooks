@@ -8,7 +8,7 @@
 * Tested up to WP: 5.2.4
 * Tested up to PB: 5.9.5
 * Requires PHP: 5.6.0
-* Stable tag: 1.4.6
+* Stable tag: 1.4.7
 * License: GNU 3.0
 * License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -62,9 +62,17 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 * **MODIFICATIONS**
  * Images optimiced to 64 colors png 8 ImageAlpha and ImageOptim)
 
+### 1.4.7
+* **ENHANCEMENTS**
+  * Deregister dashicons
+  * Update css jacobs files
+  * Update css H3
+  * Deactivated googlefonts (finish)
+
 ### 1.4.6
   * **MODIFICATION**
-  * HTML header fix related to update of the parent theme.
+  * HTML header fix related to update of the parent theme (smdre).
+  * front-end TINYmce for Presssooks css code required
 
 * **List of Files revised**
   * header.php
