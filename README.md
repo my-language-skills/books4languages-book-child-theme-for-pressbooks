@@ -66,7 +66,8 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 * **ENHANCEMENTS**
   * Deregister dashicons
   * Update css jacobs files
-  * Update css H3
+  * Modify css H2, H3, H4, Th
+  * Modify boxes style
   * Deactivated googlefonts (finish)
 
 ### 1.4.6
