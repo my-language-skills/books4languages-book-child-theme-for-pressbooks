@@ -1,10 +1,12 @@
 <?php
 /*
 Theme Name:       Books4languages Book child theme
-Version:          1.4.5
+Version:          1.4.6
 License:          GPL v3 or later
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
+
+/* site optimization code: https://github.com/scorpiock/wp-perf-optimization-without-plugin/blob/master/functions.php */
 
 
 function pbc_enqueue_styles() {
@@ -92,4 +94,25 @@ if ( is_user_logged_in() ) {
 
 //include content-header-smdre
 include ( locate_template("/partials/content-header-smdre.php"));
+/** End of functionality*/
+
+/**
+ * Remove dashicons in frontend for unauthenticated users
+ *
+ * @since 1.4.6
+ *
+ */
+
+ add_action( 'wp_enqueue_scripts', 'bs_dequeue_dashicons' );
+ function bs_dequeue_dashicons() {
+		 if ( ! is_user_logged_in() ) {
+				 wp_deregister_style( 'dashicons' );
+		 }
+ }
+
+ // Deregister los dashicons si no se muestra la barra de admin
+ // add_action( 'wp_print_styles', function() {
+ //     if (!is_admin_bar_showing()) wp_deregister_style( 'dashicons' );
+ // }, 100);
+
 /** End of functionality*/
