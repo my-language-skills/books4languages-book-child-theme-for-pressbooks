@@ -5,7 +5,12 @@ themes/books4languages-book-child-theme-for-pressbooks/                         
 │   ├── images                                                                  # → Images folder
 │   │   ├── books4languages-header.png                                          # → Books4languages header file png
 │   │   ├── books4languages-icon.png                                            # → Books4languages icon file png
-│   │   └── lang-icon.png                                                       # → Lang icon file png
+│   │   ├── lang-icon.png                                                       # → Lang icon file png
+│   │   ├── smdre_assignment.png                                                # → Smdre icon file png
+│   │   ├── smdre_audiotrack.png                                                # → Smdre icon file png
+│   │   ├── smdre_chrome_reader_mode.png                                        # → Smdre icon file png
+│   │   ├── smdre_group_work.png                                                # → Smdre icon file png
+│   │   └── smdre_video_library.png                                             # → Smdre icon file png
 │   ├── styles                                                                  # → Styles folder
 │   │   ├── components                                                          # → components folder
 │   │   │   ├── _accessibility.scss                                             # → Accessibility file scss
@@ -30,6 +35,7 @@ themes/books4languages-book-child-theme-for-pressbooks/                         
 ├── partials                                                                    # → Partials folder
 │   ├── content-cover-book-header.php                                           # → Cover book header file php
 │   ├── content-cover-metadata.php                                              # → Cover metadata file php
+│   ├── content-header-smdre.php                                                # → Content header smdre file php
 │   └── content-single.php                                                      # → Single file php
 ├── .editorconfig     
 ├── .gitattributes
