@@ -39,9 +39,9 @@ if(!empty($post_id)){
 //print icons of related content based on its presence and quantity
 	 	if( !empty($excercises) && !empty(array_filter($excercises))){
 	    if (count($excercises) === 1) {
-	      echo '<a href="' . $excercises[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_assignment.png" alt="assignment"><span class="dropdown-relations-tooltiptext">Excercise</span></a>';
+	      echo '<a href="' . $excercises[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img id="smdre_assignment" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.png" alt="assignment"><span class="dropdown-relations-tooltiptext">Excercise</span></a>';
 	    } else {
-	      echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-excercises\", \"". $location ."\")'class='dropdown-relations-tooltip'><img width='36' height='36' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_assignment.png' alt='assignment'><span class='dropdown-relations-tooltiptext'>Excercises</span></a>";
+	      echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-excercises\", \"". $location ."\")'class='dropdown-relations-tooltip'><img id='smdre_assignment' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.png' alt='assignment'><span class='dropdown-relations-tooltiptext'>Excercises</span></a>";
 				echo "<div id ='$setClassPrefix-excercises'>";
 				echo "<ul>";
 	      foreach ($excercises as $excercise) {
@@ -50,7 +50,7 @@ if(!empty($post_id)){
 	        echo '</ul></div>';
 	    }
 	  }	else {
-				echo '<a class="dropdown-relations-tooltip"><img class="dropdown-relations-item-inactive dropdown-relations-tooltip" width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_assignment.png" alt="assignment"><span class="dropdown-relations-tooltiptext">No excercises</span></a>';
+				echo '<a class="dropdown-relations-tooltip"><img id="smdre_assignment" class="dropdown-relations-item-inactive dropdown-relations-tooltip" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.png" alt="assignment"><span class="dropdown-relations-tooltiptext">No excercises</span></a>';
 		}
 
 		if( !empty($activities) && !empty(array_filter($activities))){

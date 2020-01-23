@@ -505,4 +505,32 @@ main {
 .dropdown-relations-item-inactive:hover{
   cursor: pointer;
 }
+
+/**
+ *  Sprites css
+**/
+#smdre_assignment {
+    width: 36px; height: 36px;
+    background: url('../assets/images/css_sprites.png') -10px -10px;
+}
+
+#smdre_group_work {
+    width: 36px; height: 36px;
+    background: url('assets/images/css_sprites.png') -66px -10px;
+}
+
+#smdre_audiotrack {
+    width: 36px; height: 36px;
+    background: url('assets/images/css_sprites.png') -10px -66px;
+}
+
+#smdre_video_library {
+    width: 36px; height: 36px;
+    background: url('assets/images/css_sprites.png') -66px -66px;
+}
+
+#smdre_chrome_reader_mode {
+    width: 36px; height: 36px;
+    background: url('assets/images/css_sprites.png') -122px -10px;
+}
 /*################################### CSS FOR SIMPLE METADATA RELATIONS PLUGIN *END* ################################### */
