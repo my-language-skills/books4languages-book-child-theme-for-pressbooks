@@ -102,13 +102,17 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 					 /* Load values to variables to limit queries.  */
 						$currFlag = tfp_getCurrentBookFlag();
 						$currLang = tfp_getCurrentBookLanguageCode();
+						$flag_id = "flag-" . $currLang ;
 						?>
 
 						<div id="header-inside-right"> <!-- This div is added due for align translation icon to the right in small screen version -->
 							<li id="dropdown-in-responsive-header">
 								<div class="dropdown-lang2">
 								  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content2')"><img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
-										 <?php echo $currFlag;?> <?php echo $currLang;?>
+										<?php
+										echo '<img id="' . $flag_id . '" class="flag_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="country flag">';
+										echo $currLang;
+										?>
 									</a>
 								  <div id="dropdown-lang-content2">
 										<ul>
@@ -151,7 +155,10 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 							<li>
 								<div class="dropdown-lang">
 								  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content')"><img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
-									<?php echo $currFlag;?> <?php echo $currLang;?>
+										<?php
+										echo '<img id="' . $flag_id . '" class="flag_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="country flag">';
+										echo $currLang;
+										?>
 									</a>
 								  <div id="dropdown-lang-content">
 										<ul>

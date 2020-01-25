@@ -39,9 +39,9 @@ if(!empty($post_id)){
 //print icons of related content based on its presence and quantity
 	 	if( !empty($excercises) && !empty(array_filter($excercises))){
 	    if (count($excercises) === 1) {
-	      echo '<a href="' . $excercises[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img id="smdre_assignment" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.png" alt="assignment"><span class="dropdown-relations-tooltiptext">Excercise</span></a>';
+	      echo '<a href="' . $excercises[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img id="smdre_assignment" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="assignment"><span class="dropdown-relations-tooltiptext">Excercise</span></a>';
 	    } else {
-	      echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-excercises\", \"". $location ."\")'class='dropdown-relations-tooltip'><img id='smdre_assignment' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.png' alt='assignment'><span class='dropdown-relations-tooltiptext'>Excercises</span></a>";
+	      echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-excercises\", \"". $location ."\")'class='dropdown-relations-tooltip'><img id='smdre_assignment' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif' alt='assignment'><span class='dropdown-relations-tooltiptext'>Excercises</span></a>";
 				echo "<div id ='$setClassPrefix-excercises'>";
 				echo "<ul>";
 	      foreach ($excercises as $excercise) {
@@ -50,14 +50,14 @@ if(!empty($post_id)){
 	        echo '</ul></div>';
 	    }
 	  }	else {
-				echo '<a class="dropdown-relations-tooltip"><img id="smdre_assignment" class="dropdown-relations-item-inactive dropdown-relations-tooltip" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.png" alt="assignment"><span class="dropdown-relations-tooltiptext">No excercises</span></a>';
+				echo '<a class="dropdown-relations-tooltip"><img id="smdre_assignment" class="dropdown-relations-item-inactive dropdown-relations-tooltip" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="assignment"><span class="dropdown-relations-tooltiptext">No excercises</span></a>';
 		}
 
 		if( !empty($activities) && !empty(array_filter($activities))){
 			if (count($activities) === 1) {
-				echo '<a href="' . $activities[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_group_work.png" alt="group work"><span class="dropdown-relations-tooltiptext">Activity</span></a>';
+				echo '<a href="' . $activities[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img id="smdre_group_work" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="group work"><span class="dropdown-relations-tooltiptext">Activity</span></a>';
 			} else {
-				echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-activities\", \"". $location ."\")' class='dropdown-relations-tooltip'><img width='36' height='36' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_group_work.png' alt='group work'><span class='dropdown-relations-tooltiptext'>Activities</span></a>";
+				echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-activities\", \"". $location ."\")' class='dropdown-relations-tooltip'><img id='smdre_group_work' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif' alt='group work'><span class='dropdown-relations-tooltiptext'>Activities</span></a>";
 				echo "<div  id ='$setClassPrefix-activities'>";
 				echo "<ul>";
 				foreach ($activities as $activity) {
@@ -66,14 +66,14 @@ if(!empty($post_id)){
 					echo '</ul></div>';
 			}
 		} else {
-				echo '<a class="dropdown-relations-tooltip"><img class="dropdown-relations-item-inactive" width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_group_work.png" alt="group work"><span class="dropdown-relations-tooltiptext">No activities</span></a>';
+				echo '<a class="dropdown-relations-tooltip"><img class="dropdown-relations-item-inactive" id="smdre_group_work" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="group work"><span class="dropdown-relations-tooltiptext">No activities</span></a>';
 		}
 
 		if( !empty($audios) && !empty(array_filter($audios))){
 			if (count($audios) === 1) {
-				echo '<a href="' . $audios[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_audiotrack.png" alt="audiotrack"><span class="dropdown-relations-tooltiptext">Audio</span></a>';
+				echo '<a href="' . $audios[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img id="smdre_audiotrack" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="audiotrack"><span class="dropdown-relations-tooltiptext">Audio</span></a>';
 			} else {
-				echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-audios\", \"". $location ."\")' class='dropdown-relations-tooltip'><img width='36' height='36' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_audiotrack.png' alt='audiotrack'><span class='dropdown-relations-tooltiptext'>Audios</span></a>";
+				echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-audios\", \"". $location ."\")' class='dropdown-relations-tooltip'><img id='smdre_audiotrack'src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif' alt='audiotrack'><span class='dropdown-relations-tooltiptext'>Audios</span></a>";
 				echo "<div id ='$setClassPrefix-audios'>";
 				echo '<ul>';
 				foreach ($audios as $audio) {
@@ -82,14 +82,14 @@ if(!empty($post_id)){
 					echo '</ul></div>';
 			}
 		} else {
-				echo '<a class="dropdown-relations-tooltip"><img class="dropdown-relations-item-inactive" width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_audiotrack.png" alt="audiotrack"><span class="dropdown-relations-tooltiptext">No audios</span></a>';
+				echo '<a class="dropdown-relations-tooltip"><img class="dropdown-relations-item-inactive" id="smdre_audiotrack" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="audiotrack"><span class="dropdown-relations-tooltiptext">No audios</span></a>';
 		}
 
 	if( !empty($videos) && !empty(array_filter($videos))){
 			if (count($videos) === 1) {
-				echo '<a href="' . $videos[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_video_library.png" alt="video library"><span class="dropdown-relations-tooltiptext">Video</span></a>';
+				echo '<a href="' . $videos[0] . '" class="dropdown-relations-tooltip" target="_blank"> <img id="smdre_video_library" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="video library"><span class="dropdown-relations-tooltiptext">Video</span></a>';
 			} else {
-				echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-videos\", \"". $location ."\")' class='dropdown-relations-tooltip'><img width='36' height='36' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_video_library.png' alt='video library'><span class='dropdown-relations-tooltiptext'>Videos</span></a>";
+				echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-videos\", \"". $location ."\")' class='dropdown-relations-tooltip'><img id='smdre_video_library' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif' alt='video library'><span class='dropdown-relations-tooltiptext'>Videos</span></a>";
 				echo "<div id ='$setClassPrefix-videos'>";
 				echo '<ul>';
 				foreach ($videos as $video) {
@@ -98,14 +98,14 @@ if(!empty($post_id)){
 					echo '</ul></div>';
 			}
 		} else {
-				echo '<a class="dropdown-relations-tooltip"><img class="dropdown-relations-item-inactive" width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_video_library.png" alt="video library"><span class="dropdown-relations-tooltiptext">No videos</span></a>';
+				echo '<a class="dropdown-relations-tooltip"><img class="dropdown-relations-item-inactive" id="smdre_video_library" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="video library"><span class="dropdown-relations-tooltiptext">No videos</span></a>';
 		}
 
 		if( !empty($citations) && !empty(array_filter($citations))){
 				if (count($citations) === 1) {
-					echo '<a href="' . $citations[0] . '"class="dropdown-relations-tooltip" target="_blank"> <img width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_chrome_reader_mode.png" alt="chrome reader"><span class="dropdown-relations-tooltiptext">Citation</span></a>';
+					echo '<a href="' . $citations[0] . '"class="dropdown-relations-tooltip" target="_blank"> <img id="smdre_chrome_reader_mode" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="chrome reader"><span class="dropdown-relations-tooltiptext">Citation</span></a>';
 				} else {
-					echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-citations\", \"". $location ."\")' class='dropdown-relations-tooltip'><img width='36' height='36' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_chrome_reader_mode.png' alt='chrome reader'><span class='dropdown-relations-tooltiptext'>Citations</span></a>";
+					echo "<a onClick='mls_toggleRelationDropdowns(event, \"$setClassPrefix-citations\", \"". $location ."\")' class='dropdown-relations-tooltip'><img id='smdre_chrome_reader_mode' src='/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif' alt='chrome reader'><span class='dropdown-relations-tooltiptext'>Citations</span></a>";
 					echo "<div id ='$setClassPrefix-citations'>";
 					echo '<ul>';
 					foreach ($citations as $citation) {
@@ -114,6 +114,6 @@ if(!empty($post_id)){
 						echo '</ul></div>';
 				}
 			} else {
-					echo '<a class="dropdown-relations-tooltip"><img class="dropdown-relations-item-inactive" width="36" height="36" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/smdre_chrome_reader_mode.png" alt="chrome reader"><span class="dropdown-relations-tooltiptext">No citations</span></a>';
+					echo '<a class="dropdown-relations-tooltip"><img class="dropdown-relations-item-inactive" id="smdre_chrome_reader_mode" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="chrome reader"><span class="dropdown-relations-tooltiptext">No citations</span></a>';
 			}
   }

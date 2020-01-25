@@ -509,28 +509,257 @@ main {
 /**
  *  Sprites css
 **/
+
+
+
+
 #smdre_assignment {
     width: 36px; height: 36px;
-    background: url('../assets/images/css_sprites.png') -10px -10px;
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites.png') -10px -10px;
 }
 
 #smdre_group_work {
     width: 36px; height: 36px;
-    background: url('assets/images/css_sprites.png') -66px -10px;
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites.png') -66px -10px;
 }
 
 #smdre_audiotrack {
     width: 36px; height: 36px;
-    background: url('assets/images/css_sprites.png') -10px -66px;
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites.png') -10px -66px;
 }
 
 #smdre_video_library {
     width: 36px; height: 36px;
-    background: url('assets/images/css_sprites.png') -66px -66px;
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites.png') -66px -66px;
 }
 
 #smdre_chrome_reader_mode {
     width: 36px; height: 36px;
-    background: url('assets/images/css_sprites.png') -122px -10px;
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites.png') -122px -10px;
 }
+
+
+.flag_class {
+    width: 16px; height: 11px;
+}
+
+
+
+#flag-pt {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -10px -10px;
+}
+
+
+#flag-ro {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -46px -10px;
+}
+
+
+#flag-ru {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -10px -41px;
+}
+
+
+#flag-sk {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -46px -41px;
+}
+
+
+#flag-sl {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -82px -10px;
+}
+
+
+#flag-sr {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -82px -41px;
+}
+
+
+#flag-sv {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -10px -72px;
+}
+
+
+#flag-tr {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -46px -72px;
+}
+
+
+#flag-uk {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -82px -72px;
+}
+
+
+#flag-vi {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -118px -10px;
+}
+
+
+#flag-zh {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -118px -41px;
+}
+
+
+#flag-ar {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -118px -72px;
+}
+
+
+#flag-bg {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -10px -103px;
+}
+
+
+#flag-cs {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -46px -103px;
+}
+
+
+#flag-da {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -82px -103px;
+}
+
+
+#flag-de {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -118px -103px;
+}
+
+
+#flag-el {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -154px -10px;
+}
+
+
+#flag-en {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -154px -41px;
+}
+
+
+#flag-es {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -154px -72px;
+}
+
+
+#flag-et {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -154px -103px;
+}
+
+
+#flag-fi {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -10px -134px;
+}
+
+
+#flag-fr {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -46px -134px;
+}
+
+
+#flag-ga {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -82px -134px;
+}
+
+
+#flag-he {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -118px -134px;
+}
+
+
+#flag-hi {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -154px -134px;
+}
+
+
+#flag-hr {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -190px -10px;
+}
+
+
+#flag-hu {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -190px -41px;
+}
+
+
+#flag-id {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -190px -72px;
+}
+
+
+
+
+#flag-it {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -190px -103px;
+}
+
+
+#flag-ja {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -190px -134px;
+}
+
+
+#flag-ka {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -10px -165px;
+}
+
+
+#flag-lt {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -46px -165px;
+}
+
+
+#flag-lv {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -82px -165px;
+}
+
+
+#flag-mt {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -118px -165px;
+}
+
+
+#flag-nl {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -154px -165px;
+}
+
+
+#flag-pl {
+
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -190px -165px;
+}
+
 /*################################### CSS FOR SIMPLE METADATA RELATIONS PLUGIN *END* ################################### */
