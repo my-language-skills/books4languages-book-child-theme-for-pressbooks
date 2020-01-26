@@ -106,6 +106,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 						?>
 
 						<div id="header-inside-right"> <!-- This div is added due for align translation icon to the right in small screen version -->
+							<ul>
 							<li id="dropdown-in-responsive-header">
 								<div class="dropdown-lang2">
 								  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content2')"><img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
@@ -124,6 +125,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 								  </div>
 								</div>
 							</li>
+						</ul>
 
 			<?php } ?>
 <!-- End of modified code -->
