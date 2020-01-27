@@ -100,7 +100,6 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 					 // If translations are enabled in back-end display here. tfp_checkIfTranslationsEnabled() from TFP.
 
 					 /* Load values to variables to limit queries.  */
-						$currFlag = tfp_getCurrentBookFlag();
 						$currLang = tfp_getCurrentBookLanguageCode();
 						$flag_id = "flag-" . $currLang ;
 						?>

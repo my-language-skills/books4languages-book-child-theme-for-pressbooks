@@ -5,6 +5,9 @@ themes/books4languages-book-child-theme-for-pressbooks/                         
 │   ├── images                                                                  # → Images folder
 │   │   ├── books4languages-header.png                                          # → Books4languages header file png
 │   │   ├── books4languages-icon.png                                            # → Books4languages icon file png
+│   │   ├── css_sprites_flags.png                                               # → Sprite flags file png
+│   │   ├── css_sprites.png                                                     # → Sprite relations file png
+│   │   ├── empty.gif                                                           # → Empty file gif
 │   │   ├── lang-icon.png                                                       # → Lang icon file png
 │   │   ├── smdre_assignment.png                                                # → Smdre icon file png
 │   │   ├── smdre_audiotrack.png                                                # → Smdre icon file png
