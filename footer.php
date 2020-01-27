@@ -64,7 +64,7 @@ if ( $contact_link ) {
 						</a>
 <!-- End of added code -->
 
-			<div class="footer__pressbooks__links">
+			<div class="footer__pressbooks__links" style = "margin: auto;">
 
 				<?php /* translators: %s: Pressbooks */ ?>
 
