@@ -60,7 +60,7 @@ if ( $contact_link ) {
 -		@since 1.0
 -->
 						<a class="" href="https://books4languages.com/" title="Books For Languages">
-							<img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" alt="Books4Languages Logo">
+							<img id="bfl_icon_footer" class="bfl_icon_class" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/empty.gif" alt="books4languages">
 						</a>
 <!-- End of added code -->
 
@@ -94,8 +94,8 @@ if ( $contact_link ) {
 -		@since 1.0
 -->
 								<p class="footer__pressbooks__links__title"><?php printf( __( 'Created with use of %s', 'pressbooks-book' ),'<span class="pressbooks">Wordpress and Pressbooks</span>' ); ?></p>
-								<?php
-/* End of modified code -->
+
+ <!-- End of modified code -->
 
 <!--
 -		MODIFIES: all the links bellow. Privacy Policy menu slug added.
@@ -122,15 +122,11 @@ if ( $contact_link ) {
 -->
 	<div class="footer__pressbooks__social">
 		<a class="facebook" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?>">
-			 <svg class="icon--svg">
-				 <use xlink:href="#facebook" />
-			 </svg>
-			 <span class="screen-reader-text"><?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?></span>
+			<img id="facebook_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="facebook bfl">
+		 	<span class="screen-reader-text"><?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?></span>
 		 </a>
 		 <a class="twitter" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books For Languages on Twitter', 'pressbooks-book' ); ?>">
-			 <svg class="icon--svg">
-				 <use xlink:href="#twitter" />
-			 </svg>
+			 <img id="twitter_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="twitter bfl">
 		 <span class="screen-reader-text"><?php _e( 'Books For Languages on Twitter', 'pressbooks-book' ); ?></span>
 	 </a>
 	</div>

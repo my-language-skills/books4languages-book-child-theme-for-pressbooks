@@ -684,3 +684,23 @@ main {
 #flag-pl {
     background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -190px -165px;
 }
+
+.social_icon_class {
+  width: 24px; height: 24px;
+}
+
+#facebook_icon_footer {
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_footer.png') -10px -74px;
+  }
+
+#twitter_icon_footer {
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_footer.png') -74px -10px;
+}
+
+.bfl_icon_class {
+  width: 44px; height: 44px;
+}
+
+#bfl_icon_footer {
+    background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_footer.png') -10px -10px;
+}
