@@ -117,7 +117,7 @@ if ( $contact_link ) {
 
 <!--
 -		MODIFIES: href="" of the link bellow for addition of company social networks.
--
+-   modifies: icons are now sprites css 
 -		@since 1.0
 -->
 	<div class="footer__pressbooks__social">
