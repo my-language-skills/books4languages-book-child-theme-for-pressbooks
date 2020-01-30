@@ -1,11 +1,12 @@
 # Plugin structure
 ```
 themes/books4languages-book-child-theme-for-pressbooks/                         # → Plugin root
-├── assets                                                                      # → Assets folder                                                   
+├── assets                                                                      # → Assets folder                                        
 │   ├── images                                                                  # → Images folder
 │   │   ├── books4languages-header.png                                          # → Books4languages header file png
 │   │   ├── books4languages-icon.png                                            # → Books4languages icon file png
 │   │   ├── css_sprites_flags.png                                               # → Sprite flags file png
+│   │   ├── css_sprites_footer.png                                              # → Sprite footer file png
 │   │   ├── css_sprites.png                                                     # → Sprite relations file png
 │   │   ├── empty.gif                                                           # → Empty file gif
 │   │   ├── lang-icon.png                                                       # → Lang icon file png

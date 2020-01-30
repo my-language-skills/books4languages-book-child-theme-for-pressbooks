@@ -64,6 +64,8 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
  * index.php now use a custom style and order (Alpha version)
  * new sprite css file for simple metadata relations icons.
  * new sprite css file for translation for pressbook flag's icons.
+ * new sprite css file for footer icons.
+ * external links has nopeener attribute to improve security.
 
 ### 1.4.7
 * **ENHANCEMENTS**
