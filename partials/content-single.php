@@ -4,7 +4,7 @@
 <!--
 -				ADDED: featured image code
 -
--				SINCE v1.2.2  MODIFIED v1.3  MODIFIED v1.4.1 MODIFIED 1.4.2
+-				@since v1.2.2  MODIFIED v1.3  MODIFIED v1.4.1 MODIFIED 1.4.2
 -->
 <?php
 if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbooks.php')){
