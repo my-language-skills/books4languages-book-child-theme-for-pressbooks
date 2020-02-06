@@ -11,7 +11,6 @@
 
   function getCurrentPostRelations($location){
 		global $wpdb;
-		global $wp;
 
 		// set variables for choosen print location
 		if($location == "book-info"){
