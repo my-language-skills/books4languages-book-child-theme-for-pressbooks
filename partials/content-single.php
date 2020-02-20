@@ -55,7 +55,17 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 		echo "<span>$number</span> ";
 	}
 	if ( get_post_meta( $post->ID, 'pb_show_title', true ) || $post->post_type === 'part' ) {
-		the_title();
+		?>
+		<!-- @ADDED: Titles are link to pages in desktop -->
+				<?php if ( wp_is_mobile() ) :
+				    /* Display and echo mobile specific stuff here */
+						the_title();
+				else :
+				    /* Display and echo desktop stuff here */
+						?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<?php endif; ?>
+		<!-- End of added code -->
+				<?php
 	}
 	?>
 	</h1>
@@ -66,6 +76,10 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 	<p data-type="author"><?php echo $authors; ?></p>
 	<?php } ?>
 </header>
+
+<?php // Edit page call to action buttom created by mls
+edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
+
 <?php
 if ( get_post_type( $post->ID ) !== 'part' ) {
 	if ( pb_should_parse_subsections() ) {
@@ -75,6 +89,7 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 		$content = apply_filters( 'the_content', get_the_content() );
 		echo $content;
 	}
+
 	global $multipage;
 	if ( $multipage ) {
 		?>
