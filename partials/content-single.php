@@ -56,16 +56,26 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 	}
 	if ( get_post_meta( $post->ID, 'pb_show_title', true ) || $post->post_type === 'part' ) {
 		?>
-		<!-- @ADDED: Titles are link to pages in desktop -->
-				<?php if ( wp_is_mobile() ) :
-				    /* Display and echo mobile specific stuff here */
-						the_title();
-				else :
-				    /* Display and echo desktop stuff here */
+<!-- @ADDED: Titles are link to pages in desktop -->
+	<?php
+	if ( wp_is_mobile() ) :
+	    /* Display and echo mobile specific stuff here */
+			the_title();
+	else :
+	    /* Display and echo desktop stuff here */
+
+			if(function_exists('wp_print')) : // If wp_print is acivated, titles are links.
+					/* Display and echo mobile specific stuff here */
 						?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-				<?php endif; ?>
-		<!-- End of added code -->
-				<?php
+			<?php
+			else :
+					/* Display and echo desktop stuff here */
+				 the_title();
+			endif; ?>
+	<?php
+	endif; ?>
+<!-- End of added code -->
+	<?php
 	}
 	?>
 	</h1>
@@ -89,19 +99,22 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 		$content = apply_filters( 'the_content', get_the_content() );
 		echo $content;
 	}
-	
-       ?>
-	<!-- @ADDED: Print pages is available jus in desktop -->
-			<?php if ( wp_is_mobile() ) :
-					/* Display and echo mobile specific stuff here */
 
-			else :
-					/* Display and echo desktop stuff here */
-					if(function_exists('wp_print')) { print_link(); }
-	endif; ?>
-	<!-- End of added code -->
+       ?>
+<!-- @ADDED: Print pages is available jus in desktop -->
+<?php
+if (is_plugin_active('wp-print-for-pb/wp-print.php')){
+	if ( wp_is_mobile() ) :
+		/* Display and echo mobile specific stuff here */
+
+		else :
+		/* Display and echo desktop stuff here */
+		if(function_exists('wp_print')) { print_link(); }
+		endif;
+	}?>
+<!-- End of added code -->
 	<?php
-	
+
 	global $multipage;
 	if ( $multipage ) {
 		?>

@@ -8,7 +8,7 @@
 * Tested up to WP: 5.2.4
 * Tested up to PB: 5.9.5
 * Requires PHP: 5.6.0
-* Stable tag: 1.4.7
+* Stable tag: 1.4.8
 * License: GNU 3.0
 * License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -59,6 +59,10 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ## Screenshots
 
 ## Changelog
+### 1.4.8
+* **ADDITIONS**
+  * Integration with wp-print
+  * If wp-print is activated, titles are links to current page
 * **MODIFICATIONS**
  * Images optimiced to 64 colors png 8 ImageAlpha and ImageOptim)
  * index.php now use a custom style and order (Alpha version)
@@ -66,6 +70,7 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
  * new sprite css file for translation for pressbook flag's icons.
  * new sprite css file for footer icons.
  * external links has nopeener attribute to improve security.
+ * titles are links to his page
 
 ### 1.4.7
 * **ENHANCEMENTS**

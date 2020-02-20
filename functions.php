@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name:       Books4languages Book child theme
-Version:          1.4.6
+Version:          1.4.8
 License:          GPL v3 or later
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
