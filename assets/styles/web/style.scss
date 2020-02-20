@@ -31,6 +31,12 @@ $type: 'web';
   }
 
 /* Titles styles */
+.chapter a, .back-matter a h1 {
+
+    text-decoration: none;
+
+}
+
 .chapter h2 {
   border-bottom: 2px solid rgba(53,86,129, 0.3);
   text-transform: uppercase;
