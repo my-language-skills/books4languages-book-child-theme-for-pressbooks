@@ -89,7 +89,19 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 		$content = apply_filters( 'the_content', get_the_content() );
 		echo $content;
 	}
+	
+       ?>
+	<!-- @ADDED: Print pages is available jus in desktop -->
+			<?php if ( wp_is_mobile() ) :
+					/* Display and echo mobile specific stuff here */
 
+			else :
+					/* Display and echo desktop stuff here */
+					if(function_exists('wp_print')) { print_link(); }
+	endif; ?>
+	<!-- End of added code -->
+	<?php
+	
 	global $multipage;
 	if ( $multipage ) {
 		?>
