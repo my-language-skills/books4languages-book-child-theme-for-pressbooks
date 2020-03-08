@@ -80,13 +80,12 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 	?>
 	</h1>
 	<?php if ( $subtitle ) { ?>
-	<p data-type="subtitle"><?php echo $subtitle; ?></p>
+	<p data-type="subtitle"><?php echo $subtitle; ?> <?php echo reading_time(); ?> </p> //Add reading time from EFP 
 	<?php } ?>
 	<?php if ( $authors ) { ?>
 	<p data-type="author"><?php echo $authors; ?></p>
 	<?php } ?>
 </header>
-<?php echo reading_time(); ?> //Add reading time from EFP
 <?php // Edit page call to action buttom created by mls
 edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
 
