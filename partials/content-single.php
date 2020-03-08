@@ -86,7 +86,7 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 	<p data-type="author"><?php echo $authors; ?></p>
 	<?php } ?>
 </header>
-
+<?php echo reading_time(); ?> //Add reading time from EFP
 <?php // Edit page call to action buttom created by mls
 edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
 
