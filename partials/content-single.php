@@ -80,7 +80,7 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 	?>
 	</h1>
 	<?php if ( $subtitle ) { ?>
-	<p data-type="subtitle"><?php echo $subtitle; ?> <?php echo reading_time(); ?> </p> //Add reading time from EFP 
+	<p data-type="subtitle"><?php echo $subtitle; ?> <?php echo reading_time(); ?> </p> <?php//Add reading time from EFP?>
 	<?php } ?>
 	<?php if ( $authors ) { ?>
 	<p data-type="author"><?php echo $authors; ?></p>
