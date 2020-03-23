@@ -59,8 +59,8 @@ if ( $contact_link ) {
 -
 -		@since 1.0
 -->
-						<a class="" href="https://books4languages.com/" title="Books For Languages">
-							<img id="bfl_icon_footer" class="bfl_icon_class" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/empty.gif" alt="books4languages">
+						<a class="" href="https://books4languages.com/" title="Books4Languages">
+							<img id="bfl_icon_footer" class="bfl_icon_class" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/empty.gif" alt="Books4Languages">
 						</a>
 <!-- End of added code -->
 
