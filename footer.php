@@ -109,6 +109,7 @@ if ( $contact_link ) {
 							<li><a href="https://books4languages.com/legal/"><?php _e( 'Policy', 'pressbooks-book' ); ?></a> |</li>
 							<li><a href="https://books4languages.com/legal/privacy-policy/"><?php _e( 'Privacy Policy', 'pressbooks-book' ); ?></a> |</li>
 							<li><a href="https://questions4languages.wordpress.com/"><?php _e( 'Forum', 'pressbooks-book' ); ?></a> |</li>
+							<li><a href="https://books4languages.com/contact"><?php _e( 'Contact', 'pressbooks-book' ); ?></a> |</li>
 							<li><a href="https://open.books4languages.com/register/your-membership/"><?php _e( 'Your Membership', 'pressbooks-book' ); ?></a> </li>
 						</ul>
 <!-- End of modified code -->
