@@ -5,14 +5,15 @@
 <?php
 global $multipage;
 ?>
-
 <!--
 -				ADDED: Add a #copyright notice to the clipboard when someone copies a text from the website.
 -
--				@SINCE 1.4.8
+-				@SINCE
 -				@LINK https://stackoverflow.com/questions/2026335/how-to-add-extra-info-to-copied-web-text
 -				@LINK https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event
--
+-				@LINK https://www.wpbeginner.com/wp-tutorials/how-to-add-a-read-more-link-to-copied-text-in-wordpress/
+- 	  const pagelink = `\n\nSource: © ${document.location.href}`;
+
 -->
 
 <?php
@@ -21,7 +22,7 @@ if ( !wp_is_mobile() ) {
 	<script type="text/javascript">
 
 	document.addEventListener('copy', (event) => {
-	  const pagelink = `\n\nSource: © ${document.location.href}`;
+	  const pagelink = `\n\nSource: <?php the_title(); ?> © <?php echo wp_get_shortlink(get_the_ID()); ?>`; //Original: `\n\nSource: ${document.location.href}`
 	  event.clipboardData.setData('text', document.getSelection() + pagelink);
 	  event.preventDefault();
 	});
