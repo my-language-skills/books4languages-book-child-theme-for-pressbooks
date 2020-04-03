@@ -124,7 +124,7 @@ if (is_plugin_active('wp-print-for-pb/wp-print.php')){
 				?>
 					<div class="nav-reading--page__previous">
 						<?php echo _wp_link_page( $page - 1 ); ?><svg class="icon--svg">
-				<use xlink:href="#arrow-left" />
+				<use href="#arrow-left" />
 			</svg>
 				<?php
 						echo __( 'Previous Page', 'pressbooks-book' ) . '</a>'
@@ -139,7 +139,7 @@ if (is_plugin_active('wp-print-for-pb/wp-print.php')){
 						<?php echo _wp_link_page( $page + 1 ); ?>
 									<?php
 									echo __( 'Next Page', 'pressbooks-book' ) . '<svg class="icon--svg">
-						<use xlink:href="#arrow-right" />
+						<use href="#arrow-right" />
 					</svg></a>'
 									?>
 					</div>

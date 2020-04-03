@@ -1,8 +1,7 @@
+
 {
   "name": "@pressbooks/pressbooks-jacobs",
-  "version": "1.1.1",
-  "description":
-    "This theme is named after American-Canadian activist, journalist, and author Jane Jacobs, who is responsible for the New Urbanism movement in urban studies. It is designed for academic writing, particularly textbooks, but is also suitable for fiction. Headings and body type are set in Montserrat.",
+  "description": "This theme is named after American-Canadian activist, journalist, and author Jane Jacobs, who is responsible for the New Urbanism movement in urban studies. It is designed for academic writing, particularly textbooks, but is also suitable for fiction. Headings and body type are set in Montserrat.",
   "author": "Pressbooks (Book Oven Inc.)",
   "license": "GPL-3.0-or-later",
   "engines": {
@@ -13,16 +12,13 @@
     "url": "git+https://github.com/pressbooks/pressbooks-jacobs.git"
   },
   "dependencies": {},
-  "devDependencies": {
-    "pressbooks-build-tools": "^0.11.0"
-  },
+  "devDependencies": {},
   "scripts": {
+    "install-build-tools": "npm install --no-save pressbooks-build-tools",
     "fix": "npm run -s fix:styles",
-    "fix:styles":
-      "node_modules/stylelint/bin/stylelint.js --fix \"assets/styles/**/*.scss\" --syntax scss",
+    "fix:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js --fix \"assets/styles/**/*.scss\" --syntax scss",
     "lint": "npm run -s lint:styles",
-    "lint:styles":
-      "node_modules/stylelint/bin/stylelint.js  \"assets/styles/**/*.scss\" --syntax scss",
+    "lint:styles": "cross-env NODE_ENV=development node_modules/stylelint/bin/stylelint.js  \"assets/styles/**/*.scss\" --syntax scss",
     "test": "npm run -s lint"
   },
   "stylelint": {
