@@ -109,6 +109,12 @@ if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) &&
 			<a class="call-to-action" href="<?php echo $first_chapter; ?>">
 				<?php _e( 'Read Book', 'pressbooks-book' ); ?>
 			</a>
+			<!--
+			-		MODIFIES: Newsletter.
+			-
+			-		@since 1.4.7
+			-->
+			<a class="call-to-action" target="_blank" rel="noopener noreferrer" href="http://eepurl.com/gZWjHL"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
 				<?php
 }
 if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) {
