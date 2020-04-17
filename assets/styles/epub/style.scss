@@ -25,51 +25,74 @@ $type: 'epub';
 
 
 /* ****** @internal by B4L ****** */
+.textbox.textbox--summary{ display: none; }
 
 /* Text Boxes */
 .textbox, .bcc-box {
   border-style: none;
-	}
+}
 
 .textbox, .bcc-box {
   padding: 0;
   margin: 0;
-	}
+}
 
 .textbox.textbox--summary {
   background: #FDF7F8;
-  }
+}
 
 .single-chapter {
   background: #FCFCFC;
-  }
+}
 
-/* Titles styles  */
-h2.textbox__title {
-  border-bottom: 1px solid rgba(53,86,129, 0.3);
-  text-transform: uppercase;
-  }
-
-.chapter h4 {
- margin: 20px;
-  font-style: normal;
-	}
-
-/* Tables styles */
-.chapter th {
-text-transform: uppercase;
-	}
-
-/* Paragraph */
+/* TexBoxes Paragraph */
 
 .textbox p {
   font-size: 13pt !important;
   line-height: 1.3 !important;
   margin-bottom: normal !important;
-  }
+}
 
 .textbox li {
-font-size: 13pt !important;
-line-height: 1.3 !important;
+  font-size: 13pt !important;
+  line-height: 1.3 !important;
 // margin-bottom: 25px !important;
- }
+}
+
+/* Titles styles  */
+h2.textbox__title {
+  border-bottom: 1px solid rgba(53,86,129, 0.3);
+  text-transform: uppercase;
+}
+
+.chapter h4 {
+  margin: 20px;
+  font-style: normal;
+}
+
+/* Tables styles */
+.chapter th {
+  text-transform: uppercase;
+  font-size: 12pt !important;
+}
+
+.chapter td {
+  font-size: 12pt !important;
+  padding: 0.2em !important;
+}
+
+/* List */
+.chapter li {
+  line-height: 1.1 !important;
+  text-indent: 0.5em !important;
+}
+
+.chapter ol {
+  margin-top: 0.5em !important;
+  padding-left: 1em !important;
+}
+
+.chapter ul {
+  margin-top: 0.5em !important;
+  padding-left: 1em !important;
+}
