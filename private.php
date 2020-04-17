@@ -22,7 +22,7 @@
 			?>
     </b></p>
 
-      <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://media.giphy.com/media/hSdbwiVGiz72x67VyG/giphy.gif" alt="Typewriter (GIF) designed by Georgy Pashkov." width="800" height="450" />Typewriter (GIF) designed by Georgy Pashkov</p>
+      <p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://media.giphy.com/media/hSdbwiVGiz72x67VyG/giphy.gif" alt="Typewriter (GIF) designed by Georgy Pashkov." width="800" height="450" />Typewriter (GIF) designed by <a href="https://dribbble.com/pashkovgs" target="_blank" rel="noopener noreferrer">Georgy Pashkov</a></p>
       <br>
       <p>
       <?php
