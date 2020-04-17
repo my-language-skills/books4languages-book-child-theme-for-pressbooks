@@ -141,6 +141,14 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 						<?php if (! is_user_logged_in()):?>
 							 <li><a href="/register/"><?php _e( 'Sign Up', 'pressbooks-book' ); ?></a></li>
 						<?php endif; ?>
+
+						<!--
+-		ADDED: Link to edit page
+-
+-		@since v1.4.8
+-->
+						<li><?php edit_post_link( __( 'Edit', 'pressbooks-book' )); ?></li>
+						
 <!-- End of added code -->
 
 <!--
