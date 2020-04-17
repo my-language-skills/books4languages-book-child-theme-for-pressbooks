@@ -86,6 +86,15 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 	<p data-type="author"><?php echo $authors; ?></p>
 	<?php } ?>
 
+	<!-- @ADDED: Download button -->
+
+	<a class="epub" href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="<?php _e( 'Download ebook', 'pressbooks-book' ); ?>">
+		<img id="epub_icon" class="epub_icon" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/epub-bn-24.png" alt="Download">
+		<span class="screen-reader-text"><?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?></span>
+	 </a>
+	<a href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="Download ebook">Download ebook</a>
+	<!-- END -->
+
 	<!-- @ADDED: Print pages is available jus in desktop -->
 	<?php
 
@@ -94,7 +103,7 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 				?>
 				<!-- END -->
 </header>
-<?php // Edit page call to action buttom created by mls
+<?php // Edit page call to action button created by mls
 edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
 
 <?php
@@ -108,16 +117,22 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 	}
 
        ?>
-<!-- @ADDED: Print pages is available jus in desktop -->
-<?php
-	if ( wp_is_mobile() ) :
-		/* Display and echo mobile specific stuff here */
+ <!-- @ADDED: just in desktop -->
+<?php if ( wp_is_mobile() ) :
+			    /* Display and echo mobile specific stuff here */
 
-		else :
-		/* Display and echo desktop stuff here */
-		endif;
-	?>
-<!-- End of added code -->
+			else :
+			    /* Display and echo desktop stuff here */
+
+					if( ! is_user_logged_in() && ! wp_is_mobile() ) {
+						?><!-- @ADDED: integration with h5p -->
+					 <iframe src="https://worksheet.books4languages.com/content/wp-admin/admin-ajax.php?action=h5p_embed&id=2" width="927" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+					 <script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+					 	<?php }
+
+			endif; ?>
+	<!-- End of added code -->
+
 	<?php
 
 	global $multipage;
