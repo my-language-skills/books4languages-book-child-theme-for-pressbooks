@@ -5,6 +5,19 @@
 <?php
 global $multipage;
 ?>
+
+<!--
+-				ADDED: Add the h5p javascript.
+-
+-				@SINCE
+-				@LINK https://stackoverflow.com/questions/2026335/how-to-add-extra-info-to-copied-web-text
+-				@LINK https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event
+
+
+-->
+<script src="https://worksheet.books4languages.com/english/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+
+
 <!--
 -				ADDED: Add a #copyright notice to the clipboard when someone copies a text from the website.
 -
