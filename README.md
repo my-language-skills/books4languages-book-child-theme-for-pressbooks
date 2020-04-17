@@ -64,6 +64,8 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
   * New 404.php
   * Integration with wp-print
   * If wp-print is activated, titles are links to current page
+  * #copyright notice (if copy and paste)
+  * h5p javascript
 * **MODIFICATIONS**
  * Buy page integrated with RCP
  * Private page style like 404
