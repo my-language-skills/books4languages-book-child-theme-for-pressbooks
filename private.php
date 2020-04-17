@@ -38,8 +38,15 @@
       ?>
       </p>
       <br>
-      <h4>Do you have an idea of a book?</h4>
-      <a class="button" href="https://books4languages.com/legal/mou/" target="_blank" rel="noopener noreferrer">Contact us</a>
+			<h4>Do you have an idea of a book?</h4>
+			<p>If you allready are a teacher, why not to be the autor of your textbook?
+				<ul>
+				<li>Translate the content is one of the easiest ways to get started.</li>
+				<li>Make an adaptation of a language textbooks to a specifical target.</li>
+			</ul>
+			</p>
+
+      <a class="button" href="https://books4languages.com/contribute/" target="_blank" rel="noopener noreferrer">Be a contributor</a>
       <br>
 		</div>
 	</div><!-- #post-## -->
