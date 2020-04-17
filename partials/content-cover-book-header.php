@@ -36,54 +36,73 @@ use function \Pressbooks\Image\attachment_id_from_url;
 				</div>
 				<?php
 }
+/**
+ * INTEGRATION WITH RESTRIC CONTEN PRO
+ * @since1.4.8
+ */
 
-			/**
-			 * @author Brad Payne <brad@bradpayne.ca>
-			 * @copyright 2014 Brad Payne
-			 * @since 1.6.0
-			 */
 
-			$files = \Pressbooks\Utility\latest_exports();
+ if( in_array( 2, rcp_get_customer_membership_level_ids() ) ) : ?>
 
-			$site_option = get_site_option( 'pressbooks_sharingandprivacy_options', [ 'allow_redistribution' => 0 ] );
-			$option      = get_option( 'pbt_redistribute_settings', [ 'latest_files_public' => 0 ] );
+
+	<?php
+	/**
+	 * @author Brad Payne <brad@bradpayne.ca>
+	 * @copyright 2014 Brad Payne
+	 * @since 1.6.0
+	 */
+
+	$files = \Pressbooks\Utility\latest_exports();
+
+	$site_option = get_site_option( 'pressbooks_sharingandprivacy_options', [ 'allow_redistribution' => 0 ] );
+	$option      = get_option( 'pbt_redistribute_settings', [ 'latest_files_public' => 0 ] );
 if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) && ( ! empty( $option['latest_files_public'] ) ) ) {
-	?>
-				<div class="book-header__cover__downloads dropdown">
+?>
+		<div class="book-header__cover__downloads dropdown">
 
-					<p><?php _e( 'Download this book', 'pressbooks-book' ); ?></p>
-					<ul>
-					<?php
-					foreach ( $files as $filetype => $filename ) :
-						$filename = preg_replace( '/(-\d{10})(.*)/ui', '$1', $filename );
+			<p><?php _e( 'Download this book', 'pressbooks-book' ); ?></p>
+			<ul>
+			<?php
+			foreach ( $files as $filetype => $filename ) :
+				$filename = preg_replace( '/(-\d{10})(.*)/ui', '$1', $filename );
 
-						// Rewrite rule
-						$url = home_url( "/open/download?type={$filetype}" );
-						$title = esc_js( get_bloginfo( 'name' ) );
+				// Rewrite rule
+				$url = home_url( "/open/download?type={$filetype}" );
+				$title = esc_js( get_bloginfo( 'name' ) );
 
-						// Tracking event defaults to Google Analytics (Universal). @codingStandardsIgnoreStart
-						// Filter like so (for Piwik):
-						// add_filter('pressbooks_download_tracking_code', function( $tracking, $filetype ) {
-						//  return "_paq.push(['trackEvent','exportFiles','Downloads','{$title}:{$filetype}']);";
-						// }, 10, 2);
-						// Or for Google Analytics (Classic):
-						// add_filter('pressbooks_download_tracking_code', function( $tracking, $filetype ) {
-						//  return "_gaq.push(['_trackEvent','exportFiles','Downloads','{$title}:{$filetype}']);";
-						// }, 10, 2); @codingStandardsIgnoreEnd
-						$tracking = apply_filters( 'pressbooks_download_tracking_code', "ga('send','event','exportFiles','Downloads','{$title}:{$filetype}');", $filetype, $title );
-						?>
-					<li class="dropdown-item">
-						<a rel="nofollow" onclick="<?php echo $tracking; ?>" itemprop="offers" itemscope itemtype="http://schema.org/Offer" href="<?php echo $url; ?>">
-							<?php echo \Pressbooks\Modules\Export\get_name_from_filetype_slug( $filetype ); ?>
-							<meta itemprop="price" content="$0.00">
-							<link itemprop="bookFormat" href="http://schema.org/EBook">
-							<link itemprop="availability" href="http://schema.org/InStock">
-						</a>
-					</li>
-					<?php endforeach; ?>
-				</ul>
-				</div>
-			<?php } ?>
+				// Tracking event defaults to Google Analytics (Universal). @codingStandardsIgnoreStart
+				// Filter like so (for Piwik):
+				// add_filter('pressbooks_download_tracking_code', function( $tracking, $filetype ) {
+				//  return "_paq.push(['trackEvent','exportFiles','Downloads','{$title}:{$filetype}']);";
+				// }, 10, 2);
+				// Or for Google Analytics (Classic):
+				// add_filter('pressbooks_download_tracking_code', function( $tracking, $filetype ) {
+				//  return "_gaq.push(['_trackEvent','exportFiles','Downloads','{$title}:{$filetype}']);";
+				// }, 10, 2); @codingStandardsIgnoreEnd
+				$tracking = apply_filters( 'pressbooks_download_tracking_code', "ga('send','event','exportFiles','Downloads','{$title}:{$filetype}');", $filetype, $title );
+				?>
+			<li class="dropdown-item">
+				<a rel="nofollow" onclick="<?php echo $tracking; ?>" itemprop="offers" itemscope itemtype="http://schema.org/Offer" href="<?php echo $url; ?>">
+					<?php echo \Pressbooks\Modules\Export\get_name_from_filetype_slug( $filetype ); ?>
+					<meta itemprop="price" content="$0.00">
+					<link itemprop="bookFormat" href="http://schema.org/EBook">
+					<link itemprop="availability" href="http://schema.org/InStock">
+				</a>
+			</li>
+			<?php endforeach; ?>
+		</ul>
+		</div>
+	<?php } ?>
+
+<!-- https://open.books4languages.com/register/student/ -->
+
+<?php else : ?>
+<div class="book-header__cta">
+<a class="call-to-action" target="_blank" rel="noopener noreferrer" href="https://books4languages.com/ebooks/"><?php _e( 'Download', 'pressbooks-book' ); ?></a>
+</div>
+<?php endif; ?>
+
+
 				<?php if ( \PressbooksBook\Helpers\social_media_enabled() ) { ?>
 				<div class="book-header__share book-header__cover__share">
 					<?php echo \PressbooksBook\Helpers\share_icons(); ?>
@@ -106,17 +125,32 @@ if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) &&
 		</div>
 		<div class="book-header__cta">
 			<?php if ( pb_get_first_post_id() ) { ?>
-			<a class="call-to-action" href="<?php echo $first_chapter; ?>">
-				<?php _e( 'Read Book', 'pressbooks-book' ); ?>
-			</a>
+			<a class="call-to-action" href="<?php echo $first_chapter; ?>"><?php _e( 'Read Book', 'pressbooks-book' ); ?></a>
+			<?php
+			}
+			?>
 			<!--
 			-		MODIFIES: Newsletter.
 			-
 			-		@since 1.4.7
 			-->
 			<a class="call-to-action" target="_blank" rel="noopener noreferrer" href="http://eepurl.com/gZWjHL"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
-				<?php
-}
+
+			<!--
+			-		MODIFIES: Registration.
+			-
+			-		@since 1.4.7
+			-->
+			<?php if ( ! rcp_user_has_active_membership() ) { ?>
+			<a class="call-to-action" target="_blank" rel="noopener noreferrer" href="https://open.books4languages.com/register/student/"><?php _e( 'Registration', 'pressbooks-book' ); ?></a>
+			<?php	}	?>
+
+ 			<?php if( in_array( 1, rcp_get_customer_membership_level_ids() ) ) { ?>
+			<a class="call-to-action" target="_blank" rel="noopener noreferrer" href="https://open.books4languages.com/register/student/"><?php _e( 'Registration', 'pressbooks-book' ); ?></a>
+			<?php	}	?>
+			<!-- END	-->
+
+<?php
 if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) {
 	?>
 	<a class="call-to-action" href="<?php echo home_url( '/buy' ); ?>">
