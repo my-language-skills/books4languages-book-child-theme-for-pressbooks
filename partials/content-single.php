@@ -85,6 +85,14 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 	<?php if ( $authors ) { ?>
 	<p data-type="author"><?php echo $authors; ?></p>
 	<?php } ?>
+
+	<!-- @ADDED: Print pages is available jus in desktop -->
+	<?php
+
+				if(function_exists('wp_print') && ! wp_is_mobile()) { print_link(); }
+
+				?>
+				<!-- END -->
 </header>
 <?php // Edit page call to action buttom created by mls
 edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
@@ -102,15 +110,13 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
        ?>
 <!-- @ADDED: Print pages is available jus in desktop -->
 <?php
-if (is_plugin_active('wp-print-for-pb/wp-print.php')){
 	if ( wp_is_mobile() ) :
 		/* Display and echo mobile specific stuff here */
 
 		else :
 		/* Display and echo desktop stuff here */
-		if(function_exists('wp_print')) { print_link(); }
 		endif;
-	}?>
+	?>
 <!-- End of added code -->
 	<?php
 
