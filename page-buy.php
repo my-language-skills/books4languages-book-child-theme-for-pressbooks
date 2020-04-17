@@ -44,12 +44,34 @@ get_header(); ?>
 							<?php /* translators: %1$s: url to purchase */ ?>
 						<li class="buy-ibooks"><a href="<?php print $urls['ibooks']; ?>" class="bookstore-logo-link logo"><img src="<?php bloginfo( 'template_directory' ); ?>/dist/images/ibooks.png" width="34" height="34" alt="ibooks-logo" title="iBook"/></a><?php printf( __( 'Purchase on  <a href="%1$s">apple.com</a>', 'pressbooks-book' ), $urls['ibooks'] ); ?></li>
 					<?php endif; ?>
+				</ul>
 
-						<?php if ( isset( $urls['otherservice'] ) && $urls['otherservice'] ) : ?>
-							<?php /* translators: %1$s: url to purchase */ ?>
-						<li class="buy-other"><?php _e( 'Purchase here:', 'pressbooks-book' ); ?> <a href="<?php print $urls['otherservice']; ?>"><?php print $urls['otherservice']; ?></a></li>
-						<?php endif; ?>
+					<!--
+					-		MODIFIES: Registration.
+					-
+					-		@since 1.4.7
+					-->
+						<ul class="buy-book">
+					<?php if ( ! rcp_user_has_active_membership() ) : ?>
+						<h2>Download available for Students.</h2>
+					<li class="buy-other"><?php _e( 'Register your account here:', 'pressbooks-book' ); ?>	<a rel="noopener noreferrer" href="https://open.books4languages.com/register/student/"><?php _e( 'Registration', 'pressbooks-book' ); ?></a></li>
+
+				<?php else : ?>
+					<?php if( in_array( 1, rcp_get_customer_membership_level_ids() ) ) { ?>
+						<h2>Upgrade your memberhsip and Download.</h2>
+						<li class="buy-other"><?php _e( 'Upgrade here: ', 'pressbooks-book' ); ?><a rel="noopener noreferrer" href="https://open.books4languages.com/register/student/"><?php _e( 'Registration', 'pressbooks-book' ); ?></a></li>
+					<?php } ?>
+
+					<?php if( in_array( 2, rcp_get_customer_membership_level_ids() ) ) { ?>
+						<li class="buy-other"><?php _e( 'Download here: ', 'pressbooks-book' ); ?> <a href="<?php print $urls['otherservice']; ?>"><?php print $urls['otherservice']; ?></a></li>
+					<?php } ?>
+
+				<?php endif; ?>
 						</ul>
+				<!-- end	-->
+
+
+
 				<?php endif; ?>
 			<?php endif; ?>
 	</div><!-- end .post -->
