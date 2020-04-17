@@ -38,7 +38,7 @@
       ?>
       </p>
       <br>
-			<h4>Do you have an idea of a book?</h4>
+      <h4>Do you have an idea of a book?</h4>
 			<p>If you allready are a teacher, why not to be the autor of your textbook?
 				<ul>
 				<li>Translate the content is one of the easiest ways to get started.</li>
