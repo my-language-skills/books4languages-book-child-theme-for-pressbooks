@@ -74,7 +74,7 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 			endif; ?>
 	<?php
 	endif; ?>
-<!-- End of added code -->
+	<!-- End of added code -->
 	<?php
 	}
 	?>
@@ -102,7 +102,12 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 
 				?>
 				<!-- END -->
+	<!-- @ADDED: socialsnap -->
+<?php 	if ( function_exists('socialsnap_generate_share_request_url')	&& is_singular('chapter') ) {
+	echo do_shortcode('[ss_social_share align="left" shape="rounded" size="small"labels="none" spacing="1" hide_on_mobile="0" total="0" all_networks="0"]'); } ?>
+
 </header>
+	
 <?php // Edit page call to action button created by mls
 edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
 
@@ -132,7 +137,10 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 
 			endif; ?>
 	<!-- End of added code -->
-
+	<!-- @ADDED: socialsnap -->
+<?php 	if ( function_exists('socialsnap_generate_share_request_url') && is_singular('chapter')	) {
+	echo do_shortcode('[ss_click_to_tweet content="#Books4Languages" style="2"]'); } ?>
+	
 	<?php
 
 	global $multipage;
