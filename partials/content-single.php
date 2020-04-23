@@ -88,9 +88,9 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 
 	<!-- @ADDED: Download button -->
 
-	<a class="epub" href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="<?php _e( 'Download ebook', 'pressbooks-book' ); ?>">
+	<a class="epub" href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="<?php _e( 'Download eBook ', 'pressbooks-book' ); ?>">
 		<img id="epub_icon" class="epub_icon" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/epub-bn-24.png" alt="Download">
-		<span class="screen-reader-text"><?php _e( 'Books For Languages on Facebook', 'pressbooks-book' ); ?></span>
+		<span class="screen-reader-text"><?php _e( 'Printable book version', 'pressbooks-book' ); ?></span>
 	 </a>
 	<a href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="Download ebook">Download ebook</a>
 	<!-- END -->
