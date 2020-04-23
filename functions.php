@@ -124,3 +124,17 @@ if ( is_user_logged_in() ) {
 include ( locate_template("/partials/content-header-smdre.php"));
 
 /** End of functionality*/
+
+
+
+/**
+ * Include display-posts-shortcode
+ *
+ * @since 1.4.8
+ * @internal display-posts-shortcode
+ *
+ */
+//
+
+require_once dirname( __FILE__ ) . '/vendor/display-posts-shortcode/display-posts-shortcode.php';
+require_once dirname( __FILE__ ) . '/vendor/display-posts-shortcode/display-posts-transient-cache.php';
