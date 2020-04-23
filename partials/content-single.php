@@ -127,11 +127,13 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 	$key_pb_subtitle = get_post_meta( get_the_ID(), 'pb_subtitle', true );
 	// Check if the custom field has a value.
 	if ( ! empty( $key_pb_subtitle ) ) {?>
+	<div class="display-posts-ul" >
 	<br>
 	<h2 data-type="subtitle">Related topics about: <?php echo $subtitle; ?></h2>
-	<?php echo do_shortcode( '[display-posts transient_key="be_display_posts" transient_expiration="WEEK_IN_SECONDS" meta_key="pb_subtitle" meta_value="'. $subtitle . '" exclude_current="true" post_type="chapter" post_status="publish" orderby="title" order="ASC"]' );
+	<?php echo do_shortcode( '[display-posts transient_key="be_display_posts" transient_expiration="WEEK_IN_SECONDS" wrapper="ul" wrapper_class="display-posts-ul" meta_key="pb_subtitle" meta_value="'. $subtitle . '" exclude_current="true" post_type="chapter" post_status="publish" orderby="title" order="ASC"]' );
 	}
 	?>
+	</div>
 		<!-- End of added code -->
 	<!-- @ADDED: just in desktop -->
  <?php if ( wp_is_mobile() ) :

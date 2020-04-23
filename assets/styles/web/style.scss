@@ -38,11 +38,40 @@ $type: 'web';
   }
 
 .chapter h4 {
- margin: 20px;
+  margin: 20px;
   font-style: normal;
 	}
 
 /* Tables styles */
 .chapter th {
-text-transform: uppercase;
+  text-transform: uppercase;
 	}
+
+/*  display-posts  */
+.display-posts-ul {
+  background: #F5F9FC;
+  }
+
+/* Links */
+/* unvisited link */
+.chapter a:link {
+  color: #dc6e78;
+  text-decoration: none;
+  }
+
+/* visited link */
+.display-posts-ul a:visited {
+  color: #1356A3;
+  font: bold;
+  }
+
+/* mouse over link */
+.chapter a:hover {
+  color: #dc6e78;
+  text-decoration: underline;
+  }
+
+/* selected link */
+.chapter a:active {
+  color: blue;
+  }
