@@ -105,12 +105,7 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 	<!-- @ADDED: socialsnap -->
 <?php 	if ( function_exists('socialsnap_generate_share_request_url')	&& is_singular('chapter') ) {
 	echo do_shortcode('[ss_social_share align="left" shape="rounded" size="small"labels="none" spacing="1" hide_on_mobile="0" total="0" all_networks="0"]'); } ?>
-
 </header>
-
-<?php // Edit page call to action button created by mls
-edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
-
 <?php
 if ( get_post_type( $post->ID ) !== 'part' ) {
 	if ( pb_should_parse_subsections() ) {
@@ -138,24 +133,28 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 	}
 	?>
 		<!-- End of added code -->
- <!-- @ADDED: just in desktop -->
-<?php if ( wp_is_mobile() ) :
-			    /* Display and echo mobile specific stuff here */
+	<!-- @ADDED: just in desktop -->
+ <?php if ( wp_is_mobile() ) :
+ 				 /* Display and echo mobile specific stuff here */
 
-			else :
-			    /* Display and echo desktop stuff here */
+ 	 else :
+ 				 /* Display and echo desktop stuff here */
 
-					if( ! is_user_logged_in() && ! wp_is_mobile() ) {
-						?><!-- @ADDED: integration with h5p -->
-					 <iframe src="https://worksheet.books4languages.com/content/wp-admin/admin-ajax.php?action=h5p_embed&id=2" width="927" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-					 <script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-					 	<?php }
+ 	 endif; ?>
+  <!-- End of added code -->
 
-			endif; ?>
-	<!-- End of added code -->
-	<!-- @ADDED: socialsnap -->
-<?php 	if ( function_exists('socialsnap_generate_share_request_url') && is_singular('chapter')	) {
-	echo do_shortcode('[ss_click_to_tweet content="#Books4Languages" style="2"]'); } ?>
+ <!-- @ADDED: h5p just in desktop -->
+ <?php	if( ! is_user_logged_in() && ! wp_is_mobile() ) {
+ ?>	<!-- @ADDED: integration with h5p -->
+ <iframe src="https://worksheet.books4languages.com/content/wp-admin/admin-ajax.php?action=h5p_embed&id=2" width="927" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+ <script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+ <?php }?>
+
+
+ <!-- @ADDED: socialsnap -->
+ <?php 	if ( function_exists('socialsnap_generate_share_request_url') && is_singular('chapter') && ! wp_is_mobile()	) {
+ echo do_shortcode('[ss_click_to_tweet content="#Books4Languages" style="2"]'); } ?>
+ <!-- End of added code -->
 
 	<?php
 
