@@ -109,22 +109,22 @@ echo $multipage ? ' footer--multipage' : '';
 -->
 <?php if ( wp_is_mobile() && is_single()) : ?>
 	<ul class="footer__pressbooks__links__list">
-		<li><a href="https://worksheet.books4languages.com/"><?php _e( 'Exercises', 'pressbooks-book' ); ?></a> |</li>
+		<li><a target="_blank" rel="noopener noreferrer" href="https://worksheet.books4languages.com/"><?php _e( 'Exercises', 'pressbooks-book' ); ?></a> |</li>
 		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/legal/"><?php _e( 'Legal', 'pressbooks-book' ); ?></a> |</li>
 		<li><a target="_blank" rel="noopener noreferrer" href="https://open.books4languages.com/register/your-membership/"><?php _e( 'Membership', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="http://eepurl.com/gZWjHL"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
+		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/newsletter/"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
 	</ul>
 <?php	else : ?>
 	<ul class="footer__pressbooks__links__list">
 		<li><a href="https://open.books4languages.com/"><?php _e( 'Catalog', 'pressbooks-book' ); ?></a> |</li>
 		<li><a href="<?php pbc_get_tablecontents_url() ?>"><?php _e( 'Site index', 'pressbooks-book' ); ?></a> |</li>
-		<li><a href="https://worksheet.books4languages.com/"><?php _e( 'Exercises', 'pressbooks-book' ); ?></a> |</li>
+		<li><a target="_blank" rel="noopener noreferrer" href="https://worksheet.books4languages.com/"><?php _e( 'Exercises', 'pressbooks-book' ); ?></a> |</li>
 		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/legal/"><?php _e( 'TOS', 'pressbooks-book' ); ?></a> |</li>
 		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/legal/privacy-policy/"><?php _e( 'Privacy', 'pressbooks-book' ); ?></a> |</li>
 		<li><a target="_blank" rel="noopener noreferrer" href="https://questions4languages.wordpress.com/"><?php _e( 'Forum', 'pressbooks-book' ); ?></a> |</li>
 		<li><a target="_blank" rel="noopener noreferrer" href="https://open.books4languages.com/register/your-membership/"><?php _e( 'Membership', 'pressbooks-book' ); ?></a> |</li>
 		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/contact"><?php _e( 'Contact', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="http://eepurl.com/gZWjHL"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
+		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/newsletter/"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
 	</ul>
 <?php	endif;?>
 <!-- End of modified code -->
