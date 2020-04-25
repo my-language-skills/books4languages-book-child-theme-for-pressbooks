@@ -75,3 +75,20 @@ $type: 'web';
 .chapter a:active {
   color: blue;
   }
+
+/* Mobile .textbox ul*/
+@media all and (max-width:480px) {
+.single-chapter #content, .single-front-matter #content, .single-part #content {
+  font-size: 1rem;
+  padding: 0 0.4rem;
+  margin-bottom: 0rem;
+    }
+.textbox li,   .bcc-box li {
+  font-size: 1rem;
+  margin-left: 0em;
+
+    }
+.chapter ul {
+  padding-left: 1.5em;
+    }
+ }
