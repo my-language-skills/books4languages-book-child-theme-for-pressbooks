@@ -117,6 +117,41 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 	}
 
        ?>
+			 <!-- @ADDED: Menu show/hide exercises -->
+			 <?php if(!isset($_POST['button1'])) {
+			 	 ?> <style> .textbox.textbox--exercise{ display: none;}</style>
+			  <?php } ?>
+
+			  <!-- <form action="#textbox--exercise" method="post"> -->
+			 	 <form method="post">
+			 		 <input class="summaryblock1" type="submit" name="button1" aria-labelledby="buttonText1" value="Show exercises"/>
+			 		 <input class="summaryblock2" type="submit" name="button2" aria-labelledby="buttonText2" value="Hide exercises"/>
+			 		 <style>
+			 .summaryblock1 {
+			 	display: block;
+			  width: 49.5%;
+			  border: 1px solid rgba(0,0,0,.25);
+			 	border-radius: 16px;
+			  background-color: #dc6e78;
+			  padding: 14px 28px;
+			  font-size: 16px;
+			  cursor: pointer;
+			  text-align: left;
+			 }
+			 .summaryblock2 {
+			 	display: block;
+			  width: 49.5%;
+			  border: 1px solid rgba(0,0,0,.25);
+			 	border-radius: 16px;
+			  background-color: #dc6e78;
+			  padding: 14px 28px;
+			  font-size: 16px;
+			  cursor: pointer;
+			  text-align: right;
+			 }
+			 	</style>
+			 </form>
+			 <!-- END -->
 
 			 <!-- @ADDED: just in desktop -->
 			 <!-- include_excerpt="true"
@@ -145,12 +180,19 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
  	 endif; ?>
   <!-- End of added code -->
 
- <!-- @ADDED: h5p just in desktop -->
- <?php	if( ! is_user_logged_in() && ! wp_is_mobile() ) {
- ?>	<!-- @ADDED: integration with h5p -->
- <iframe src="https://worksheet.books4languages.com/content/wp-admin/admin-ajax.php?action=h5p_embed&id=2" width="927" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
- <script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
- <?php }?>
+	<!-- @ADDED: h5p just in desktop -->
+  <!-- if( ! is_user_logged_in()  ) { -->
+  <?php
+  	if(isset($_POST['button3']) && ! wp_is_mobile()) {
+  	?>	<!-- @ADDED: integration with h5p -->
+  	<iframe src="https://worksheet.books4languages.com/content/wp-admin/admin-ajax.php?action=h5p_embed&id=2" width="927" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+  	<script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+  	<?php }?>
+
+  	<form method="post">
+  		<input class="summaryblock1" type="submit" name="button3" aria-labelledby="buttonText3" value="Show contributors info"/>
+  		<input class="summaryblock2" type="submit" name="button4" aria-labelledby="buttonText4" value="Hide contributors info"/>
+  </form>
 
 
  <!-- @ADDED: socialsnap -->
