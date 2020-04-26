@@ -169,6 +169,13 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 	}
 	?>
 	</div>
+
+	<!-- ADDED: Feedback Image -->
+	<!-- width="96" height="96" -->
+	<a href="https://books4languages.com/feedback/" aria-label="Feedback.">
+	<img target="_blank" rel="noopener noreferrer" class="b4l-feedback-image size-full alignleft" src="https://i.imgur.com/cqbVrNV.png" alt="Books4Languages feedback"  /></a>
+
+
 		<!-- End of added code -->
 	<!-- @ADDED: just in desktop -->
  <?php if ( wp_is_mobile() ) :
