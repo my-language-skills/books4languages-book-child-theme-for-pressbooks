@@ -135,7 +135,8 @@ echo $multipage ? ' footer--multipage' : '';
 -				@since 1.3
 -				@modified 1.4
 -->
-						<?php if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled() ) {
+<?php if ( is_user_logged_in() ) {
+						if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled() ) {
 						 ?>
 								<div style="display: flex; justify-content: center;">
 									<p><?php _e( 'Translations:', 'pressbooks-book' ); ?></p>
@@ -146,7 +147,9 @@ echo $multipage ? ' footer--multipage' : '';
 											tfp_printTransLinks($blog_id, "footer");
 										?>
 									</ul>
-						<?php  } ?>
+				<?php  }
+
+			}?>
 <!-- End of modified code -->
 
 
