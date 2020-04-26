@@ -126,30 +126,30 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 			 	 <form method="post">
 			 		 <input class="summaryblock1" type="submit" name="button1" aria-labelledby="buttonText1" value="Show exercises"/>
 			 		 <input class="summaryblock2" type="submit" name="button2" aria-labelledby="buttonText2" value="Hide exercises"/>
-			 		 <style>
-			 .summaryblock1 {
-			 	display: block;
-			  width: 49.5%;
-			  border: 1px solid rgba(0,0,0,.25);
-			 	border-radius: 16px;
-			  background-color: #dc6e78;
-			  padding: 14px 28px;
-			  font-size: 16px;
-			  cursor: pointer;
-			  text-align: left;
-			 }
-			 .summaryblock2 {
-			 	display: block;
-			  width: 49.5%;
-			  border: 1px solid rgba(0,0,0,.25);
-			 	border-radius: 16px;
-			  background-color: #dc6e78;
-			  padding: 14px 28px;
-			  font-size: 16px;
-			  cursor: pointer;
-			  text-align: right;
-			 }
-			 	</style>
+					 <style>
+			.summaryblock1 {
+			 display: block;
+			 width: 49%;
+			 border: 1px solid rgba(0,0,0,.25);
+			 border-radius: 16px;
+			 background-color: #dc6e78;
+			 padding: 12px 4px !important;
+			 font-size: 13px;
+			 cursor: pointer;
+			 text-align: left;
+			}
+			.summaryblock2 {
+			 display: block;
+			 width: 49%;
+			 border: 1px solid rgba(0,0,0,.25);
+			 border-radius: 16px;
+			 background-color: #dc6e78;
+			 padding: 12px 4px !important;
+			 font-size: 13px;
+			 cursor: pointer;
+			 text-align: right;
+			}
+				</style>
 			 </form>
 			 <!-- END -->
 
