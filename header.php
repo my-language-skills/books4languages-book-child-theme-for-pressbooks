@@ -88,7 +88,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 			</div>
 
 <!--
--				ADD: Functionality for loading of the available translations - location 2. Functions are called from translations-for-presbooks plugin.
+-				ADD: Functionality for loading of the available translations - location 2 (mobile). Functions are called from translations-for-presbooks plugin.
 -				NOTE: Location 2 and location 1 work together.
 -				@since 1.3
 -				@modified 1.4
@@ -108,7 +108,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 								<div class="dropdown-lang2">
 								  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content2')"><img src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
 										<?php
-										echo '<img id="' . $flag_id . '" class="flag_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="country flag">';
+										// echo '<img id="' . $flag_id . '" class="flag_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="country flag">';
 										echo $currLang;
 										?>
 									</a>
@@ -142,17 +142,16 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 							 <li><a href="/register/"><?php _e( 'Sign Up', 'pressbooks-book' ); ?></a></li>
 						<?php endif; ?>
 
-						<!--
+<!--
 -		ADDED: Link to edit page
 -
 -		@since v1.4.8
 -->
 						<li><?php edit_post_link( __( 'Edit', 'pressbooks-book' )); ?></li>
-						
 <!-- End of added code -->
 
 <!--
--				ADD: Functionality for loading of the available translations - location 1. Functions are called from translations-for-presbooks plugin.
+-				ADD: Functionality for loading of the available translations - location 1 (desktop). Functions are called from translations-for-presbooks plugin.
 -
 -				@since 1.3
 -				@modified 1.4
