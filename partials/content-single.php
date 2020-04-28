@@ -123,6 +123,7 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 			  <?php } ?>
 
 			  <!-- <form action="#textbox--exercise" method="post"> -->
+				<?php if ( is_singular('chapter')) { ?>
 			 	 <form method="post">
 			 		 <input class="summaryblock1" type="submit" name="button1" aria-labelledby="buttonText1" value="Show exercises"/>
 			 		 <input class="summaryblock2" type="submit" name="button2" aria-labelledby="buttonText2" value="Hide exercises"/>
@@ -151,6 +152,7 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 			}
 				</style>
 			 </form>
+			 	 <?php } ?>
 			 <!-- END -->
 
 			 <!-- @ADDED: just in desktop -->
@@ -172,9 +174,10 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 
 	<!-- ADDED: Feedback Image -->
 	<!-- width="96" height="96" -->
+	<?php if ( is_singular('chapter')) { ?>
 	<a href="https://books4languages.com/feedback/" aria-label="Feedback.">
 	<img target="_blank" rel="noopener noreferrer" class="b4l-feedback-image size-full alignleft" src="https://i.imgur.com/cqbVrNV.png" alt="Books4Languages feedback"  /></a>
-
+	 <?php } ?>
 
 		<!-- End of added code -->
 	<!-- @ADDED: just in desktop -->
@@ -195,12 +198,12 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
   	<iframe src="https://worksheet.books4languages.com/content/wp-admin/admin-ajax.php?action=h5p_embed&id=2" width="927" height="1" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
   	<script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
   	<?php }?>
-
+	<?php if ( is_singular('chapter')) { ?>
   	<form method="post">
   		<input class="summaryblock1" type="submit" name="button3" aria-labelledby="buttonText3" value="Show contributors info"/>
   		<input class="summaryblock2" type="submit" name="button4" aria-labelledby="buttonText4" value="Hide contributors info"/>
   </form>
-
+	<?php }?>
 
  <!-- @ADDED: socialsnap -->
  <?php 	if ( function_exists('socialsnap_generate_share_request_url') && is_singular('chapter') && ! wp_is_mobile()	) {
