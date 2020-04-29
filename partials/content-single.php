@@ -1,5 +1,8 @@
 <section data-type="<?php echo $datatype; ?>" <?php post_class( pb_get_section_type( $post ) ); ?>>
 <header>
+	<?php if (! is_user_logged_in() && wp_is_mobile() && is_singular('chapter')) { ?>
+<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=42&l=ur1&category=kindlestore&banner=0V6ZW5PN9ZFC486XDEG2&f=ifr&linkID=e9aa68ff10a30f6f36cd11b90cbd676c&t=books4languag-21&tracking_id=books4languag-21" width="234" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+	<?php } ?>
 
 <!--
 -				ADDED: featured image code
@@ -114,9 +117,12 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 	} else {
 		$content = apply_filters( 'the_content', get_the_content() );
 		echo $content;
-	}
+	} ?>
 
-       ?>
+<?php if (! is_user_logged_in() && wp_is_mobile() && is_singular('chapter')) { ?>
+	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=42&l=ur1&category=kindle_unlimited&banner=1WJ0Y05D8GDGRZRB8QR2&f=ifr&linkID=1577d8c5fa645932e9d664c0818ad7d4&t=books4languag-21&tracking_id=books4languag-21" width="234" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+ <?php } ?>
+
 			 <!-- @ADDED: Menu show/hide exercises -->
 			 <?php if(!isset($_POST['button1'])) {
 			 	 ?> <style> .textbox.textbox--exercise{ display: none;}</style>
@@ -278,5 +284,8 @@ if ( ! empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
 	echo apply_filters( 'the_content', $post->post_content );
 }
 ?>
+<?php if (! is_user_logged_in() && ! wp_is_mobile() && is_singular('chapter')) { ?>
+<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=48&l=ur1&category=kindlestore&banner=0VNZPTVFYGFFXX1YXN82&f=ifr&linkID=ed5cc2358edc48d9578a528f46dd0174&t=books4languag-21&tracking_id=books4languag-21" width="688" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+<?php } ?>
 </section>
 <?php edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
