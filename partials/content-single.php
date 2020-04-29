@@ -124,7 +124,8 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 
 			  <!-- <form action="#textbox--exercise" method="post"> -->
 				<?php if ( is_singular('chapter') && strpos( get_the_content(), 'textbox--exercise' ) !== false ) { ?>
-			 	 <form method="post">
+	<!-- https://www.labschool.es/crear-eventos-google-analytics -->
+	 <form method="post" onsubmit="ga('send', 'event', 'exercises', 'show', 'all', 1);">
 			 		 <input class="summaryblock1" type="submit" name="button1" aria-labelledby="buttonText1" value="Show exercises"/>
 			 		 <input class="summaryblock2" type="submit" name="button2" aria-labelledby="buttonText2" value="Hide exercises"/>
 					 <style>
@@ -227,7 +228,7 @@ if ( ! empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
 	text-align: right;
  }
 	 </style>
-	 
+
   </form>
 	<?php }?>
 
