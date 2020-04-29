@@ -123,7 +123,7 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 			  <?php } ?>
 
 			  <!-- <form action="#textbox--exercise" method="post"> -->
-				<?php if ( is_singular('chapter')) { ?>
+				<?php if ( is_singular('chapter') && strpos( get_the_content(), 'textbox--exercise' ) !== false ) { ?>
 			 	 <form method="post">
 			 		 <input class="summaryblock1" type="submit" name="button1" aria-labelledby="buttonText1" value="Show exercises"/>
 			 		 <input class="summaryblock2" type="submit" name="button2" aria-labelledby="buttonText2" value="Hide exercises"/>
@@ -202,6 +202,32 @@ if ( ! empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
   	<form method="post">
   		<input class="summaryblock1" type="submit" name="button3" aria-labelledby="buttonText3" value="Show contributors info"/>
   		<input class="summaryblock2" type="submit" name="button4" aria-labelledby="buttonText4" value="Hide contributors info"/>
+
+			<style>
+ .summaryblock1 {
+	display: block;
+	width: 49%;
+	border: 1px solid rgba(0,0,0,.25);
+	border-radius: 16px;
+	background-color: #dc6e78;
+	padding: 12px 4px !important;
+	font-size: 13px;
+	cursor: pointer;
+	text-align: left;
+ }
+ .summaryblock2 {
+	display: block;
+	width: 49%;
+	border: 1px solid rgba(0,0,0,.25);
+	border-radius: 16px;
+	background-color: #dc6e78;
+	padding: 12px 4px !important;
+	font-size: 13px;
+	cursor: pointer;
+	text-align: right;
+ }
+	 </style>
+	 
   </form>
 	<?php }?>
 
