@@ -162,22 +162,37 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 			 	 <?php } ?>
 			 <!-- END -->
 
-			 <!-- @ADDED: just in desktop -->
-			 <!-- include_excerpt="true"
-			 https://es.wordpress.org/plugins/display-posts-shortcode/
-			 -->
+			 <!-- @ADDED:  -->
+ 			<!-- include_excerpt="true"
+ 			https://es.wordpress.org/plugins/display-posts-shortcode/
+ 			-->
 
-	<?php
-	$key_pb_subtitle = get_post_meta( get_the_ID(), 'pb_subtitle', true );
-	// Check if the custom field has a value.
-if ( ! empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
-		<div class="display-posts-ul" >
-	<br>
-	<h2 data-type="subtitle">Related topics about: <?php echo $subtitle; ?></h2>
-	<?php echo do_shortcode( '[display-posts transient_key="be_display_posts" transient_expiration="WEEK_IN_SECONDS" wrapper="ul" wrapper_class="display-posts-ul" meta_key="pb_subtitle" meta_value="'. $subtitle . '" exclude_current="true" post_type="chapter" post_status="publish" orderby="title" order="ASC"]' );
-	}
-	?>
-	</div>
+ <!-- If Subtitle is used -->
+ <?php
+ $key_pb_subtitle = get_post_meta( get_the_ID(), 'pb_subtitle', true );
+ // Check if the custom field has a value.
+ if ( ! empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
+ <div class="display-posts-ul" >
+ <br>
+ <h2 data-type="subtitle">Related topics about: <?php echo $subtitle; ?></h2>
+ <?php echo do_shortcode( '[display-posts transient_key="be_display_posts" transient_expiration="WEEK_IN_SECONDS" wrapper="ul" wrapper_class="display-posts-ul" meta_key="pb_subtitle" meta_value="'. $subtitle . '" exclude_current="true" post_type="chapter" post_status="publish" orderby="title" order="ASC" ]' );
+ }
+ ?>
+ </div>
+
+ <!-- If Subtitle is empty -->
+ <?php
+ $key_pb_subtitle = get_post_meta( get_the_ID(), 'pb_subtitle', true );
+ // Check if the custom field has a value.
+ if ( empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
+ <div class="display-posts-ul" >
+ <br>
+ <h2 data-type="subtitle">More topics</h2>
+ <?php echo do_shortcode( '[display-posts transient_key="be_display_posts-rand" transient_expiration="WEEK_IN_SECONDS" wrapper="ul" wrapper_class="display-posts-ul" exclude_current="true" post_type="chapter" post_status="publish" orderby="rand" order="ASC"]' );
+ }
+ ?>
+ </div>
+
 
 	<!-- ADDED: Feedback Image -->
 	<!-- width="96" height="96" -->
