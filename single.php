@@ -52,6 +52,24 @@
 		<?php echo do_shortcode( '[display-posts transient_key="be_display_posts-rand" transient_expiration="WEEK_IN_SECONDS" wrapper="ul" wrapper_class="display-posts-ul" exclude_current="true" post_type="chapter" post_status="publish" posts_per_page="12" orderby="rand" order="ASC"]' );
 		}
 		?>
+
+		<?php
+				// function to grab all possible meta values of smdre_bibliography_citations meta key.
+				$get_bibliography_citations = get_post_meta( get_the_ID(), 'smdre_bibliography_citations', true );
+				// Check if the custom field has a value.
+				if ( ! empty( $get_bibliography_citations ) && is_singular('chapter')) {
+					?><h2 data-type="subtitle">Bibliography</h2><?php
+					$myvals = get_post_meta( get_the_ID());
+					foreach($myvals as $key=>$val){
+					  foreach($val as $vals){
+							$url_parse = wp_parse_url($vals);
+					    if ($key=='smdre_bibliography_citations'){
+		 					  echo '<a href="' . $vals . '" target="_blank"> '. $url_parse['host'] .' </a>'. '<br/>';
+					     }
+					   }
+					 }
+				}
+			?>
 	</div>
 </div>
 <style>
