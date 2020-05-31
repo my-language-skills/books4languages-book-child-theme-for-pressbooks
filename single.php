@@ -29,7 +29,8 @@
 					<div class="block block-reading-meta">
 						<div class="block-reading-meta__inner">
 							<?php include( locate_template( 'partials/content-difftool.php' ) ); ?>
-					<!-- @ ADDED Just mobile -->
+
+<!-- @ ADDED Just mobile -->
 					<?php if ( ! wp_is_mobile() ){?>
 
 							<div class="block-reading-meta__subsection">
@@ -41,8 +42,8 @@
 								<?php } ?>
 
 					<?php	}?>
-						<!-- END -->
-							<?php
+<!-- END -->
+								<?php
 								$pb_section_doi = get_post_meta( $post->ID, 'pb_section_doi', true );
 								if ( $pb_section_doi ) {
 									?>
