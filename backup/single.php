@@ -22,7 +22,130 @@
 			}
 			?>
 
+
+
+
+
+
+
+
 </div><!-- #content -->
+
+
+<!-- The sidebar -->
+
+<div class="sidebar" onclick="ga('send', 'event', 'liks', 'sidebar', 'all'0);">
+	<div class="sidebar-center">
+		<?php
+		$key_pb_subtitle = get_post_meta( get_the_ID(), 'pb_subtitle', true );
+		// Check if the custom field has a value.
+		if ( ! empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
+			<h2 data-type="subtitle">More: <?php echo $subtitle; ?></h2>
+			<?php echo do_shortcode( '[display-posts transient_key="be_display_posts" transient_expiration="WEEK_IN_SECONDS" wrapper="ul" wrapper_class="display-posts-ul" meta_key="pb_subtitle" meta_value="'. $subtitle . '" exclude_current="true" post_type="chapter" post_status="publish" orderby="title" order="ASC"]' );
+			}
+			?>
+		<!-- If Subtitle is empty -->
+		<?php
+		// Check if the custom field has a value.
+		if ( empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
+		<h2 data-type="subtitle">More topics</h2>
+		<?php echo do_shortcode( '[display-posts transient_key="be_display_posts-rand" transient_expiration="WEEK_IN_SECONDS" wrapper="ul" wrapper_class="display-posts-ul" exclude_current="true" post_type="chapter" post_status="publish" posts_per_page="12" orderby="rand" order="ASC"]' );
+		}
+		?>
+
+		<?php
+				// function to grab all possible meta values of smdre_bibliography_citations meta key.
+				$get_bibliography_citations = get_post_meta( get_the_ID(), 'smdre_bibliography_citations', true );
+				// Check if the custom field has a value.
+				if ( ! empty( $get_bibliography_citations ) && is_singular('chapter')) {
+					?><h2 data-type="subtitle">Bibliography</h2><?php
+					$myvals = get_post_meta( get_the_ID());
+					foreach($myvals as $key=>$val){
+					  foreach($val as $vals){
+							$url_parse = wp_parse_url($vals);
+					    if ($key=='smdre_bibliography_citations'){
+		 					  echo '<a href="' . $vals . '" target="_blank"> '. $url_parse['host'] .' </a>'. '<br/>';
+					     }
+					   }
+					 }
+				}
+			?>
+	</div>
+</div>
+<style>
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 235px;
+  background-color: #F5F9FC !important;
+  position: absolute;
+  height: 100%;
+  overflow: auto;
+  top: 208px; /*  Stay at the top */
+  right: 0;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar 720px*/
+@media screen and (max-width: 1200px) {
+  .sidebar {
+		display: none;
+    /* width: 100%;
+    position: static;
+    height: auto; */
+  }
+/* .sidebar-center {
+  	padding: 0 3rem;
+	max-width: 720px;
+  	margin-left: auto;
+  	margin-right: auto;
+  } */
+}
+
+
+/* unvisited link */
+.sidebar a:link {
+  color: #dc6e78;
+  text-decoration: none;
+  }
+
+/* visited link */
+.sidebar a:visited {
+  color: #1356A3;
+  font: bold;
+  }
+
+/* mouse over link */
+.sidebar a:hover {
+  color: #dc6e78;
+  text-decoration: underline;
+  }
+
+/* selected link */
+.sidebar a:active {
+  color: blue;
+  }
+
+.sidebar ul {
+  margin-top: 0.5em !important;
+  padding-left: 1em !important;
+color:  #92aed3;
+}
+
+.sidebar h2 {
+	color: var(--primary);
+	font-size: 1.25rem;
+	text-align: center;
+  	text-transform: uppercase;
+  	font-style: normal;
+}
+
+</style>
+
+
+
+
+
 
 			<?php \PressbooksBook\Helpers\get_links(); ?>
 
