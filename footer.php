@@ -5,7 +5,6 @@
 <?php
 global $multipage;
 ?>
-
 <!--
 -				ADDED: Add the h5p javascript.
 -
@@ -16,6 +15,7 @@ global $multipage;
 
 -->
 <script src="https://worksheet.books4languages.com/english/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+<!-- END CODE -->
 
 <!--
 -				ADDED: Add a #copyright notice to the clipboard when someone copies a text from the website.
@@ -44,7 +44,6 @@ if ( !wp_is_mobile() ) {
 }
 ?>
 <!-- END CODE -->
-
 <footer class="footer
 <?php
 if ( is_front_page() ) :
@@ -81,15 +80,12 @@ echo $multipage ? ' footer--multipage' : '';
 -
 -		@since 1.0
 -->
-						<a class="" href="https://books4languages.com/" title="Books4Languages">
-							<img id="bfl_icon_footer" class="bfl_icon_class" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/empty.gif" alt="Books4Languages">
-						</a>
+			<a class="" href="https://books4languages.com/" title="Books4Languages">
+				<img id="bfl_icon_footer" class="bfl_icon_class" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/empty.gif" alt="Books4Languages">
+			</a>
 <!-- End of added code -->
 
-			<div class="footer__pressbooks__links" style = "margin: auto;">
-
-				<?php /* translators: %s: Pressbooks */ ?>
-
+<div class="footer__pressbooks__links" style = "margin: auto;"> <!-- <div class="footer__pressbooks__links"> -->
 
 
 <!--
@@ -97,9 +93,9 @@ echo $multipage ? ' footer--multipage' : '';
 -
 -		@since 1.0
 -->
-								<p class="footer__pressbooks__links__title"><?php printf( __( 'Created with use of %s', 'pressbooks-book' ),'<span class="pressbooks">Wordpress and Pressbooks</span>' ); ?></p>
+	<p class="footer__pressbooks__links__title"><?php printf( __( 'Created with use of %s', 'pressbooks-book' ),'<span class="pressbooks">Wordpress and Pressbooks</span>' ); ?></p>
 
- <!-- End of modified code -->
+<!-- End of modified code -->
 
 <!--
 -		MODIFIES: all the links bellow. Privacy Policy menu slug added.
@@ -152,23 +148,24 @@ echo $multipage ? ' footer--multipage' : '';
 <!-- End of modified code -->
 
 
-			</div>
 
+
+			</div>
 <!--
 -		MODIFIES: href="" of the link bellow for addition of company social networks.
 -   MODIFIES: icons are now sprites css
 -		@since 1.0
 -->
-	<div class="footer__pressbooks__social">
-		<a class="facebook" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?>" rel=”noopener”>
-			<img id="facebook_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="facebook bfl">
-		 	<span class="screen-reader-text"><?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?></span>
-		 </a>
-		 <a class="twitter" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?>" rel=”noopener”>
-			 <img id="twitter_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="twitter bfl">
-		 <span class="screen-reader-text"><?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?></span>
-	 </a>
-	</div>
+				<div class="footer__pressbooks__social">
+					<a class="facebook" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?>" rel=”noopener”>
+						<img id="facebook_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="facebook bfl">
+					 	<span class="screen-reader-text"><?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?></span>
+					 </a>
+					 <a class="twitter" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?>" rel=”noopener”>
+						 <img id="twitter_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="twitter bfl">
+					 <span class="screen-reader-text"><?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?></span>
+				 </a>
+				</div>
 <!-- End of modified code -->
 
 		</section>
