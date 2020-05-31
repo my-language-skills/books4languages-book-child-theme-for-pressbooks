@@ -1,5 +1,6 @@
 <section data-type="<?php echo $datatype; ?>" <?php post_class( pb_get_section_type( $post ) ); ?>>
 <header>
+
 <!--
 -				ADDED: featured image code
 -
@@ -46,65 +47,63 @@ if (is_plugin_active('featured-image-for-pressbooks/featured-image-for-pressbook
 			<?php
 	 } } ?>
 <!-- End of added code -->
-
 	<h1 class="entry-title">
-
 	<?php
 	if ( $number ) {
 		echo "<span>$number</span> ";
 	}
 	if ( get_post_meta( $post->ID, 'pb_show_title', true ) || $post->post_type === 'part' ) {
+// @ADDED: Titles are link to pages in desktop
 
-?>
-<!-- @ADDED: Titles are link to pages in desktop -->
-	<?php
-	if ( wp_is_mobile() ) :
-	    /* Display and echo mobile specific stuff here */
-			the_title();
-	else :
-	    /* Display and echo desktop stuff here */
+	 	if ( wp_is_mobile() ) :
+	 	    /* Display and echo mobile specific stuff here */
+	 			the_title();
+	 	else :
+	 	    /* Display and echo desktop stuff here */
 
-			if(function_exists('wp_print') && is_page('print')) : // If wp_print is acivated, titles are links.
-					/* Display and echo mobile specific stuff here */
-						?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			<?php
-			else :
-					/* Display and echo desktop stuff here */
-				 the_title();
-			endif; ?>
-	<?php
-	endif; ?>
+	 			if(function_exists('wp_print') && is_page('print')) : // If wp_print is acivated, titles are links.
+	 					/* Display and echo mobile specific stuff here */
+	 						?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+	 			<?php
+	 			else :
+	 					/* Display and echo desktop stuff here */
+	 				 the_title();
+	 			endif; ?>
+	 	<?php
+	 	endif; ?>
 <!-- End of added code -->
-		<?php
-	}
-	?>
+	 <?php }	?>
 	</h1>
 	<?php if ( $subtitle ) { ?>
-	<p data-type="subtitle"><?php echo $subtitle; ?>   <?php echo reading_time(); ?>   </p><?php//Add reading time from EFP?>
+	<p data-type="subtitle"><?php echo $subtitle; ?>  <?php echo reading_time(); ?>   </p> <!-- Add reading time from EFP -->
 	<?php } ?>
 	<?php if ( $authors ) { ?>
 	<p data-type="author"><?php echo $authors; ?></p>
 	<?php } ?>
-
-	<?php	// Download buttom	?>
+<!-- Download button -->
 	<a class="epub" href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="<?php _e( 'Download eBook', 'pressbooks-book' ); ?>">
 		<img id="epub_icon" class="epub_icon" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/epub-bn-24.png" alt="Download">
 		<span class="screen-reader-text"><?php _e( 'Download eBook', 'pressbooks-book' ); ?></span>
 	 </a>
 	<a href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="Download ebook">Download ebook</a>
-	<!-- END -->
-	<!-- @ADDED: Print pages is available jus in desktop -->
-	<?php
+<!-- END -->
 
-				if(function_exists('wp_print') && ! wp_is_mobile()) { print_link(); }
+<!-- @ADDED: Print pages is available jus in desktop -->
+<?php
 
-				?>
-				<!-- END -->
+if(function_exists('wp_print') && ! wp_is_mobile()) { print_link(); }
+
+?>
+<!-- END -->
+
 <!-- if ( $key_pb_subtitle !=  'Revision' ) -->
 <!-- @ADDED: socialsnap -->
-<?php 	if ( function_exists('socialsnap_generate_share_request_url')&& is_user_logged_in() ) {
+<?php
+if ( function_exists('socialsnap_generate_share_request_url') && is_user_logged_in() ) {
 	echo do_shortcode('[ss_social_share align="left" shape="rounded" size="small"labels="label" spacing="1" hide_on_mobile="0" total="0" all_networks="0"]'); } ?>
-	</header>
+<!-- END -->
+
+</header>
 <?php
 if ( get_post_type( $post->ID ) !== 'part' ) {
 	if ( pb_should_parse_subsections() ) {
@@ -113,70 +112,34 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 	} else {
 		$content = apply_filters( 'the_content', get_the_content() );
 		echo $content;
-
-		?>
-
+	}
+?>
 
 <!-- @ADDED: Menu show/hide exercises -->
 <?php if(!isset($_POST['button1'])) {
 	 ?> <style> .textbox.textbox--exercise{ display: none; }</style>
  <?php } ?>
 
- <!-- <form action="#textbox--exercise" method="post"> -->
- <!-- if ( strpos( get_the_content(), '13801580' ) !== false) { -->
+<!-- <form action="#textbox--exercise" method="post"> -->
+<!-- if ( strpos( get_the_content(), '13801580' ) !== false) { -->
  <?php if ( is_singular('chapter') && strpos( get_the_content(), 'textbox--exercise' ) !== false ) { ?>
 <!-- https://www.labschool.es/crear-eventos-google-analytics -->
 	 <form method="post" onsubmit="ga('send', 'event', 'exercises', 'show', 'all', 0);">
 		 <input class="summaryblock1" type="submit" name="button1" aria-labelledby="buttonText1" value="Show exercises"/>
 		 <input class="summaryblock2" type="submit" name="button2" aria-labelledby="buttonText2" value="Hide exercises"/>
 
-		 <style>
-.summaryblock1 {
- display: block;
- width: 49%;
- border: 1px solid rgba(0,0,0,.25);
- border-radius: 16px;
- background-color: #dc6e78;
- padding: 12px 4px !important;
- font-size: 13px;
- cursor: pointer;
- text-align: left;
-}
-.summaryblock2 {
- display: block;
- width: 49%;
- border: 1px solid rgba(0,0,0,.25);
- border-radius: 16px;
- background-color: #dc6e78;
- padding: 12px 4px !important;
- font-size: 13px;
- cursor: pointer;
- text-align: right;
-}
-	</style>
 </form>
 	 <?php } ?>
 
 <!-- END -->
 
-</div>
+<!-- ADDED: Feedback Image -->
+<!-- width="96" height="96" -->
+<?php if ( is_singular('chapter')) { ?>
+<a href="https://books4languages.com/feedback/" aria-label="Feedback.">
+<img class="feedbackimage" target="_blank" rel="noopener noreferrer" class="b4l-feedback-image center-feedback size-full alignleft" src="https://i.imgur.com/cqbVrNV.png" alt="Books4Languages feedback"  /></a>
+<?php } ?>
 
-
-</div>
-
-
-
-
-
-		<!-- @ADDED: just in desktop -->
-<?php if ( wp_is_mobile() ) :
-				    /* Display and echo mobile specific stuff here */
-
-    	else :
-				    /* Display and echo desktop stuff here */
-
-	  	endif; ?>
-		<!-- End of added code -->
 
 <!-- @ADDED: h5p just in desktop -->
 <!-- if( ! is_user_logged_in()  ) { -->
@@ -192,61 +155,12 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 	<form method="post" onsubmit="ga('send', 'event', 'info', 'show', 'all', 0);">
 		<input class="summaryblock1" type="submit" name="button3" aria-labelledby="buttonText3" value="Show info"/>
 		<input class="summaryblock2" type="submit" name="button4" aria-labelledby="buttonText4" value="Hide info"/>
-
-		<style>
-.info {
-max-width: 720px;
-margin-left: auto;
-margin-right: auto;
-}
-
-.summaryblock1 {
-display: block;
-width: 49%;
-border: 1px solid rgba(0,0,0,.25);
-border-radius: 16px;
-background-color: #dc6e78;
-padding: 12px 4px !important;
-font-size: 13px;
-cursor: pointer;
-text-align: left;
-}
-.summaryblock2 {
-display: block;
-width: 49%;
-border: 1px solid rgba(0,0,0,.25);
-border-radius: 16px;
-background-color: #dc6e78;
-padding: 12px 4px !important;
-font-size: 13px;
-cursor: pointer;
-text-align: right;
-}
- </style>
-
-</form>
+	</form>
 
 	 <?php } ?>
-<div>
-
-
-
-	<!-- ADDED: Feedback Image -->
-	<!-- width="96" height="96" -->
-	<?php if ( is_singular('chapter')) { ?>
-	<a href="https://books4languages.com/feedback/" aria-label="Feedback.">
-	<img class="feedbackimage" target="_blank" rel="noopener noreferrer" class="b4l-feedback-image center-feedback size-full alignleft" src="https://i.imgur.com/cqbVrNV.png" alt="Books4Languages feedback"  /></a>
-		 <?php } ?>
-		<style>
-		 .feedbackimage {
-		   display: block;
-		   margin-left: auto;
-		   margin-right: auto;
-		 }
-		 	</style>
+</div>
 
 <?php
-	}
 	global $multipage;
 	if ( $multipage ) {
 		?>
@@ -288,3 +202,14 @@ text-align: right;
 ?>
 </section>
 <?php edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
+
+
+<!-- @ADDED: just in desktop -->
+<?php if ( wp_is_mobile() ) :
+				/* Display and echo mobile specific stuff here */
+
+	else :
+				/* Display and echo desktop stuff here */
+
+	endif; ?>
+<!-- End of added code -->
