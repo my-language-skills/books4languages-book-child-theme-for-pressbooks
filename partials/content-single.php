@@ -1,8 +1,5 @@
 <section data-type="<?php echo $datatype; ?>" <?php post_class( pb_get_section_type( $post ) ); ?>>
 <header>
-	<?php if (! is_user_logged_in() && wp_is_mobile() && is_singular('chapter')) { ?>
-<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=42&l=ur1&category=kindlestore&banner=0V6ZW5PN9ZFC486XDEG2&f=ifr&linkID=e9aa68ff10a30f6f36cd11b90cbd676c&t=books4languag-21&tracking_id=books4languag-21" width="234" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-	<?php } ?>
 <!--
 -				ADDED: featured image code
 -
@@ -119,11 +116,6 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 
 		?>
 
-		<?php if (! is_user_logged_in() && wp_is_mobile() && is_singular('chapter')) { ?>
-			<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=42&l=ur1&category=kindle_unlimited&banner=1WJ0Y05D8GDGRZRB8QR2&f=ifr&linkID=1577d8c5fa645932e9d664c0818ad7d4&t=books4languag-21&tracking_id=books4languag-21" width="234" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-		 <?php } ?>
-
-
 
 <!-- @ADDED: Menu show/hide exercises -->
 <?php if(!isset($_POST['button1'])) {
@@ -167,37 +159,9 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 
 <!-- END -->
 
-
-
-			<!-- @ADDED: just in desktop -->
-			<!-- include_excerpt="true"
-			https://es.wordpress.org/plugins/display-posts-shortcode/
-			-->
-
-<!-- If Subtitle is used -->
-<?php
-$key_pb_subtitle = get_post_meta( get_the_ID(), 'pb_subtitle', true );
-// Check if the custom field has a value.
-if ( ! empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
-<div class="display-posts-ul" >
-<br>
-<h2 data-type="subtitle">Related topics about: <?php echo $subtitle; ?></h2>
-<?php echo do_shortcode( '[display-posts transient_key="be_display_posts" transient_expiration="WEEK_IN_SECONDS" wrapper="ul" wrapper_class="display-posts-ul" meta_key="pb_subtitle" meta_value="'. $subtitle . '" exclude_current="true" post_type="chapter" post_status="publish" orderby="title" order="ASC" ]' );
-}
-?>
 </div>
 
-<!-- If Subtitle is empty -->
-<?php
-$key_pb_subtitle = get_post_meta( get_the_ID(), 'pb_subtitle', true );
-// Check if the custom field has a value.
-if ( empty( $key_pb_subtitle ) && is_singular('chapter')) {?>
-<div class="display-posts-ul" >
-<br>
-<h2 data-type="subtitle">More topics</h2>
-<?php echo do_shortcode( '[display-posts transient_key="be_display_posts-rand" transient_expiration="WEEK_IN_SECONDS" wrapper="ul" wrapper_class="display-posts-ul" exclude_current="true" post_type="chapter" post_status="publish" orderby="rand" order="ASC"]' );
-}
-?>
+
 </div>
 
 
@@ -264,10 +228,6 @@ text-align: right;
 
 	 <?php } ?>
 <div>
-<!-- @ADDED: socialsnap -->
-<?php 	if ( function_exists('socialsnap_generate_share_request_url') && is_singular('chapter') && ! wp_is_mobile()	) {
-	echo do_shortcode('[ss_click_to_tweet content="#Books4Languages" style="2"]'); } ?>
-	<!-- End of added code -->
 
 
 
@@ -326,12 +286,5 @@ text-align: right;
 	echo apply_filters( 'the_content', $post->post_content );
 }
 ?>
-<?php if (! is_user_logged_in() && ! wp_is_mobile() && is_singular('chapter')) { ?>
-<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=48&l=ur1&category=kindlestore&banner=0VNZPTVFYGFFXX1YXN82&f=ifr&linkID=ed5cc2358edc48d9578a528f46dd0174&t=books4languag-21&tracking_id=books4languag-21" width="688" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-<?php } ?>
-<br>
-<?php if (! is_user_logged_in() && ! wp_is_mobile() && is_singular('chapter')) { ?>
-	<iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=48&l=ez&f=ifr&linkID=ed90e99e8b9e979636b6d678885ffb1e&t=books4languag-21&tracking_id=books4languag-21" width="688" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
-<?php } ?>
 </section>
 <?php edit_post_link( __( 'Edit', 'pressbooks-book' ), '<div class="edit-link">', '</div>', $post->ID, 'call-to-action' ); ?>
