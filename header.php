@@ -26,6 +26,18 @@
 	<meta name="theme-color" content="#ffffff">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" /><?php // TODO ?>
 	<?php wp_head(); ?>
+
+	<?php
+
+	/*
+	 * MODIFICATION Google adsense
+	 *
+	 *	@since 1.5
+	*/
+	?>
+	<!-- <script data-ad-client="ca-pub-9416109953950159" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+
+
 </head>
 <body <?php body_class(); ?>>
 <!-- <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
