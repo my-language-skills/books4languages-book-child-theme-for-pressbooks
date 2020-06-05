@@ -36,7 +36,19 @@
 	*/
 	?>
 	<!-- <script data-ad-client="ca-pub-9416109953950159" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+	<?php
 
+	/*
+	 * MODIFICATION Cookie Consent (At header.php and foote.php)
+	 *
+	 * @since 1.5
+	 * @link https://www.osano.com/cookieconsent/download/
+	 * https://empresiona.com/blog/como-crear-aviso-cookies-wordpress-sin-plugin/
+	 * https://newblogr.com/how-do-i-add-cookie-notifications-to-wordpress/
+	*/
+	?>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<!-- end code -->
 
 </head>
 <body <?php body_class(); ?>>

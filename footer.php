@@ -173,5 +173,38 @@ echo $multipage ? ' footer--multipage' : '';
 </footer><!-- .footer -->
 <?php wp_footer(); ?>
 </div>
+
+<?php
+
+/*
+ * MODIFICATION Cookie Consent (At header.php and foote.php)
+ *
+ * @since 1.5
+ * @link https://www.osano.com/cookieconsent/download/
+ * https://empresiona.com/blog/como-crear-aviso-cookies-wordpress-sin-plugin/
+ * https://newblogr.com/how-do-i-add-cookie-notifications-to-wordpress/
+*/
+?>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#aa0000",
+      "text": "#ffdddd"
+    },
+    "button": {
+      "background": "#ff0000"
+    }
+  },
+  "theme": "edgeless",
+  "position": "top",
+	"static": true,
+  "content": {
+    "href": "https://books4languages.com/legal/cookies-policy/"
+  }
+});
+</script>
+<!-- end code -->
 </body>
 </html>
