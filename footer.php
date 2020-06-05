@@ -8,7 +8,7 @@ global $multipage;
 <!--
 -				ADDED: Add the h5p javascript.
 -
--				@SINCE
+-				@SINCE 1.5
 -				@LINK https://stackoverflow.com/questions/2026335/how-to-add-extra-info-to-copied-web-text
 -				@LINK https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event
 
@@ -20,7 +20,7 @@ global $multipage;
 <!--
 -				ADDED: Add a #copyright notice to the clipboard when someone copies a text from the website.
 -
--				@SINCE
+-				@SINCE 1.5
 -				@LINK https://stackoverflow.com/questions/2026335/how-to-add-extra-info-to-copied-web-text
 -				@LINK https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event
 -				@LINK https://www.wpbeginner.com/wp-tutorials/how-to-add-a-read-more-link-to-copied-text-in-wordpress/
