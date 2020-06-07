@@ -128,19 +128,94 @@ echo "<p align=center>" . $wp_embed->run_shortcode('[embed]' . $get_video_url . 
 <!-- END -->
 
 
-<!-- @ADDED: Menu show/hide exercises -->
-<?php if(!isset($_POST['button1'])) {
-	 ?> <style> .textbox.textbox--exercise{ display: none; }</style>
- <?php } ?>
+<?php
 
-<!-- <form action="#textbox--exercise" method="post"> -->
-<!-- if ( strpos( get_the_content(), '13801580' ) !== false) { -->
- <?php if ( is_singular('chapter') && strpos( get_the_content(), 'textbox--exercise' ) !== false ) { ?>
+$key_h5p_id_field = get_post_meta( get_the_ID(), 'efp_h5p_id_field', true );
+
+// if (strpos(is_single(),"english") !== false) {
+// 					 $country = "english";
+// 			 } elseif (strpos(is_single(),"greek") !== false) {
+// 					 $country = "greek";
+// 			 } elseif (strpos(is_single(),"spanish") !== false) {
+// 					 $country = "spanish";
+// 			 } else {
+// 					 $country = $defaultcat;
+// 			 }
+if (strpos(get_blogaddress_by_domain($domain, $path),"english") !== false) {
+ // Check if the custom field has a value.
+ if ( ! empty($key_h5p_id_field) && isset($_POST['button1']) ) {
+ 	?>
+ 	<div class="textbox textbox--exercise"><header class="textbox__header">
+ 	<h2 class="textbox__title">Exercises</h2>
+ 	</header>
+ 	<div class="textbox__content"><p>External link to <a target="_blank" rel="noopener noreferrer" href="https://worksheet.books4languages.com/english/wp-admin/admin-ajax.php?action=h5p_embed&id=<?php echo $key_h5p_id_field?>"><?php _e( 'exercise ' . $key_h5p_id_field, 'pressbooks-book' ); ?></a></p>
+ 	<br>
+ 	<iframe src="https://worksheet.books4languages.com/english/wp-admin/admin-ajax.php?action=h5p_embed&id=<?php echo $key_h5p_id_field?>" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+ 	<script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+ 	</div>
+ 	</div>
+ 	<?php
+ 	}
+
+ if ( is_user_logged_in() && ! empty($key_h5p_id_field)  ) {
+ 	?>
+ 	<div class="textbox textbox--exercise"><header class="textbox__header">
+ 	<h2 class="textbox__title">Exercises</h2>
+ 	</header>
+ 	<div class="textbox__content">
+ 	<br>
+ 	<iframe src="https://worksheet.books4languages.com/english/wp-admin/admin-ajax.php?action=h5p_embed&id=<?php echo $key_h5p_id_field?>" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+ 	<script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+	<br>
+	<p>External link to <a target="_blank" rel="noopener noreferrer" href="https://worksheet.books4languages.com/english/wp-admin/admin-ajax.php?action=h5p_embed&id=<?php echo $key_h5p_id_field?>"><?php _e( 'Exercise ' . $key_h5p_id_field, 'pressbooks-book' ); ?></a></p>
+ 	</div>
+ 	</div>
+ 	<?php
+ 	}
+
+}
+if (strpos(get_blogaddress_by_domain($domain, $path),"greek") !== false) {
+ // Check if the custom field has a value.
+ if ( ! empty($key_h5p_id_field) && isset($_POST['button1']) ) {
+ 	?>
+ 	<div class="textbox textbox--exercise"><header class="textbox__header">
+ 	<h2 class="textbox__title">Exercises</h2>
+ 	</header>
+ 	<div class="textbox__content"><p>External link to <a target="_blank" rel="noopener noreferrer" href="https://worksheet.books4languages.com/greek/wp-admin/admin-ajax.php?action=h5p_embed&id=<?php echo $key_h5p_id_field?>"><?php _e( 'exercise ' . $key_h5p_id_field, 'pressbooks-book' ); ?></a></p>
+ 	<br>
+ 	<iframe src="https://worksheet.books4languages.com/greek/wp-admin/admin-ajax.php?action=h5p_embed&id=<?php echo $key_h5p_id_field?>" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+ 	<script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+ 	</div>
+ 	</div>
+ 	<?php
+ 	}
+
+ if ( is_user_logged_in() && ! empty($key_h5p_id_field)  ) {
+ 	?>
+ 	<div class="textbox textbox--exercise"><header class="textbox__header">
+ 	<h2 class="textbox__title">Exercises</h2>
+ 	</header>
+ 	<div class="textbox__content">
+ 	<br>
+ 	<iframe src="https://worksheet.books4languages.com/greek/wp-admin/admin-ajax.php?action=h5p_embed&id=<?php echo $key_h5p_id_field?>" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+ 	<script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
+	<br>
+	<p>External link to <a target="_blank" rel="noopener noreferrer" href="https://worksheet.books4languages.com/greek/wp-admin/admin-ajax.php?action=h5p_embed&id=<?php echo $key_h5p_id_field?>"><?php _e( 'exercise ' . $key_h5p_id_field, 'pressbooks-book' ); ?></a></p>
+ 	</div>
+ 	</div>
+ 	<?php
+ 	}
+}
+?>
+ <!-- <form action="#textbox--exercise" method="post"> -->
+ <!-- if ( strpos( get_the_content(), '13801580' ) !== false) { -->
+ <?php if ( ! is_user_logged_in() && is_singular('chapter') && ! empty($key_h5p_id_field)  ) { ?>
+
+ <!-- strpos( get_the_content(), 'textbox--exercise' ) !== false )  -->
 <!-- https://www.labschool.es/crear-eventos-google-analytics -->
-	 <form method="post" onsubmit="ga('send', 'event', 'exercises', 'show', 'all', 0);">
-		 <input class="summaryblock1" type="submit" name="button1" aria-labelledby="buttonText1" value="Show exercises"/>
-		 <input class="summaryblock2" type="submit" name="button2" aria-labelledby="buttonText2" value="Hide exercises"/>
-
+ <form method="post" onsubmit="ga('send', 'event', 'exercises', 'show', 'all', 0);">
+	 <input class="summaryblock1" type="submit" name="button1" aria-labelledby="buttonText1" value="Show exercises"/>
+	 <input class="summaryblock2" type="submit" name="button2" aria-labelledby="buttonText2" value="Hide exercises"/>
 </form>
 	 <?php } ?>
 
