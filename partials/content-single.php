@@ -115,6 +115,19 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 	}
 ?>
 
+<!-- @ADDED: youtube -->
+<?php
+// https://stackoverflow.com/questions/5322344/to-delay-javascript-function-call-using-jquery
+$get_video_url = get_post_meta(get_the_ID(), 'smdre_resources_videos', true);
+
+if ( is_user_logged_in() && ! empty( $get_video_url ) && is_singular('chapter') ) {
+global $wp_embed;
+echo "<p align=center>" . $wp_embed->run_shortcode('[embed]' . $get_video_url . '[/embed]') . "</p>";
+}
+?>
+<!-- END -->
+
+
 <!-- @ADDED: Menu show/hide exercises -->
 <?php if(!isset($_POST['button1'])) {
 	 ?> <style> .textbox.textbox--exercise{ display: none; }</style>
