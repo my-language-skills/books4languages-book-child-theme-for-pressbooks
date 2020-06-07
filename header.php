@@ -217,7 +217,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 				<nav class="reading-header__inside">
 					<?php if ( is_single() ) { ?>
 					<div class="reading-header__toc dropdown">
-						<?php if(!wp_is_mobile()){ ?>
+						<?php if(is_user_logged_in()){ //!wp_is_mobile()?>
 						<div class="reading-header__toc__title"><?php
 							 _e( 'Contents', 'pressbooks-book' ); ?></div>
 							<div class="block-reading-toc" hidden><?php //the hidden list?>
