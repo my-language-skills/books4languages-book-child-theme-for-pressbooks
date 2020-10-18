@@ -11,6 +11,7 @@ $type: 'web';
 
 
 /* ****** @internal by B4L ****** */
+
 .feedbackimage {
   display: block;
   margin-left: auto;
@@ -88,6 +89,10 @@ margin-top: 1rem;
 .chapter th {
   text-transform: uppercase;
 	}
+
+.chapter table{
+  width:100%;
+}
 
 /*  display-posts  */
 .display-posts-ul {
