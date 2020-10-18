@@ -28,10 +28,11 @@
 
 					<div class="block block-reading-meta">
 						<div class="block-reading-meta__inner">
-							<?php include( locate_template( 'partials/content-difftool.php' ) ); ?>
-
-<!-- @ ADDED Just mobile -->
-					<?php if ( ! wp_is_mobile() ){?>
+							<?php include( locate_template( 'partials/content-difftool.php' ) );
+							/** ADDED Just Desktop
+							 * @since V.1XXX
+							 */
+					 	 	if ( !wp_is_mobile() ){?>
 
 							<div class="block-reading-meta__subsection">
 								<h2 class="section__subtitle block-reading-meta__subtitle"><?php _e( 'License', 'pressbooks-book' ); ?></h2>
@@ -40,10 +41,9 @@
 										<?php echo \PressbooksBook\Helpers\copyright_license( false ); ?>
 									</p>
 								<?php } ?>
+				<?php	}
+							/** End of added code: Just Desktop */
 
-					<?php	}?>
-<!-- END -->
-								<?php
 								$pb_section_doi = get_post_meta( $post->ID, 'pb_section_doi', true );
 								if ( $pb_section_doi ) {
 									?>
