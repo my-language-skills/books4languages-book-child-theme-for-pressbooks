@@ -5,45 +5,7 @@
 <?php
 global $multipage;
 ?>
-<!--
--				ADDED: Add the h5p javascript.
--
--				@SINCE 1.5
--				@LINK https://stackoverflow.com/questions/2026335/how-to-add-extra-info-to-copied-web-text
--				@LINK https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event
 
-
--->
-<script src="https://worksheet.books4languages.com/english/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
-<!-- END CODE -->
-
-<!--
--				ADDED: Add a #copyright notice to the clipboard when someone copies a text from the website.
--
--				@SINCE 1.5
--				@LINK https://stackoverflow.com/questions/2026335/how-to-add-extra-info-to-copied-web-text
--				@LINK https://developer.mozilla.org/en-US/docs/Web/API/Element/copy_event
--				@LINK https://www.wpbeginner.com/wp-tutorials/how-to-add-a-read-more-link-to-copied-text-in-wordpress/
-- 	  const pagelink = `\n\nSource: © ${document.location.href}`;
-
--->
-
-<?php
-if ( !wp_is_mobile() ) {
-	if ( !is_user_logged_in() ) { ?>
-	<script type="text/javascript">
-
-	document.addEventListener('copy', (event) => {
-	  const pagelink = `\n\nSource: <?php the_title(); ?> © <?php echo wp_get_shortlink(get_the_ID()); ?>`; //Original: `\n\nSource: ${document.location.href}`
-	  event.clipboardData.setData('text', document.getSelection() + pagelink);
-	  event.preventDefault();
-	});
-
-	</script>
-<?php }
-}
-?>
-<!-- END CODE -->
 <footer class="footer
 <?php
 if ( is_front_page() ) :
@@ -57,80 +19,91 @@ echo $multipage ? ' footer--multipage' : '';
 
 /**
  * Add checks to determine what contact link returns
+ * @deprecated Not longer required
+ *
  */
 
- //@Delete
 
 /**
  * Filter the "Contact" link.
  *
  * @since 5.6.0
+ * @deprecated Not longer required
  */
-
- //@Delete
-
 
 ?>
 ">
 	<div class="footer__inner">
 		<section class="footer__pressbooks">
-
-<!--
--		ADD: changes logo from dynamic original logo to static logo of the company
--
--		@since 1.0
--->
-			<a class="" href="https://books4languages.com/" title="Books4Languages">
+<?php
+	/**
+	 *
+	 * ADDED: changes logo from dynamic original logo to static logo of the company.
+	 *
+	 * @since 1.0
+	 *
+	 */
+	 ?>
+			<a class="" onclick="gtag('event', 'image_click', {'event_category': 'navigation', 'event_label': 'footer_home'});" href="https://books4languages.com/" title="Books4Languages">
 				<img id="bfl_icon_footer" class="bfl_icon_class" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/empty.gif" alt="Books4Languages">
 			</a>
 <!-- End of added code -->
 
 <div class="footer__pressbooks__links" style = "margin: auto;"> <!-- <div class="footer__pressbooks__links"> -->
-
-
-<!--
--		MODIFIES: Footer tittle.
--
--		@since 1.0
--->
+<?php
+	/**
+	 *
+	 * MODIFIES: Footer tittle.
+	 *
+	 * @since 1.0
+	 *
+	 */
+	 ?>
 	<p class="footer__pressbooks__links__title"><?php printf( __( 'Created with use of %s', 'pressbooks-book' ),'<span class="pressbooks">Wordpress and Pressbooks</span>' ); ?></p>
 
 <!-- End of modified code -->
+<?php
+/**
+ *
+ * MODIFIES: all the links bellow. Privacy Policy menu slug added.
+ *
+ * @since 1.0
+ * @since 1.4.3 Book- index link
+ * @since 1.4.8 Mobile ADDED
+ *
+ */
 
-<!--
--		MODIFIES: all the links bellow. Privacy Policy menu slug added.
--
--		@since 1.0    Book- index link ADDED v1.4.3 Mobile ADDED v1.4.8
--->
-<?php if ( wp_is_mobile() && is_single()) : ?>
+if ( wp_is_mobile() && is_single()) : ?>
 	<ul class="footer__pressbooks__links__list">
-		<li><a target="_blank" rel="noopener noreferrer" href="https://worksheet.books4languages.com/"><?php _e( 'Exercises', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/legal/"><?php _e( 'Legal', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://open.books4languages.com/register/your-membership/"><?php _e( 'Membership', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/newsletter/"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
+		<li><a target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'worksheet'});" href="https://worksheet.books4languages.com/"><?php _e( 'Exercises', 'pressbooks-book' ); ?></a> |</li>
+		<li><a target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'legal'});" href="https://books4languages.com/legal/"><?php _e( 'Legal', 'pressbooks-book' ); ?></a> |</li>
+		<li><a target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'your-membership'});" href="https://open.books4languages.com/register/your-membership/"><?php _e( 'Membership', 'pressbooks-book' ); ?></a> |</li>
+		<li><a target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'newsletter'});" href="https://books4languages.com/newsletter/"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
 	</ul>
 <?php	else : ?>
 	<ul class="footer__pressbooks__links__list">
-		<li><a href="https://open.books4languages.com/"><?php _e( 'Catalog', 'pressbooks-book' ); ?></a> |</li>
-		<li><a href="<?php pbc_get_tablecontents_url() ?>"><?php _e( 'Site index', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://worksheet.books4languages.com/"><?php _e( 'Exercises', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/legal/"><?php _e( 'TOS', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/legal/privacy-policy/"><?php _e( 'Privacy', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://questions4languages.wordpress.com/"><?php _e( 'Forum', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://open.books4languages.com/register/your-membership/"><?php _e( 'Membership', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/contact"><?php _e( 'Contact', 'pressbooks-book' ); ?></a> |</li>
-		<li><a target="_blank" rel="noopener noreferrer" href="https://books4languages.com/newsletter/"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
+		<li><a onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'catalog'});" href="https://open.books4languages.com/"><?php _e( 'Catalog', 'pressbooks-book' ); ?></a> |</li>
+		<li><a onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'site-index'});" href="<?php pbc_get_tablecontents_url() ?>"><?php _e( 'Site index', 'pressbooks-book' ); ?></a> |</li>
+		<li><a onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'worksheet'});" target="_blank" rel="noopener noreferrer" href="https://worksheet.books4languages.com/"><?php _e( 'Exercises', 'pressbooks-book' ); ?></a> |</li>
+		<li><a onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'legal'});" target="_blank" rel="noopener noreferrer" href="https://books4languages.com/legal/"><?php _e( 'TOS', 'pressbooks-book' ); ?></a> |</li>
+		<li><a onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'privacy-policy'});" rel="noopener noreferrer" href="https://books4languages.com/legal/privacy-policy/"><?php _e( 'Privacy', 'pressbooks-book' ); ?></a> |</li>
+		<li><a onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'questions4languages'});" target="_blank" rel="noopener noreferrer" href="https://questions4languages.wordpress.com/"><?php _e( 'Forum', 'pressbooks-book' ); ?></a> |</li>
+		<li><a onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'your-membership'});" target="_blank" rel="noopener noreferrer" href="https://open.books4languages.com/register/your-membership/"><?php _e( 'Membership', 'pressbooks-book' ); ?></a> |</li>
+		<li><a onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'contact'});" target="_blank" rel="noopener noreferrer" href="https://books4languages.com/contact"><?php _e( 'Contact', 'pressbooks-book' ); ?></a> |</li>
+		<li><a onclick="gtag('event', 'footer_click', {'event_category': 'navigation', 'event_label': 'newsletter'});" target="_blank" rel="noopener noreferrer" href="https://books4languages.com/newsletter/"><?php _e( 'Newsletter', 'pressbooks-book' ); ?></a>
 	</ul>
-<?php	endif;?>
-<!-- End of modified code -->
+<?php	endif;
+/** End of modified code  */
 
-<!--
--				ADD: Functionality for loading of the available translations - location 3. Functions are called from translations-for-presbooks plugin.
--
--				@since 1.3
--				@modified 1.4
--->
-<?php if ( is_user_logged_in() ) {
+/**
+ *
+ * ADDED: Functionality for loading of the available translations - location 3. Functions are called from translations-for-presbooks plugin.
+ *
+ *	@since 1.3
+ *	@since 1.4
+ *
+ */
+ if ( is_user_logged_in() ) {
 						if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled() ) {
 						 ?>
 								<div style="display: flex; justify-content: center;">
@@ -144,24 +117,28 @@ echo $multipage ? ' footer--multipage' : '';
 									</ul>
 				<?php  }
 
-			}?>
-<!-- End of modified code -->
-
-
-
+			}
+/** End of added code  */
+			?>
 
 			</div>
-<!--
--		MODIFIES: href="" of the link bellow for addition of company social networks.
--   MODIFIES: icons are now sprites css
--		@since 1.0
--->
+
+<?php
+/**
+ *
+ * MODIFIES: href="" of the link bellow for addition of company social networks.
+ * MODIFIES: Icons are now sprites css
+ *
+ * @since 1.0
+ *
+ */
+?>
 				<div class="footer__pressbooks__social">
-					<a class="facebook" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?>" rel=”noopener”>
+					<a class="facebook" onclick="gtag('event', 'footer_click', {'event_category': 'social', 'event_label': 'facebook'});" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?>" rel=”noopener”>
 						<img id="facebook_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="facebook bfl">
 					 	<span class="screen-reader-text"><?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?></span>
 					 </a>
-					 <a class="twitter" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?>" rel=”noopener”>
+					 <a class="twitter" onclick="gtag('event', 'footer_click', {'event_category': 'social', 'event_label': 'twitter'});" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?>" rel=”noopener”>
 						 <img id="twitter_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="twitter bfl">
 					 <span class="screen-reader-text"><?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?></span>
 				 </a>
@@ -174,37 +151,5 @@ echo $multipage ? ' footer--multipage' : '';
 <?php wp_footer(); ?>
 </div>
 
-<?php
-
-/*
- * MODIFICATION Cookie Consent (At header.php and foote.php)
- *
- * @since 1.5
- * @link https://www.osano.com/cookieconsent/download/
- * https://empresiona.com/blog/como-crear-aviso-cookies-wordpress-sin-plugin/
- * https://newblogr.com/how-do-i-add-cookie-notifications-to-wordpress/
-*/
-?>
-<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-<script>
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#aa0000",
-      "text": "#ffdddd"
-    },
-    "button": {
-      "background": "#ff0000"
-    }
-  },
-  "theme": "edgeless",
-  "position": "top",
-	"static": true,
-  "content": {
-    "href": "https://books4languages.com/legal/cookies-policy/"
-  }
-});
-</script>
-<!-- end code -->
 </body>
 </html>
