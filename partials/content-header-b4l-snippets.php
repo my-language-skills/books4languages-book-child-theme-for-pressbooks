@@ -1,19 +1,5 @@
 <?php
 /*
- * MODIFICATION Cookie Consent (At header.php and foote.php)
- *
- * @since 1.5
- * @link https://www.osano.com/cookieconsent/download/
- * https://empresiona.com/blog/como-crear-aviso-cookies-wordpress-sin-plugin/
- * https://newblogr.com/how-do-i-add-cookie-notifications-to-wordpress/
-*/
-?>
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-<?php
-/** End of added code  */
-
-
-/*
  *      ADDED: Google Ad Manager code
  *
  *			@SINCE v
