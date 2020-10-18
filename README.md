@@ -8,7 +8,7 @@
 * Tested up to WP: 5.2.4
 * Tested up to PB: 5.9.5
 * Requires PHP: 5.6.0
-* Stable tag: 1.4.8
+* Stable tag: 1.5
 * License: GNU 3.0
 * License URL: https://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -59,6 +59,9 @@ Books4Languages Child Theme for Pressbooks is supplied "as is" and all use is at
 ## Screenshots
 
 ## Changelog
+### 1.5
+* **ADDITIONS**
+*
 ### 1.4.8
 * **ADDITIONS**
   * New 404.php
