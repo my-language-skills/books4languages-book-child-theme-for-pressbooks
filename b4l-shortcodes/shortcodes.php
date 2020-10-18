@@ -41,7 +41,7 @@ add_shortcode('feedbackimage','b4l_feedback_image');
  *
  */
 function b4l_info_menu() { ?>
-
+	<?php if ( is_singular('chapter')) { ?>
 	<!-- if( ! is_user_logged_in()  ) { -->
 	<div id="info" class="info">
 		<h2 class="textbox__title">Info</h2>
@@ -52,7 +52,7 @@ function b4l_info_menu() { ?>
 		<script src="https://worksheet.books4languages.com/content/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js" charset="UTF-8"></script>
 	<?php } ?>
 
-	<?php if ( is_singular('chapter')) { ?>
+
 		<form method="post" onclick="gtag('event', 'view_info', {'event_category': 'information', 'event_label': 'show_info'});" action="<?php the_permalink()?>#info">
 			<input class="summaryblock1" type="submit" name="button3" aria-labelledby="buttonText3" value="Show info"/>
 			<input class="summaryblock2" type="submit" name="button4" aria-labelledby="buttonText4" value="Hide info"/>

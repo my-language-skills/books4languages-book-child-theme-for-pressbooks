@@ -117,7 +117,7 @@ if ( !is_user_logged_in() ) {
  *
  */
 
-// include ( locate_template("/partials/content-header-smdre.php"));
+include ( locate_template("/partials/content-header-smdre.php"));
 
 
 
