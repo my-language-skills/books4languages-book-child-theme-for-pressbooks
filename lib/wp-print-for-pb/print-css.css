@@ -1,0 +1,102 @@
+/* Mistape */
+
+.mistape_caption {
+   display: none;
+}
+/* Sections Educational Book Exercise */
+h2 { margin: 10px; }
+.textbox.textbox--exercise { display: none; }
+.textbox.textbox--summary { display: none; }
+
+/* Sections hustle-ui */
+	.hustle-ui {
+    display: none;
+}
+
+/* WP-Print */
+body {
+	font-family: Verdana, Arial, Tahoma;
+	font-size: 14px;
+	color: #000000;
+}
+* {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+hr { display: none; }
+img { max-width: 100%; }
+p {
+	word-wrap: break-word;
+	margin-bottom: 15px;
+}
+a { color: inherit; }
+
+/*  Header */
+.entry-header {
+	margin-bottom: 5px; /* 25px; */
+	padding-bottom: 5px; /* 25px; */
+	border-bottom: 1px solid #555;
+}
+.hat {
+	display: block;
+	text-align: center;
+	margin: 15px 0 20px 0;
+}
+
+.entry-title, #CommentTitle {
+	font-weight: bold;
+	font-size: 21px;
+	margin-bottom: 5px;
+}
+/* #CommentTitle { margin-bottom: 15px; } */
+
+/* Main */
+.center {
+	margin: 0 auto;
+	padding: 0 2%;
+}
+
+/* thumbnail */
+.thumbnail {
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+/* content */
+.entry-content {
+	margin-bottom: 5px; /* 35px; */
+	line-height: 170%;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+/* Footer */
+.footer {
+	margin-top: 25px;
+	padding: 25px 0 0 0;
+	border-top: 1px solid #555;
+}
+
+@media print {
+    #comments_controls,
+    #print-link {
+        display: block;
+    }
+		/* a::after{
+			content: " (" attr(href) ") ";
+		} */
+}
+
+
+
+.alignleft, .alignleft {
+	float: left;
+	margin: 10px 10px 5px 0;
+}
+.alignright, .alignright {
+	float: right;
+	margin: 10px 0 5px 10px;
+}

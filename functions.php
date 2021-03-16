@@ -4,7 +4,45 @@ Theme Name:       Books4languages Book child theme
 Version:          1.5
 License:          GPL v3 or later
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
+
+
+
+
+https://bloggyaani.com/speed-up-wordpress-site/
 */
+
+//Disable Self-Pingbacks
+// function bloggyaani_disable_self_pingbacks( &$links ) {
+// foreach ( $links as $l => $link )
+// if ( 0 === strpos( $link, get_option( 'home' ) ) )
+// unset($links[$l]);
+// }
+// add_action( 'pre_ping', 'bloggyaani_disable_self_pingbacks' );
+
+
+/* https://jamesparsons.com/2020/02/jquery-render-blocking-insights */
+// add_filter( 'wp_enqueue_scripts', 'replace_default_jquery_with_fallback');
+// function replace_default_jquery_with_fallback() {
+//     $ver = '1.12.4';
+//     wp_dequeue_script( 'jquery' );
+//     wp_deregister_script( 'jquery' );
+//     // Set last parameter to 'true' if you want to load it in footer
+//     wp_register_script( 'jquery', "//ajax.googleapis.com/ajax/libs/jquery/$ver/jquery.min.js", '', $ver, false );//false
+//     wp_add_inline_script( 'jquery', 'window.jQuery||document.write(\'<script src="'.includes_url( '/js/jquery/jquery.js' ).'"><\/script>\')' );
+//     wp_enqueue_script ( 'jquery' );
+// }
+
+
+/**
+ * Restore shortlink at amdmin page.
+ *
+ * @since 0.0
+ * @link
+
+ */
+
+add_filter( 'get_shortlink', function( $shortlink ) {return $shortlink;} );
+
 
 /**
  * Function for
@@ -18,7 +56,7 @@ GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressb
 
 /* site optimization code: https://github.com/scorpiock/wp-perf-optimization-without-plugin/blob/master/functions.php */
 
-
+// style
 function pbc_enqueue_styles() {
 
 	$parent_style = 'parent-style';
@@ -30,9 +68,10 @@ function pbc_enqueue_styles() {
 		wp_get_theme()->get('Version')
 	);
 }
-
 add_action( 'wp_enqueue_scripts', 'pbc_enqueue_styles' );
 
+
+// script
 function pbc_enqueue_scripts() {
 
 	wp_enqueue_script( 'owl-carousel', get_stylesheet_directory_uri() . '/script.js', array( 'jquery' ) );
@@ -40,31 +79,19 @@ function pbc_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'pbc_enqueue_scripts' );
 
 
+// disable stylesheet (glossary-tooltip)
+function shapeSpace_disable_scripts_styles() {
 
-/**
- * Function for updating company logo on sign in page
- *
- * @since 1.0
- */
- function pbc_login_logo() { ?>
-    <style type="text/css">
-        #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/books4languages-header.png) !important;
-		height:65px;
-		width:320px;
-		background-size: 320px 65px;
-		background-repeat: no-repeat;
-        	padding-bottom: 30px;
-        }
-    </style>
-<?php }
-add_action( 'login_enqueue_scripts', 'pbc_login_logo' );
-/** End of functionality*/
+ wp_dequeue_style('glossary-tooltip');
+
+}
+add_action('wp_enqueue_scripts', 'shapeSpace_disable_scripts_styles', 100);
+
 
 
 
 /**
- * Function for printing URL of Table of contents post
+ * Function for printing URL of Table of contents post (DO NOT TRANSFER OF BREAK)
  *
  * @since 1.4.3
  */
@@ -77,7 +104,7 @@ function pbc_get_tablecontents_url(){
 
 
 /**
- * Remove External Google Fonts
+ * Remove External Google Fonts (DO NOT TRANSFER OF BREAK)
  *
  * @since 1.4.4
  * @internal fonts.gstatic.com / fonts.googleapis.com
@@ -122,26 +149,50 @@ include ( locate_template("/partials/content-header-smdre.php"));
 
 
 
-
 /**
- * Include display-posts-shortcode
+ * Include lib folder
  *
  * @since 1.4.8
  * @internal display-posts-shortcode
+ * @internal display-posts-transient-cache
+ *
+ * @since 1.5
+ * @internal wp-print-for-pb
+ * @internal wampum-popups
  *
  */
+ // if (!function_exists('get_content_toc_headers')) {
+ //
+ // 		// load Social if not already loaded
+	// 	require_once dirname( __FILE__ ) . '/lib/hm-content-toc/hm-content-toc.php';
+ //
+ // 	}
 
-require_once dirname( __FILE__ ) . '/vendor/display-posts-shortcode/display-posts-shortcode.php';
-require_once dirname( __FILE__ ) . '/vendor/display-posts-shortcode/display-posts-transient-cache.php';
+require_once dirname( __FILE__ ) . '/lib/display-posts-shortcode/display-posts-shortcode.php';
+require_once dirname( __FILE__ ) . '/lib/display-posts-shortcode/display-posts-transient-cache.php';
+
+// require_once dirname( __FILE__ ) . '/lib/wp-print-for-pb/wp-print-for-pb.php';
+// require_once dirname( __FILE__ ) . '/lib/wampum-popups/wampum-popups.php';
+
+
 
 
 /**
- * Include B4L-shortcode
+ * Include Vendor folder
  *
  * @since 1.5
- * @internal b4l-shortcodes
+ * @internal snippets-single
+ * @internal snippets-mu
+ * @internal snippets-header
+ * @internal snippets-footer
+ * @internal shortcodes
+ * @internal shortcodes-h5p
  *
  */
 
-require_once dirname( __FILE__ ) . '/b4l-shortcodes/shortcodes.php';
-require_once dirname( __FILE__ ) . '/b4l-shortcodes/h5p.php';
+ require_once dirname( __FILE__ ) . '/vendor/snippets-single.php';
+ require_once dirname( __FILE__ ) . '/vendor/snippets-mu.php';
+ require_once dirname( __FILE__ ) . '/vendor/snippets-header.php';
+ require_once dirname( __FILE__ ) . '/vendor/snippets-footer.php';
+ require_once dirname( __FILE__ ) . '/vendor/shortcodes.php';
+ require_once dirname( __FILE__ ) . '/vendor/shortcodes-h5p.php';

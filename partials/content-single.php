@@ -1,17 +1,19 @@
 <section data-type="<?php echo $datatype; ?>" <?php post_class( pb_get_section_type( $post ) ); ?>>
 <header>
 
+  <!-- https://stackoverflow.com/questions/11901074/javascript-call-a-function-after-specific-time-period -->
+
 
 <?php
 /**
  *
  * ADDED: the_content area ads (top)
  *
- * @since 1.x
+ * @since 1.5
  *
  */
 
- get_template_part( 'partials/content-single','ads-top' );
+ // get_template_part( 'partials/content-single','ads-top' );
 
 
 /** End of added code  */
@@ -20,7 +22,7 @@
  *
  * ADDED: featured image code
  *
- * @since 1.x
+ * @since 1.5
  *
  */
 
@@ -35,53 +37,43 @@ if ( $number ) {
 	echo "<span>$number</span> ";
 }
 if ( get_post_meta( $post->ID, 'pb_show_title', true ) || $post->post_type === 'part' ) {
-	// @ADDED: Titles are link to pages in desktop
-
- 	if ( wp_is_mobile() ) :
- 	    /* Display and echo mobile specific stuff here */
- 			the_title();
- 	else :
- 	    /* Display and echo desktop stuff here */
-
- 			if(function_exists('wp_print') && is_page('print')) : // If wp_print is acivated, titles are links.
- 					/* Display and echo mobile specific stuff here */
-			?><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
- 			<?php
- 			else :
- 					/* Display and echo desktop stuff here */
- 				 the_title();
- 			endif; ?>
- 	<?php
- 	endif;
+	if(function_exists('wp_print') && is_page('print')) : // If wp_print is acivated, titles are links. ?>
+    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php
+	else :
+		the_title();
+	endif;
 	/** End of added code  */
+
 }	?>
 </h1>
-<?php if ( $subtitle ) { ?>
-<p data-type="subtitle"><?php echo $subtitle; ?></p> <!-- Add reading time from EFP --><?php // echo reading_time(); ?>
-<?php } ?>
-<?php if ( $authors ) { ?>
-<p data-type="author"><?php echo $authors; ?></p>
-<?php }
-
+<?php
+if ( is_user_logged_in() ) {
+  if ( $subtitle ) { ?>
+  <p data-type="subtitle"><?php echo $subtitle; ?></p> <!-- Add reading time from EFP --><?php // echo reading_time(); ?>
+  <?php } ?>
+  <?php if ( $authors ) { ?>
+  <p data-type="author"><?php echo $authors; ?></p> <?php
+  }
+}
 /**
  *
  * ADDED: Download and print button
  * Available just in desktop
  *
- * @since 1.x
+ * @since 1.4.8
  *
  */
 
-if(function_exists('wp_print') && !wp_is_mobile() && is_singular('chapter')) {
-?>
+// if(function_exists('wp_print') && !wp_is_mobile() && is_singular('chapter')) { ?>
+  <!-- <br>
 	<a class="epub" onclick="gtag('event', 'content_click', {'event_category': 'resources', 'event_label': 'ebook'});" href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="<?php _e( 'Download eBook', 'pressbooks-book' ); ?>">
 		<img id="epub_icon" class="epub_icon" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/epub-bn-24.png" alt="Download">
-		<span class="screen-reader-text"><?php _e( 'Download eBook', 'pressbooks-book' ); ?></span>
+		<span class="screen-reader-text"><?php //_e( 'Download eBook', 'pressbooks-book' ); ?></span>
 	 </a>
-	<a onclick="gtag('event', 'imag_click', {'event_category': 'resources', 'event_label': 'ebook'});" href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="Download ebook">Download ebook</a>
+	<a onclick="gtag('event', 'imag_click', {'event_category': 'resources', 'event_label': 'ebook'});" href="https://books4languages.com/ebooks/" target="_blank" rel="noopener noreferrer" title="Download ebook">Download ebook</a> -->
 <?php
-print_link();
-	 }
+// print_link();
+// 	 }
 
  /** End of added code  */
 
@@ -91,15 +83,47 @@ print_link();
   * ADDED: socialsnap
   * if ( $key_pb_subtitle !=  'Revision' )
   *
-  * @since 1.x
+  * @since 1.4.8
   *
   */
+
 
 if ( function_exists('socialsnap_generate_share_request_url') && is_user_logged_in() ) {
 	echo do_shortcode('[ss_social_share align="left" shape="rounded" size="small"labels="label" spacing="1" hide_on_mobile="0" total="0" all_networks="0"]'); }
 	/** End of added code  */
 
 ?> </header> <?php
+
+
+
+
+
+ /**
+  *
+  * ADDED: hm content toc
+  *
+  * @since 1.x.,x
+	* [hm_content_toc]
+  * [hm_content_toc title="TOC title" headers="h2, h3, h4"]
+  */
+ if ( wp_is_mobile() ) :
+	 function prefix_add_content ($content){
+
+		$before = "[hm_content_toc title='Table of contents' headers='h2, h3,']";
+	 	// $after = "This comes after the content (like my Podcast badge).";
+	 	$content = $before . $content; // . $after
+
+	 	return $content;
+	 }
+	 add_filter ('the_content', 'prefix_add_content');
+		else :
+					/* Display and echo desktop stuff here */
+
+		endif;
+
+
+/** End of added code  */
+
 
 if ( get_post_type( $post->ID ) !== 'part' ) {
 	if ( pb_should_parse_subsections() ) {
@@ -115,28 +139,35 @@ if ( get_post_type( $post->ID ) !== 'part' ) {
 /**
  *
  * ADDED: youtube
- * @link https://stackoverflow.com/questions/5322344/to-delay-javascript-function-call-using-jquery
+ * @link
  *
  * @since 1.x
  *
  */
 
-$get_video_url = get_post_meta(get_the_ID(), 'smdre_resources_videos', true);
-
-if ( is_user_logged_in() && !empty( $get_video_url ) && is_singular('chapter') ) {
-global $wp_embed;
-echo "<p align=center>" . $wp_embed->run_shortcode('[embed]' . $get_video_url . '[/embed]') . "</p>";
-}
+// $get_video_url = get_post_meta(get_the_ID(), 'smdre_resources_videos', true);
+//
+// if ( is_user_logged_in() && !empty( $get_video_url ) && is_singular('chapter') ) {
+// global $wp_embed;
+// echo "<p align=center>" . $wp_embed->run_shortcode('[embed]' . $get_video_url . '[/embed]') . "</p>";
+// }
 
 /** End of added code  */
 
 /**
  *
  * ADDED: Exercises h5p
- *
- * @since 1.x
+ * @link https://wordpress.org/support/topic/how-to-get-current-site-blog-id/
+ * @link https://wordpress.stackexchange.com/questions/169306/check-if-is-on-child-page-of-a-particular-page
+ * @since 1.5
  *
  */
+
+// revision-topics-1-6 null-12/ is_single
+// $blog_id = get_current_blog_id();
+//( $blog_id != 23) && ( $blog_id != 24)
+global $blog_id;
+$os = array(23,24);
 
 if (strpos(get_blogaddress_by_domain($domain, $path),"english") !== false) {
 	echo do_shortcode( '[h5pexercises_english]' );
@@ -144,22 +175,26 @@ if (strpos(get_blogaddress_by_domain($domain, $path),"english") !== false) {
 elseif (strpos(get_blogaddress_by_domain($domain, $path),"greek") !== false) {
 echo do_shortcode( '[h5pexercises_greek]' );
 	}
+	elseif (strpos(get_blogaddress_by_domain($domain, $path),"spanish") !== false) {
+	echo do_shortcode( '[h5pexercises_spanish]' );
+		}
 else {
-	if ( is_singular('chapter')) {
+  if ( is_singular('chapter') && !(in_array($blog_id, $os)) && !(is_single('Null')) ) {
   echo do_shortcode( '[h5pexercises_contribute]' );
-
 	}
 }
 /** End of added code  */
+
+
 
 /**
  *
  * ADDED: feedbacklink
  *
- * @since 1.x
+ * @since 1.5
  *
  */
-echo do_shortcode( '[feedbackimage]' );
+// echo do_shortcode( '[feedbackimage]' );
 
 /** End of added code  */
 
@@ -167,10 +202,10 @@ echo do_shortcode( '[feedbackimage]' );
  *
  * ADDED: info menu
  *
- * @since 1.x
+ * @since 1.5
  *
  */
- echo do_shortcode( '[infomenu]' );
+ // echo do_shortcode( '[infomenu]' );
 
  /** End of added code  */
 
@@ -178,11 +213,11 @@ echo do_shortcode( '[feedbackimage]' );
   *
   * ADDED: the_content area ads (bottom)
   *
-  * @since 1.x
+  * @since 1.5
   *
   */
 
-  get_template_part( 'partials/content-single','ads-bottom' );
+  // get_template_part( 'partials/content-single','ads-bottom' );
 
 
  /** End of added code  */

@@ -24,21 +24,34 @@
 
 </div><!-- #content -->
 
+<?php
+// get_template_part( 'partials/content-single','ads-sidebar' ); ?>
+
+
+
 			<?php \PressbooksBook\Helpers\get_links(); ?>
 
 					<div class="block block-reading-meta">
 						<div class="block-reading-meta__inner">
 							<?php include( locate_template( 'partials/content-difftool.php' ) );
 							/** ADDED Just Desktop
-							 * @since V.1XXX
+							 * @since 1.5
 							 */
 					 	 	if ( !wp_is_mobile() ){?>
 
 							<div class="block-reading-meta__subsection">
 								<h2 class="section__subtitle block-reading-meta__subtitle"><?php _e( 'License', 'pressbooks-book' ); ?></h2>
 								<?php if ( \PressbooksBook\Helpers\is_book_public() ) { ?>
+
+									<ul>
+ 										<li><a rel="nofollow" href="<?php wp_get_shortlink(get_the_ID()); ?>"><?php the_title() ?> </a> from <?php bloginfo('name');?>.</li>
+										<li>Copyright © 2021 <a rel="nofollow" href="https://books4languages.com/">Books4Languages</a>. All rights reserved.</li>
+										<li>Educators, <a rel="nofollow" href="https://books4languages.com/legal/licence-to-use/">Some Rights Reserved</a>.</li>
+										<li>ShortLink: <?php echo wp_get_shortlink(get_the_ID()); ?></li>
+									</ul>
 									<p>
-										<?php echo \PressbooksBook\Helpers\copyright_license( false ); ?>
+										<!-- NOT LONGER REQUIRED -->
+										<?php //echo \PressbooksBook\Helpers\copyright_license( false ); ?>
 									</p>
 								<?php } ?>
 				<?php	}
@@ -61,16 +74,15 @@
 									</p>
 								<?php } ?>
 							</div>
-							<?php if ( \PressbooksBook\Helpers\social_media_enabled() ) { ?>
-							<div class="block-reading-meta__subsection">
-								<h2 class="section__subtitle block-reading-meta__subtitle"><?php _e( 'Share This Book', 'pressbooks-book' ); ?></h2>
-								<div class="block-reading-meta__share">
-									<?php
-										echo \PressbooksBook\Helpers\share_icons();
-									?>
-								</div>
-							</div>
-							<?php } ?>
+
+							<?php
+							/**
+							 *
+							 * @deprecated
+							 * @since 1.5
+							 */
+						 ?>
+
 						</div>
 					</div>
 				<?php comments_template( '', true ); ?>

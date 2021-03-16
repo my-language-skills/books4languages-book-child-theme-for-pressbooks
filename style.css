@@ -12,6 +12,138 @@ Template:         pressbooks-book
 GitHub Theme URI: my-language-skills/books4languages-book-child-theme-for-pressbooks
 */
 
+
+/* ****** @internal by B4L ****** */
+
+.feedbackimage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info {
+max-width: 720px;
+margin-left: auto;
+margin-right: auto;
+}
+
+.summaryblock1 {
+display: block;
+width: 49%;
+border: 1px solid rgba(0,0,0,.25);
+border-radius: 16px;
+background-color: #dc6e78;
+padding: 12px 4px !important;
+font-size: 13px;
+cursor: pointer;
+text-align: left;
+}
+
+.summaryblock2 {
+display: block;
+width: 49%;
+border: 1px solid rgba(0,0,0,.25);
+border-radius: 16px;
+background-color: #dc6e78;
+padding: 12px 4px !important;
+font-size: 13px;
+cursor: pointer;
+text-align: right;
+}
+
+/* TOC Content page */
+.block-toc h2 {
+font-size: 1.2rem;
+margin-bottom: 1rem;
+margin-top: 1rem;
+}
+
+/* Text Boxes */
+.textbox, .bcc-box {
+  border-style: none !important;
+	}
+
+.textbox, .bcc-box {
+  padding: 0 !important;
+  margin: 0 !important;
+	}
+
+.textbox.textbox--summary {
+  background: #FDF7F8;
+  }
+
+.single-chapter {
+  background: #FCFCFC;
+  }
+
+/* Titles styles */
+
+.chapter h2 {
+  border-bottom: 2px solid rgba(53,86,129, 0.3);
+  text-transform: uppercase;
+  }
+
+.chapter h4 {
+  margin: 20px;
+  font-style: normal;
+	}
+
+/* Tables styles */
+.chapter th {
+  text-transform: uppercase;
+	}
+
+.chapter table{
+  width:100%;
+}
+
+/*  display-posts  */
+.display-posts-ul {
+  background: #F5F9FC;
+  }
+
+/* Links */
+/* unvisited link */
+.chapter a:link {
+  color: #dc6e78;
+  text-decoration: none;
+  }
+
+/* visited link */
+.display-posts-ul a:visited {
+  color: #1356A3;
+  font: bold;
+  }
+
+/* mouse over link */
+.chapter a:hover {
+  color: #dc6e78;
+  text-decoration: underline;
+  }
+
+/* selected link */
+.chapter a:active {
+  color: blue;
+  }
+
+/* Mobile .textbox ul*/
+@media all and (max-width:480px) {
+.single-chapter #content, .single-front-matter #content, .single-part #content {
+  font-size: 1rem;
+  padding: 0 0.4rem;
+  margin-bottom: 0rem;
+    }
+.textbox li,   .bcc-box li {
+  font-size: 1rem;
+  margin-left: 0em;
+
+    }
+.chapter ul {
+  padding-left: 0.75em;
+    }
+ }
+
+
 /*
  ################################### GENERAL THEME CSS *BEGIN* ###################################
 */
@@ -538,7 +670,7 @@ main {
     background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites.png') -122px -10px;
 }
 
-.flag_class {
+/* .flag_class {
     width: 16px; height: 11px;
 }
 
@@ -684,7 +816,7 @@ main {
 
 #flag-pl {
     background: url('../books4languages-book-child-theme-for-pressbooks/assets/images/css_sprites_flags.png') -190px -165px;
-}
+} */
 
 .social_icon_class {
   width: 24px; height: 24px;

@@ -15,7 +15,7 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png">
-	<link rel="manifest" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/site.webmanifest">
+	<link rel="manifest" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/b4l.webmanifest.json" crossorigin="use-credentials">
 	<link rel="mask-icon" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" color="#b01109">
 	<link rel="shortcut icon" href="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/books4languages-icon.png" >
 <!-- End of modified code -->
@@ -29,7 +29,7 @@
 	/*
 	 *  ADDED: Custom code snippets
 	 *
-	 *	@since v 1.5
+	 *	@since v 1.X
 	 *
 	*/
 
@@ -80,8 +80,8 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 	 *	@since 1.3
 	 *	@since 1.4
 	*/
-
-	if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled()) {
+// TEMPORAL JUST FOR ADMINS    ///////////////////////
+	if (current_user_can('edit_others_pages') && is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled()) {
 		 // If translations are enabled in back-end display here. tfp_checkIfTranslationsEnabled() from TFP.
 
 		 /* Load values to variables to limit queries.  */
@@ -150,13 +150,13 @@ endif;
 	 *	@since 1.4
 	 *
 	*/
-						 if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && $option == "1") {
+						 if (current_user_can('edit_others_pages') && is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && $option == "1") {
 						 ?>
 						<li>
 							<div class="dropdown-lang">
 							  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content')"><img onclick="gtag('event', 'header_click', {'event_category': 'navigation', 'event_label': 'translations'});"  src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
 									<?php
-									echo '<img id="' . $flag_id . '" class="flag_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="country flag">';
+									// echo '<img id="' . $flag_id . '" class="flag_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="country flag">';
 									echo $currLang;
 									?>
 								</a>
@@ -188,22 +188,35 @@ endif;
 			?>
 		</div>
 
-		<?php if ( ! is_front_page() && pb_get_first_post_id() ) { ?>
+		<?php if ( !is_front_page() && pb_get_first_post_id() ) { ?>
 
 			<div class="reading-header">
 				<nav class="reading-header__inside">
 					<?php if ( is_single() ) { ?>
 					<div class="reading-header__toc dropdown">
 						<?php if(!wp_is_mobile()){ //!wp_is_mobile() is_user_logged_in()?>
-						<div class="reading-header__toc__title"><?php
-							 _e( 'Contents', 'pressbooks-book' ); ?></div>
-							<div class="block-reading-toc" hidden><?php //the hidden list?>
-								<?php include( locate_template( 'partials/content-toc.php' ) ); // FILE content-toc NOT FOUND?>
-							</div>	<?php }
+						<div class="reading-header__toc__title">
+							<?php
+							 _e( 'Contents', 'pressbooks-book' ); ?>
+						 </div>
+							<div class="block-reading-toc" hidden>
+								<?php //the hidden list
+							/*
+							 *	ADDED: translations-for-pressbooks.php - Closing of the <div id="header-inside-right">
+							 *
+							 *	@since 1.3
+							 *
+							*/
+							get_template_part( 'partials/content-header','toc');
+
+							// include( locate_template( 'partials/content-toc.php' ) ); // FILE content-toc NOT FOUND
+						?>
+							</div>
+						<?php }
 						else { ?>
 							<h1 class="reading-header__toc__title">
-							<a onclick="gtag('event', 'header_click', {'event_category': 'navigation', 'event_label': 'toc'});" href="<?php pbc_get_tablecontents_url() ?>"><?php _e( 'CONTENTS', 'pressbooks-book' ); ?></a>
-						</h1>
+								<a onclick="gtag('event', 'header_click', {'event_category': 'navigation', 'event_label': 'toc'});" href="<?php pbc_get_tablecontents_url() ?>"><?php _e( 'CONTENTS', 'pressbooks-book' ); ?></a>
+							</h1>
 					<?php	}	?>
 					</div>
 					<?php } else { ?>
@@ -219,16 +232,22 @@ endif;
 	 *
 	 *	@since 1.4
 	 *	@since 1.4.1
+	 *	@since 1.4.X
 	 *
 	*/
-?>
+	  			if ( !wp_is_mobile()) { ?>
 					<div class="reading-header__end-container"><?php if (is_user_logged_in() && is_plugin_active('simple-metadata/simple-metadata.php') && is_plugin_active('simple-metadata-relation/simple-metadata-relation.php')) {
 								getCurrentPostRelations($location = "chapter");
-							}?><?php
+							} ?>
+					<?php
 /* if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) : ?>
 	<a href="<?php echo home_url( '/buy/' ); ?>"><?php _e( 'Buy', 'pressbooks-book' ); ?></a>
-	<?php  endif; */ ?>
+	<?php  endif; */
+					?>
 				 </div>
+			 	<?php   }  ?>
+
+
 <?php	/** End of added code  */ ?>
 
 				</nav>

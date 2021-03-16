@@ -6,6 +6,24 @@
 global $multipage;
 ?>
 
+
+
+<?php
+
+/**
+ *
+ * ADDED: the_content area ads (top)
+ *
+ * @since 1.x
+ *
+ */
+
+ // get_template_part( 'partials/content-footer','b4l-single' );
+
+/** End of added code  */
+
+
+?>
 <footer class="footer
 <?php
 if ( is_front_page() ) :
@@ -134,12 +152,12 @@ if ( wp_is_mobile() && is_single()) : ?>
  */
 ?>
 				<div class="footer__pressbooks__social">
-					<a class="facebook" onclick="gtag('event', 'footer_click', {'event_category': 'social', 'event_label': 'facebook'});" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?>" rel=”noopener”>
-						<img id="facebook_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="facebook bfl">
+					<a class="facebook" onclick="gtag('event', 'footer_click', {'event_category': 'social', 'event_label': 'facebook'});" href="https://www.facebook.com/Books4Languages/" target="_blank" title="<?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?>" rel="noopener noreferrer">
+						<img id="facebook_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="facebook b4l" width="24" height="24">
 					 	<span class="screen-reader-text"><?php _e( 'Books4Languages on Facebook', 'pressbooks-book' ); ?></span>
 					 </a>
-					 <a class="twitter" onclick="gtag('event', 'footer_click', {'event_category': 'social', 'event_label': 'twitter'});" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?>" rel=”noopener”>
-						 <img id="twitter_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="twitter bfl">
+					 <a class="twitter" onclick="gtag('event', 'footer_click', {'event_category': 'social', 'event_label': 'twitter'});" href="https://twitter.com/bookslanguages/" target="_blank" title="<?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?>" rel="noopener noreferrer">
+						 <img id="twitter_icon_footer" class="social_icon_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="twitter b4l" width="24" height="24">
 					 <span class="screen-reader-text"><?php _e( 'Books4Languages on Twitter', 'pressbooks-book' ); ?></span>
 				 </a>
 				</div>

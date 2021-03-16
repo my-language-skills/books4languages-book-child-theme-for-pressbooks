@@ -8,6 +8,8 @@
  *
  */
 
+ // class="amazon"
+
 if ( !wp_is_mobile() && !is_user_logged_in() && is_singular('chapter') ) {
 ?>
   <br>
