@@ -194,5 +194,23 @@ require_once dirname( __FILE__ ) . '/lib/display-posts-shortcode/display-posts-t
  require_once dirname( __FILE__ ) . '/vendor/snippets-mu.php';
  require_once dirname( __FILE__ ) . '/vendor/snippets-header.php';
  require_once dirname( __FILE__ ) . '/vendor/snippets-footer.php';
- require_once dirname( __FILE__ ) . '/vendor/shortcodes.php';
+ // require_once dirname( __FILE__ ) . '/vendor/shortcodes.php';
  require_once dirname( __FILE__ ) . '/vendor/shortcodes-h5p.php';
+
+
+
+
+
+
+
+
+ if(!is_user_logged_in()) {
+	 /** * Completely Remove jQuery From WordPress */
+	 function my_init() {
+	 		if (!is_admin()) {
+	 				wp_deregister_script('jquery');
+	 				wp_register_script('jquery', false);
+	 		}
+	 }
+	 add_action('init', 'my_init');
+ }
