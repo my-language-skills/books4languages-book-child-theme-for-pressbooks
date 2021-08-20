@@ -214,3 +214,54 @@ require_once dirname( __FILE__ ) . '/lib/display-posts-shortcode/display-posts-t
 	 }
 	 add_action('init', 'my_init');
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
+ * Change 'post' name to 'Houses'
+ */
+
+
+function dev_change_post_object() {
+	   $get_post_type = get_post_type_object('chapter');
+     $labels = $get_post_type->labels;
+
+
+
+    // $labels->name = 'Topics';
+    // $labels->singular_name = 'Topic';
+    // $labels->add_new = 'Add Topic';
+    // $labels->add_new_item = 'Add Topic';
+    $labels->edit_item = 'Edit Chapter (Topic)';
+    // $labels->new_item = 'Topic';
+    // $labels->view_item = 'View Topic';
+    // $labels->search_items = 'Search Topics';
+    // $labels->not_found = 'No Topics found';
+    // $labels->not_found_in_trash = 'No Topics found in Trash';
+    // $labels->all_items = 'All Topics';
+    // $labels->menu_name = 'Topics';
+    // $labels->name_admin_bar = 'Topics';
+
+    // print_r($labels);
+}
+add_action( 'init', 'dev_change_post_object' );
