@@ -139,7 +139,7 @@ endif;
 	 *
 	*/
 
-					?><li><?php edit_post_link( __( 'Edit', 'pressbooks-book' )); ?></li><?php
+					?><li><?php if ( is_single() ) { edit_post_link( __( 'Edit', 'pressbooks-book' )); } ?></li><?php
 /** End of added code  */
 
 
