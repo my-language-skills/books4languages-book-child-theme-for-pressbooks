@@ -309,7 +309,7 @@ main {
 /*
  ################################### CSS FOR TRANSLATIONS PLUGIN *BEGIN* ###################################
 */
-.dropdown-lang {
+/* .dropdown-lang {
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -352,9 +352,9 @@ main {
 #dropdown-lang-content > ul > li > a:hover {
   background-color: #ececec;
   text-decoration: none;
-}
+} */
 /* class for displaying dropdowns. Trigerred by mls_toggleLangDropdown() function. */
-.show-dropdown {display: block !important;}
+/* .show-dropdown {display: block !important;}
 
 @media only screen and (min-width: 60rem){
   .dropdown-content-selected-lang{
@@ -372,10 +372,10 @@ main {
         color: #444444;
   }
 }
-
+ */
 
 /* Following CSS modifies language dropdown in mobile menu. */
-@media only screen and (max-width: 59.99rem) {
+/* @media only screen and (max-width: 59.99rem) {
   .dropdown-lang{
     width: 100%;
   }
@@ -388,11 +388,11 @@ main {
   #dropdown-lang-content > ul >  li >  a:hover {
     color: #444444;
   }
-}
+} */
 
 
 /* Following CSS modifies language icon in header for small mobile screens. */
-#dropdown-in-responsive-header{
+/* #dropdown-in-responsive-header{
   display: none;
 }
 
@@ -461,7 +461,27 @@ main {
   .header__nav-icon{
     margin-top: 14px;
   }
+} */
+
+
+/* This section styles the translations cloud in the header */
+#tfp-header-translations-cloud {
+  margin: auto;
+  margin-top: .5rem;
+  width: 50%;
+  max-width: var(--reading-width,40em) ;
 }
+#tfp-header-translations-cloud-inner {
+  background-color: #F5F9FC;
+  padding: .2rem;
+}
+#tfp-currently-selected-lang {
+  cursor: not-allowed;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+/* End of styling for translations cloud in the header */
 
 /* Make selected language bold in the footer. */
 .footer-lang-selected > a{

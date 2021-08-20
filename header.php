@@ -80,38 +80,7 @@ if ( \PressbooksBook\Helpers\social_media_enabled() ) {
 	 *	@since 1.3
 	 *	@since 1.4
 	*/
-// TEMPORAL JUST FOR ADMINS    ///////////////////////
-	if (current_user_can('edit_others_pages') && is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled()) {
-		 // If translations are enabled in back-end display here. tfp_checkIfTranslationsEnabled() from TFP.
 
-		 /* Load values to variables to limit queries.  */
-			$currLang = tfp_getCurrentBookLanguageCode();
-			$flag_id = "flag-" . $currLang ;
-			?>
-
-			<div id="header-inside-right"> <!-- This div is added due for align translation icon to the right in small screen version -->
-				<ul>
-				<li id="dropdown-in-responsive-header">
-					<div class="dropdown-lang2">
-					  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content2')"><img onclick="gtag('event', 'header_click', {'event_category': 'navigation', 'event_label': 'translations'});" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
-							<?php
-							// echo '<img id="' . $flag_id . '" class="flag_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="country flag">';
-							echo $currLang;
-							?>
-						</a>
-					  <div id="dropdown-lang-content2">
-							<ul>
-								<?php
-									$blog_id = get_current_blog_id();
-									tfp_printTransLinks($blog_id, "header");
-								?>
-							</ul>
-					  </div>
-					</div>
-				</li>
-				</ul>
-
-<?php 	}
 	/** End of added code  */
 ?>
 
@@ -150,26 +119,7 @@ endif;
 	 *	@since 1.4
 	 *
 	*/
-						 if (current_user_can('edit_others_pages') && is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && $option == "1") {
-						 ?>
-						<li>
-							<div class="dropdown-lang">
-							  <a onclick="mls_toggleLangDropdown(event, 'dropdown-lang-content')"><img onclick="gtag('event', 'header_click', {'event_category': 'navigation', 'event_label': 'translations'});"  src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/lang-icon.png" width="25px" alt="langicon">
-									<?php
-									// echo '<img id="' . $flag_id . '" class="flag_class" src="/wp-content/themes/books4languages-book-child-theme-for-pressbooks/assets/images/empty.gif" alt="country flag">';
-									echo $currLang;
-									?>
-								</a>
-							  <div id="dropdown-lang-content">
-									<ul>
-										<?php
-											tfp_printTransLinks($blog_id, "header");
-										?>
-									</ul>
-							  </div>
-							</div>
-						</li>	<?php
-							}
+
 /** End of added code  */
 ?>
 						</ul>
@@ -253,6 +203,18 @@ endif;
 				</nav>
 			</div>
 		<?php   }  ?>
+
+		<?php // ADDED CODE FOR TRANSLATIONS CLOUD
+			if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled()) {
+				 // If translations are enabled in back-end display here. tfp_checkIfTranslationsEnabled() from TFP.
+					?>
+
+					<div id="tfp-header-translations-cloud">
+						<?php tfp_printTransLinks_simple(get_current_blog_id()); ?>
+					</div>
+
+
+		<?php } // END OF ADDED CODE FOR TRANSLATIONS CLOUD ?>
 	</header>
 
 	<main id="main">
