@@ -200,12 +200,20 @@ endif;
 
 <?php	/** End of added code  */ ?>
 
+<?php // ADDED CODE FOR HIDDEN CONTENT FOR PRESSBOOKS
+if (is_plugin_active('hidden-content-for-pressbooks-master/hidden-content-for-pressbooks.php') && hcp_checkIfHcpActive()) { ?>
+	<div id="reading-header__end-container">
+	<?php echo(hcp_print_hidden_content_button()); ?>
+</div>
+<?php }
+ // END OF ADDED CODE FOR HIDDEN CONTENT FOR PRESSBOOKS							 ?>
+
 				</nav>
 			</div>
 		<?php   }  ?>
 
 		<?php // ADDED CODE FOR TRANSLATIONS CLOUD
-			if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled()) {
+			if (is_plugin_active('translations-for-pressbooks/translations-for-pressbooks.php') && "1" == $option = tfp_checkIfTranslationsEnabled() && is_single()) {
 				 // If translations are enabled in back-end display here. tfp_checkIfTranslationsEnabled() from TFP.
 					?>
 
@@ -215,6 +223,11 @@ endif;
 
 
 		<?php } // END OF ADDED CODE FOR TRANSLATIONS CLOUD ?>
+
+
+
+
+
 	</header>
 
 	<main id="main">
