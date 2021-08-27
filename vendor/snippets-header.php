@@ -74,7 +74,7 @@
   * https://newblogr.com/how-do-i-add-cookie-notifications-to-wordpress/
  */
  ?>
- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+ <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /> -->
  <!-- End Cookie Consent -->
 
 
